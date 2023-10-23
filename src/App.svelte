@@ -9,8 +9,6 @@
         {
           group: "Informatik",
           modules: [
-            { name: "abc", credits: 6 },
-            { name: "ads", credits: 6 },
             { name: "gtre", credits: 6 },
           ],
         },
@@ -38,7 +36,6 @@
         {
           group: "Informatik",
           modules: [
-            { name: "ads", credits: 6 },
             { name: "gtre", credits: 6 },
           ],
         },
@@ -79,7 +76,7 @@
       <div class="col-sm">
         <div class="row">
         {#each group.modules as module}
-        <div class="col-sm">
+        <div class="col-sm-6">
           <Modul
             name={module.name}
             gruppe={group.group}

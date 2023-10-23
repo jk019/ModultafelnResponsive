@@ -751,7 +751,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (81:8) {#each group.modules as module}
+    // (78:8) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
     	let modul;
@@ -770,8 +770,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(modul.$$.fragment);
-    			attr_dev(div, "class", "col-sm");
-    			add_location(div, file, 81, 8, 1895);
+    			attr_dev(div, "class", "col-sm-6");
+    			add_location(div, file, 78, 8, 1772);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -798,14 +798,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(81:8) {#each group.modules as module}",
+    		source: "(78:8) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:6) {#each semester.semesterModules as group}
+    // (75:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
@@ -834,9 +834,9 @@ var app = (function () {
 
     			t = space();
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 79, 8, 1829);
+    			add_location(div0, file, 76, 8, 1706);
     			attr_dev(div1, "class", "col-sm");
-    			add_location(div1, file, 78, 6, 1800);
+    			add_location(div1, file, 75, 6, 1677);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -908,14 +908,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(78:6) {#each semester.semesterModules as group}",
+    		source: "(75:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (72:2) {#each all as semester}
+    // (69:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
@@ -958,10 +958,10 @@ var app = (function () {
     			t1 = space();
     			br = element("br");
     			attr_dev(div0, "class", "col-sm");
-    			add_location(div0, file, 73, 6, 1657);
+    			add_location(div0, file, 70, 6, 1534);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 72, 4, 1633);
-    			add_location(br, file, 92, 4, 2116);
+    			add_location(div1, file, 69, 4, 1510);
+    			add_location(br, file, 89, 4, 1995);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1041,7 +1041,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(72:2) {#each all as semester}",
+    		source: "(69:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1288,76 +1288,76 @@ var app = (function () {
     			div25 = element("div");
     			div24 = element("div");
     			div23 = element("div");
-    			add_location(h1, file, 65, 0, 1440);
+    			add_location(h1, file, 62, 0, 1317);
     			attr_dev(h40, "class", "InfoText");
-    			add_location(h40, file, 67, 0, 1503);
+    			add_location(h40, file, 64, 0, 1380);
     			attr_dev(h41, "class", "InfoTextRot");
-    			add_location(h41, file, 68, 0, 1539);
+    			add_location(h41, file, 65, 0, 1416);
     			attr_dev(div0, "class", "container");
-    			add_location(div0, file, 70, 0, 1579);
-    			add_location(br0, file, 96, 0, 2139);
-    			add_location(br1, file, 96, 6, 2145);
-    			add_location(br2, file, 96, 12, 2151);
-    			add_location(br3, file, 96, 18, 2157);
-    			add_location(br4, file, 96, 24, 2163);
-    			add_location(br5, file, 96, 30, 2169);
-    			add_location(br6, file, 96, 36, 2175);
-    			add_location(br7, file, 96, 42, 2181);
+    			add_location(div0, file, 67, 0, 1456);
+    			add_location(br0, file, 93, 0, 2018);
+    			add_location(br1, file, 93, 6, 2024);
+    			add_location(br2, file, 93, 12, 2030);
+    			add_location(br3, file, 93, 18, 2036);
+    			add_location(br4, file, 93, 24, 2042);
+    			add_location(br5, file, 93, 30, 2048);
+    			add_location(br6, file, 93, 36, 2054);
+    			add_location(br7, file, 93, 42, 2060);
     			attr_dev(div1, "class", "col-sm");
-    			add_location(div1, file, 99, 4, 2236);
+    			add_location(div1, file, 96, 4, 2115);
     			attr_dev(div2, "class", "col-sm");
-    			add_location(div2, file, 105, 8, 2382);
+    			add_location(div2, file, 102, 8, 2261);
     			attr_dev(div3, "class", "col-sm");
-    			add_location(div3, file, 108, 8, 2494);
+    			add_location(div3, file, 105, 8, 2373);
     			attr_dev(div4, "class", "row");
-    			add_location(div4, file, 104, 6, 2356);
+    			add_location(div4, file, 101, 6, 2235);
     			attr_dev(div5, "class", "col-sm");
-    			add_location(div5, file, 103, 4, 2329);
+    			add_location(div5, file, 100, 4, 2208);
     			attr_dev(div6, "class", "col-sm");
-    			add_location(div6, file, 116, 8, 2680);
+    			add_location(div6, file, 113, 8, 2559);
     			attr_dev(div7, "class", "col-sm");
-    			add_location(div7, file, 119, 8, 2792);
+    			add_location(div7, file, 116, 8, 2671);
     			attr_dev(div8, "class", "row");
-    			add_location(div8, file, 115, 6, 2654);
+    			add_location(div8, file, 112, 6, 2533);
     			attr_dev(div9, "class", "col-sm");
-    			add_location(div9, file, 114, 4, 2627);
+    			add_location(div9, file, 111, 4, 2506);
     			attr_dev(div10, "class", "col-sm");
-    			add_location(div10, file, 127, 8, 2978);
+    			add_location(div10, file, 124, 8, 2857);
     			attr_dev(div11, "class", "col-sm");
-    			add_location(div11, file, 130, 8, 3090);
+    			add_location(div11, file, 127, 8, 2969);
     			attr_dev(div12, "class", "row");
-    			add_location(div12, file, 126, 6, 2952);
+    			add_location(div12, file, 123, 6, 2831);
     			attr_dev(div13, "class", "col-sm");
-    			add_location(div13, file, 125, 4, 2925);
+    			add_location(div13, file, 122, 4, 2804);
     			attr_dev(div14, "class", "row");
-    			add_location(div14, file, 98, 2, 2214);
-    			add_location(p, file, 138, 2, 3263);
+    			add_location(div14, file, 95, 2, 2093);
+    			add_location(p, file, 135, 2, 3142);
     			attr_dev(div15, "class", "col-sm");
-    			add_location(div15, file, 141, 4, 3294);
+    			add_location(div15, file, 138, 4, 3173);
     			attr_dev(div16, "class", "col-sm");
-    			add_location(div16, file, 147, 8, 3440);
+    			add_location(div16, file, 144, 8, 3319);
     			attr_dev(div17, "class", "row");
-    			add_location(div17, file, 146, 6, 3414);
+    			add_location(div17, file, 143, 6, 3293);
     			attr_dev(div18, "class", "col-sm");
-    			add_location(div18, file, 145, 4, 3387);
+    			add_location(div18, file, 142, 4, 3266);
     			attr_dev(div19, "class", "col-sm");
-    			add_location(div19, file, 153, 8, 3545);
+    			add_location(div19, file, 150, 8, 3424);
     			attr_dev(div20, "class", "col-sm");
-    			add_location(div20, file, 156, 8, 3657);
+    			add_location(div20, file, 153, 8, 3536);
     			attr_dev(div21, "class", "row");
-    			add_location(div21, file, 152, 6, 3519);
+    			add_location(div21, file, 149, 6, 3398);
     			attr_dev(div22, "class", "col-sm");
-    			add_location(div22, file, 151, 4, 3492);
+    			add_location(div22, file, 148, 4, 3371);
     			attr_dev(div23, "class", "col-sm");
-    			add_location(div23, file, 164, 8, 3843);
+    			add_location(div23, file, 161, 8, 3722);
     			attr_dev(div24, "class", "row");
-    			add_location(div24, file, 163, 6, 3817);
+    			add_location(div24, file, 160, 6, 3696);
     			attr_dev(div25, "class", "col-sm");
-    			add_location(div25, file, 162, 4, 3790);
+    			add_location(div25, file, 159, 4, 3669);
     			attr_dev(div26, "class", "row");
-    			add_location(div26, file, 140, 2, 3272);
+    			add_location(div26, file, 137, 2, 3151);
     			attr_dev(div27, "class", "container");
-    			add_location(div27, file, 97, 0, 2188);
+    			add_location(div27, file, 94, 0, 2067);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1560,11 +1560,7 @@ var app = (function () {
     			semesterModules: [
     				{
     					group: "Informatik",
-    					modules: [
-    						{ name: "abc", credits: 6 },
-    						{ name: "ads", credits: 6 },
-    						{ name: "gtre", credits: 6 }
-    					]
+    					modules: [{ name: "gtre", credits: 6 }]
     				},
     				{
     					group: "Wirtschaft",
@@ -1589,7 +1585,7 @@ var app = (function () {
     			semesterModules: [
     				{
     					group: "Informatik",
-    					modules: [{ name: "ads", credits: 6 }, { name: "gtre", credits: 6 }]
+    					modules: [{ name: "gtre", credits: 6 }]
     				},
     				{
     					group: "Wirtschaft",
