@@ -440,11 +440,13 @@ var app = (function () {
     const file$2 = "src\\Modul.svelte";
 
     function create_fragment$2(ctx) {
-    	let div1;
+    	let div3;
+    	let div2;
     	let div0;
     	let p;
     	let t0;
     	let t1;
+    	let div1;
     	let a;
     	let t2;
     	let t3;
@@ -452,15 +454,15 @@ var app = (function () {
     	let t4;
     	let t5;
     	let t6;
+    	let div11;
+    	let div10;
     	let div9;
-    	let div8;
-    	let div7;
+    	let div6;
     	let div4;
-    	let div2;
     	let h50;
     	let t7;
     	let t8;
-    	let div3;
+    	let div5;
     	let span1;
     	let t9;
     	let t10;
@@ -468,22 +470,24 @@ var app = (function () {
     	let button0;
     	let span2;
     	let t13;
-    	let div5;
+    	let div7;
     	let h51;
     	let t15;
     	let t16;
-    	let div6;
+    	let div8;
     	let button1;
     	let t18;
     	let button2;
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div3 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			p = element("p");
     			t0 = text(/*gruppe*/ ctx[1]);
     			t1 = space();
+    			div1 = element("div");
     			a = element("a");
     			t2 = text(/*name*/ ctx[0]);
     			t3 = space();
@@ -491,15 +495,15 @@ var app = (function () {
     			t4 = text(/*badge*/ ctx[2]);
     			t5 = text(" ECTS");
     			t6 = space();
+    			div11 = element("div");
+    			div10 = element("div");
     			div9 = element("div");
-    			div8 = element("div");
-    			div7 = element("div");
+    			div6 = element("div");
     			div4 = element("div");
-    			div2 = element("div");
     			h50 = element("h5");
     			t7 = text(/*name*/ ctx[0]);
     			t8 = space();
-    			div3 = element("div");
+    			div5 = element("div");
     			span1 = element("span");
     			t9 = text(/*badge*/ ctx[2]);
     			t10 = text(" ECTS");
@@ -508,117 +512,123 @@ var app = (function () {
     			span2 = element("span");
     			span2.textContent = "×";
     			t13 = space();
-    			div5 = element("div");
+    			div7 = element("div");
     			h51 = element("h5");
     			h51.textContent = "Beschreibung des Moduls:";
-    			t15 = text("\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis volutpat est velit egestas dui. Tristique senectus et netus et malesuada fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing. Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet. Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque viverra justo nec ultrices.");
+    			t15 = text("\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim\r\n        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis\r\n        volutpat est velit egestas dui. Tristique senectus et netus et malesuada\r\n        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh\r\n        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor\r\n        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus\r\n        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum\r\n        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate\r\n        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis\r\n        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent\r\n        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus\r\n        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor\r\n        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque\r\n        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque\r\n        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus\r\n        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.\r\n        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh\r\n        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium\r\n        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat\r\n        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.\r\n        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus\r\n        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie\r\n        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc\r\n        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque\r\n        viverra justo nec ultrices.");
     			t16 = space();
-    			div6 = element("div");
+    			div8 = element("div");
     			button1 = element("button");
     			button1.textContent = "Download PDF";
     			t18 = space();
     			button2 = element("button");
     			button2.textContent = "Close";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
-    			attr_dev(p, "class", "Modulgruppe svelte-1hqfp5z");
-    			add_location(p, file$2, 11, 4, 266);
-    			attr_dev(a, "class", "Modulname svelte-1hqfp5z");
+    			attr_dev(p, "class", "Modulgruppe svelte-126z92m");
+    			add_location(p, file$2, 11, 6, 300);
+    			attr_dev(div0, "class", "row");
+    			add_location(div0, file$2, 10, 4, 275);
+    			attr_dev(a, "class", "Modulname svelte-126z92m");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
-    			add_location(a, file$2, 12, 4, 337);
-    			attr_dev(span0, "class", "badge");
+    			add_location(a, file$2, 14, 6, 408);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$2, 13, 4, 383);
+    			attr_dev(span0, "class", "badge mt-auto svelte-126z92m");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
-    			add_location(span0, file$2, 13, 4, 444);
-    			attr_dev(div0, "class", "card-body svelte-1hqfp5z");
-    			attr_dev(div0, "id", "ModulBody");
-    			add_location(div0, file$2, 10, 2, 222);
-    			attr_dev(div1, "class", "card");
-    			add_location(div1, file$2, 8, 0, 117);
+    			add_location(span0, file$2, 23, 4, 666);
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-126z92m");
+    			attr_dev(div2, "id", "ModulBody");
+    			add_location(div2, file$2, 9, 2, 212);
+    			attr_dev(div3, "class", "card svelte-126z92m");
+    			add_location(div3, file$2, 7, 0, 107);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
-    			add_location(h50, file$2, 24, 27, 854);
-    			attr_dev(div2, "class", "col");
-    			add_location(div2, file$2, 24, 10, 837);
-    			attr_dev(span1, "class", "badge");
+    			add_location(h50, file$2, 40, 10, 1109);
+    			attr_dev(div4, "class", "col");
+    			add_location(div4, file$2, 39, 8, 1080);
+    			attr_dev(span1, "class", "badge test svelte-126z92m");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
-    			add_location(span1, file$2, 25, 27, 951);
-    			attr_dev(div3, "class", "col");
-    			add_location(div3, file$2, 25, 10, 934);
+    			add_location(span1, file$2, 43, 10, 1226);
+    			attr_dev(div5, "class", "col");
+    			add_location(div5, file$2, 42, 8, 1197);
     			attr_dev(span2, "aria-hidden", "true");
-    			add_location(span2, file$2, 27, 10, 1122);
+    			add_location(span2, file$2, 51, 10, 1465);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
-    			add_location(button0, file$2, 26, 8, 1034);
-    			attr_dev(div4, "class", "modal-header");
-    			add_location(div4, file$2, 23, 6, 799);
-    			add_location(h51, file$2, 31, 8, 1236);
-    			attr_dev(div5, "class", "modal-body");
-    			add_location(div5, file$2, 30, 6, 1202);
+    			add_location(button0, file$2, 45, 8, 1323);
+    			attr_dev(div6, "class", "modal-header");
+    			add_location(div6, file$2, 38, 6, 1044);
+    			add_location(h51, file$2, 55, 8, 1579);
+    			attr_dev(div7, "class", "modal-body");
+    			add_location(div7, file$2, 54, 6, 1545);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$2, 35, 8, 3274);
+    			add_location(button1, file$2, 84, 8, 3841);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-secondary");
     			attr_dev(button2, "data-dismiss", "modal");
-    			add_location(button2, file$2, 36, 8, 3351);
-    			attr_dev(div6, "class", "modal-footer");
-    			add_location(div6, file$2, 34, 6, 3238);
-    			attr_dev(div7, "class", "modal-content");
-    			add_location(div7, file$2, 22, 4, 764);
-    			attr_dev(div8, "class", "modal-dialog modal-dialog-centered");
-    			attr_dev(div8, "role", "document");
-    			add_location(div8, file$2, 21, 2, 694);
-    			attr_dev(div9, "class", "modal fade");
-    			attr_dev(div9, "id", "exampleModalCenter");
-    			attr_dev(div9, "tabindex", "-1");
-    			attr_dev(div9, "role", "dialog");
-    			attr_dev(div9, "aria-labelledby", "exampleModalCenterTitle");
-    			attr_dev(div9, "aria-hidden", "true");
-    			add_location(div9, file$2, 20, 0, 553);
+    			add_location(button2, file$2, 85, 8, 3918);
+    			attr_dev(div8, "class", "modal-footer");
+    			add_location(div8, file$2, 83, 6, 3805);
+    			attr_dev(div9, "class", "modal-content");
+    			add_location(div9, file$2, 37, 4, 1009);
+    			attr_dev(div10, "class", "modal-dialog modal-dialog-centered");
+    			attr_dev(div10, "role", "document");
+    			add_location(div10, file$2, 36, 2, 939);
+    			attr_dev(div11, "class", "modal fade");
+    			attr_dev(div11, "id", "exampleModalCenter");
+    			attr_dev(div11, "tabindex", "-1");
+    			attr_dev(div11, "role", "dialog");
+    			attr_dev(div11, "aria-labelledby", "exampleModalCenterTitle");
+    			attr_dev(div11, "aria-hidden", "true");
+    			add_location(div11, file$2, 28, 0, 778);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, div0);
     			append_dev(div0, p);
     			append_dev(p, t0);
-    			append_dev(div0, t1);
-    			append_dev(div0, a);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div1, a);
     			append_dev(a, t2);
-    			append_dev(div0, t3);
-    			append_dev(div0, span0);
+    			append_dev(div2, t3);
+    			append_dev(div2, span0);
     			append_dev(span0, t4);
     			append_dev(span0, t5);
     			insert_dev(target, t6, anchor);
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div8);
-    			append_dev(div8, div7);
-    			append_dev(div7, div4);
-    			append_dev(div4, div2);
-    			append_dev(div2, h50);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div6);
+    			append_dev(div6, div4);
+    			append_dev(div4, h50);
     			append_dev(h50, t7);
-    			append_dev(div4, t8);
-    			append_dev(div4, div3);
-    			append_dev(div3, span1);
+    			append_dev(div6, t8);
+    			append_dev(div6, div5);
+    			append_dev(div5, span1);
     			append_dev(span1, t9);
     			append_dev(span1, t10);
-    			append_dev(div4, t11);
-    			append_dev(div4, button0);
+    			append_dev(div6, t11);
+    			append_dev(div6, button0);
     			append_dev(button0, span2);
-    			append_dev(div7, t13);
-    			append_dev(div7, div5);
-    			append_dev(div5, h51);
-    			append_dev(div5, t15);
-    			append_dev(div7, t16);
-    			append_dev(div7, div6);
-    			append_dev(div6, button1);
-    			append_dev(div6, t18);
-    			append_dev(div6, button2);
+    			append_dev(div9, t13);
+    			append_dev(div9, div7);
+    			append_dev(div7, h51);
+    			append_dev(div7, t15);
+    			append_dev(div9, t16);
+    			append_dev(div9, div8);
+    			append_dev(div8, button1);
+    			append_dev(div8, t18);
+    			append_dev(div8, button2);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*gruppe*/ 2) set_data_dev(t0, /*gruppe*/ ctx[1]);
@@ -644,9 +654,9 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div3);
     			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div11);
     		}
     	};
 
@@ -767,6 +777,7 @@ var app = (function () {
     const file$1 = "src\\Semester.svelte";
 
     function create_fragment$1(ctx) {
+    	let div3;
     	let div2;
     	let div1;
     	let div0;
@@ -779,6 +790,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -789,26 +801,29 @@ var app = (function () {
     			t3 = text(/*totalCredits*/ ctx[0]);
     			t4 = text(" ECTS");
     			attr_dev(div0, "id", "text");
-    			attr_dev(div0, "class", "svelte-1syzv7b");
-    			add_location(div0, file$1, 7, 4, 137);
+    			attr_dev(div0, "class", "svelte-w9achr");
+    			add_location(div0, file$1, 9, 6, 239);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$1, 8, 4, 214);
     			attr_dev(span, "class", "badgeTotal");
-    			add_location(span, file$1, 8, 4, 189);
-    			attr_dev(div1, "class", "card-body");
-    			add_location(div1, file$1, 6, 2, 107);
-    			attr_dev(div2, "class", "card");
-    			add_location(div2, file$1, 5, 0, 85);
+    			add_location(span, file$1, 11, 4, 303);
+    			attr_dev(div2, "class", "card-body");
+    			add_location(div2, file$1, 7, 2, 185);
+    			attr_dev(div3, "class", "card svelte-w9achr");
+    			add_location(div3, file$1, 5, 0, 81);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t0);
     			append_dev(div0, t1);
-    			append_dev(div1, t2);
-    			append_dev(div1, span);
+    			append_dev(div2, t2);
+    			append_dev(div2, span);
     			append_dev(span, t3);
     			append_dev(span, t4);
     		},
@@ -819,7 +834,7 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(div3);
     		}
     	};
 
@@ -953,10 +968,10 @@ var app = (function () {
     			t = space();
     			create_component(modul.$$.fragment);
     			br1 = element("br");
-    			add_location(br0, file, 93, 10, 2535);
-    			add_location(br1, file, 99, 12, 2704);
+    			add_location(br0, file, 93, 10, 2710);
+    			add_location(br1, file, 99, 12, 2885);
     			attr_dev(div, "class", "col-sm-6");
-    			add_location(div, file, 92, 8, 2502);
+    			add_location(div, file, 92, 8, 2676);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1020,10 +1035,10 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 90, 8, 2436);
+    			add_location(div0, file, 90, 8, 2608);
     			attr_dev(div1, "class", "col-sm");
     			set_style(div1, "--groupBG", /*group*/ ctx[4].color + "80");
-    			add_location(div1, file, 89, 6, 2315);
+    			add_location(div1, file, 89, 6, 2486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1146,11 +1161,11 @@ var app = (function () {
     			}
 
     			t2 = space();
-    			add_location(br, file, 84, 8, 2173);
-    			attr_dev(div0, "class", "col-sm");
-    			add_location(div0, file, 83, 6, 2144);
+    			add_location(br, file, 84, 8, 2339);
+    			attr_dev(div0, "class", "col-sm-auto");
+    			add_location(div0, file, 83, 6, 2227);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 82, 4, 2120);
+    			add_location(div1, file, 82, 4, 2202);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1286,24 +1301,24 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "mainTitle");
-    			add_location(h1, file, 69, 4, 1702);
+    			add_location(h1, file, 69, 4, 1771);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 68, 2, 1680);
+    			add_location(div0, file, 68, 2, 1748);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
     			attr_dev(img, "width", "60%");
-    			add_location(img, file, 72, 4, 1830);
+    			add_location(img, file, 72, 4, 1902);
     			attr_dev(div1, "class", "col-3 svelte-embmvh");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 71, 2, 1793);
+    			add_location(div1, file, 71, 2, 1864);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file, 67, 0, 1660);
+    			add_location(div2, file, 67, 0, 1727);
     			attr_dev(h40, "class", "InfoText");
-    			add_location(h40, file, 76, 0, 1905);
+    			add_location(h40, file, 76, 0, 1981);
     			attr_dev(h41, "class", "InfoTextRot");
-    			add_location(h41, file, 77, 0, 2007);
+    			add_location(h41, file, 77, 0, 2084);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 80, 0, 2059);
+    			add_location(div3, file, 80, 0, 2139);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

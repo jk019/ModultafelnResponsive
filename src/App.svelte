@@ -81,7 +81,7 @@
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm-auto"> <!-- col-sm-auto statt nur col-sm damit die Semester nicht so breit sind -->
         <br>
         <Semester semesterNumber={semester.number} totalCredits=20/>
       </div>
