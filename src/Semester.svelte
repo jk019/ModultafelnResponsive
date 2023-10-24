@@ -5,7 +5,7 @@
 
 <div class="card">
   <div class="card-body" >
-    <div id="text">{semesterNumber} Semester</div>
+    <div id="text">Semester {semesterNumber}</div>
     <span class="badgeTotal">{totalCredits} ECTS</span>
   </div>
 </div>
@@ -13,5 +13,6 @@
 <style>
     #text{
         font-weight: 700;
+        color: #0064A6;
     }
 </style>

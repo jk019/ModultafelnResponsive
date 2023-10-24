@@ -8,24 +8,27 @@
       semesterModules: [
         {
           group: "Informatik",
+          color: "#002c57",
           modules: [
-            { name: "gtre", credits: 6 },
+            { name: "Software Engineering 1", credits: 6 },
           ],
         },
         {
           group: "Wirtschaft",
+          color: "#009bac",
           modules: [
-            { name: "geref", credits: 6 },
-            { name: "defs", credits: 6 },
-            { name: "hrth", credits: 6 },
+            { name: "Einführung BWL", credits: 6 },
+            { name: "Wissenschaftliches Schreiben", credits: 6 },
+            { name: "Accounting", credits: 6 },
           ],
         },
         {
-          group: "STEM",
+          group: "Sonstige",          
+          color: "#67c0b5",
           modules: [
-            { name: "dfds", credits: 6 },
-            { name: "abikuc", credits: 6 },
-            { name: "adsfdsbc", credits: 6 },
+            { name: "Mathematik", credits: 6 },
+            { name: "VWL 1", credits: 6 },
+            { name: "English C1", credits: 6 },
           ],
         },
       ],
@@ -35,23 +38,26 @@
       semesterModules: [
         {
           group: "Informatik",
+          color: "#002c57",
           modules: [
-            { name: "gtre", credits: 6 },
+            { name: "Requirements Engineering", credits: 6 },
           ],
         },
         {
           group: "Wirtschaft",
+          color: "#009bac",
           modules: [
-            { name: "geref", credits: 6 },
-            { name: "defs", credits: 6 },
-            { name: "hrth", credits: 6 },
+            { name: "Prozessmodellierung", credits: 6 },
+            { name: "Strategisches Management", credits: 6 },
+            { name: "Marketing", credits: 6 },
           ],
         },
         {
-          group: "STEM",
+          group: "Sonstige",          
+          color: "#67c0b5",
           modules: [
-            { name: "dfds", credits: 6 },
-            { name: "adsfdsbc", credits: 6 },
+            { name: "Wahlpflichtmodul", credits: 6 },
+            { name: "Business intelligence", credits: 6 },
           ],
         },
       ],
@@ -59,111 +65,48 @@
   ];
 </script>
 
+<div class="row">
+  <div class="col">
+    <h1 class="mainTitle">Modultafel Bachelorstudiengang Wirtschaftsinformatik</h1>
+  </div>
+  <div class="col-3" id="zhawSML">
+    <img src="images/logoSML.jpg" alt="Logo SML" width="60%">
+  </div>
+</div>
 
-<h1>Modultafel Bachelorstudiengang Wirtschaftsinformatik</h1>
+<h4 class="InfoText">Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.</h4>
+<h4 class="InfoTextRot">Das ist ein Warntext</h4>
 
-<h4 class="InfoText">Info Text</h4>
-<h4 class="InfoTextRot">Info Text</h4>
 
-<div class="container">
+<div class="custom-container">
   {#each all as semester}
     <div class="row">
       <div class="col-sm">
-        <Semester semesterNumber={semester.number} />
+        <br>
+        <Semester semesterNumber={semester.number} totalCredits=20/>
       </div>
 
       {#each semester.semesterModules as group}
-      <div class="col-sm">
+      <div class="col-sm" style="--groupBG: {group.color}80"> <!--80 stands for the opacity of the background color-->
         <div class="row">
         {#each group.modules as module}
         <div class="col-sm-6">
+          <br>
           <Modul
+            color= "{group.color}";
             name={module.name}
             gruppe={group.group}
             badge={module.credits}
-          /></div>
+          /><br></div>
         {/each}
       </div></div>
 
       {/each}
     </div>
-    <br>
   {/each}
 </div>
 
-<br /><br /><br /><br /><br /><br /><br /><br />
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <Semester semesterNumber="1" totalCredits="27" />
-    </div>
 
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm">
-          <Modul name="Modul 1" gruppe="Modulgruppe 1" badge="3" />
-        </div>
-        <div class="col-sm">
-          <Modul name="Modul 2" gruppe="Modulgruppe 1" badge="6" />
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm">
-          <Modul name="Modul 3" gruppe="Modulgruppe 2" badge="3" />
-        </div>
-        <div class="col-sm">
-          <Modul name="Modul 4" gruppe="Modulgruppe 2" badge="3" />
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm">
-          <Modul name="Modul 5" gruppe="Modulgruppe 3" badge="6" />
-        </div>
-        <div class="col-sm">
-          <Modul name="Modul 6" gruppe="Modulgruppe 3" badge="6" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Abstand zwischen Reihen-->
-  <p />
-
-  <div class="row">
-    <div class="col-sm">
-      <Semester semesterNumber="2" totalCredits="12" />
-    </div>
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm" />
-      </div>
-    </div>
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm">
-          <Modul name="Modul 3" gruppe="Modulgruppe 2" badge="6" />
-        </div>
-        <div class="col-sm">
-          <Modul name="Modul 4" gruppe="Modulgruppe 2" badge="6" />
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm" />
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <style>
@@ -172,5 +115,9 @@
     padding: 20px; /* Innenabstand für die Module */
     border: 1px solid #ccc; /* Rahmen um die Module */
     text-align: center;
+  }
+
+  #zhawSML{
+    align-items: left;
   }
 </style>
