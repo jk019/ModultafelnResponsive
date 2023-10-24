@@ -524,31 +524,31 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Close";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
-    			attr_dev(p, "class", "Modulgruppe svelte-126z92m");
+    			attr_dev(p, "class", "Modulgruppe svelte-1qwlutn");
     			add_location(p, file$2, 11, 6, 300);
     			attr_dev(div0, "class", "row");
     			add_location(div0, file$2, 10, 4, 275);
-    			attr_dev(a, "class", "Modulname svelte-126z92m");
+    			attr_dev(a, "class", "Modulname svelte-1qwlutn");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
     			add_location(a, file$2, 14, 6, 408);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$2, 13, 4, 383);
-    			attr_dev(span0, "class", "badge mt-auto svelte-126z92m");
+    			attr_dev(span0, "class", "badge mt-auto svelte-1qwlutn");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span0, file$2, 23, 4, 666);
-    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-126z92m");
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-1qwlutn");
     			attr_dev(div2, "id", "ModulBody");
     			add_location(div2, file$2, 9, 2, 212);
-    			attr_dev(div3, "class", "card svelte-126z92m");
+    			attr_dev(div3, "class", "card svelte-1qwlutn");
     			add_location(div3, file$2, 7, 0, 107);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
     			add_location(h50, file$2, 40, 10, 1109);
     			attr_dev(div4, "class", "col");
     			add_location(div4, file$2, 39, 8, 1080);
-    			attr_dev(span1, "class", "badge test svelte-126z92m");
+    			attr_dev(span1, "class", "badge test svelte-1qwlutn");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span1, file$2, 43, 10, 1226);
     			attr_dev(div5, "class", "col");
@@ -801,15 +801,15 @@ var app = (function () {
     			t3 = text(/*totalCredits*/ ctx[0]);
     			t4 = text(" ECTS");
     			attr_dev(div0, "id", "text");
-    			attr_dev(div0, "class", "svelte-w9achr");
-    			add_location(div0, file$1, 9, 6, 239);
+    			attr_dev(div0, "class", "svelte-1ryqm2k");
+    			add_location(div0, file$1, 8, 6, 157);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file$1, 8, 4, 214);
+    			add_location(div1, file$1, 7, 4, 132);
     			attr_dev(span, "class", "badgeTotal");
-    			add_location(span, file$1, 11, 4, 303);
+    			add_location(span, file$1, 10, 4, 221);
     			attr_dev(div2, "class", "card-body");
-    			add_location(div2, file$1, 7, 2, 185);
-    			attr_dev(div3, "class", "card svelte-w9achr");
+    			add_location(div2, file$1, 6, 2, 103);
+    			attr_dev(div3, "class", "card svelte-1ryqm2k");
     			add_location(div3, file$1, 5, 0, 81);
     		},
     		l: function claim(nodes) {
@@ -941,19 +941,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (92:8) {#each group.modules as module}
+    // (92:12) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
-    	let br0;
-    	let t;
     	let modul;
-    	let br1;
     	let current;
 
     	modul = new Modul({
     			props: {
     				color: /*group*/ ctx[4].color,
-    				";": true,
     				name: /*module*/ ctx[7].name,
     				gruppe: /*group*/ ctx[4].group,
     				badge: /*module*/ ctx[7].credits
@@ -964,21 +960,13 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			br0 = element("br");
-    			t = space();
     			create_component(modul.$$.fragment);
-    			br1 = element("br");
-    			add_location(br0, file, 93, 10, 2710);
-    			add_location(br1, file, 99, 12, 2885);
-    			attr_dev(div, "class", "col-sm-6");
-    			add_location(div, file, 92, 8, 2676);
+    			attr_dev(div, "class", "col-xl-6");
+    			add_location(div, file, 92, 14, 2645);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, br0);
-    			append_dev(div, t);
     			mount_component(modul, div, null);
-    			append_dev(div, br1);
     			current = true;
     		},
     		p: noop,
@@ -1001,14 +989,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(92:8) {#each group.modules as module}",
+    		source: "(92:12) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:6) {#each semester.semesterModules as group}
+    // (88:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
@@ -1035,10 +1023,10 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 90, 8, 2608);
-    			attr_dev(div1, "class", "col-sm");
+    			add_location(div0, file, 90, 10, 2567);
+    			attr_dev(div1, "class", "col-md");
     			set_style(div1, "--groupBG", /*group*/ ctx[4].color + "80");
-    			add_location(div1, file, 89, 6, 2486);
+    			add_location(div1, file, 88, 8, 2432);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1109,22 +1097,20 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(89:6) {#each semester.semesterModules as group}",
+    		source: "(88:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:2) {#each all as semester}
+    // (81:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
-    	let br;
-    	let t0;
     	let semester;
+    	let t0;
     	let t1;
-    	let t2;
     	let current;
 
     	semester = new Semester({
@@ -1151,29 +1137,24 @@ var app = (function () {
     		c: function create() {
     			div1 = element("div");
     			div0 = element("div");
-    			br = element("br");
-    			t0 = space();
     			create_component(semester.$$.fragment);
-    			t1 = space();
+    			t0 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t2 = space();
-    			add_location(br, file, 84, 8, 2339);
-    			attr_dev(div0, "class", "col-sm-auto");
-    			add_location(div0, file, 83, 6, 2227);
+    			t1 = space();
+    			attr_dev(div0, "class", "col-md-auto");
+    			add_location(div0, file, 82, 6, 2173);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 82, 4, 2202);
+    			add_location(div1, file, 81, 4, 2148);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			append_dev(div1, div0);
-    			append_dev(div0, br);
-    			append_dev(div0, t0);
     			mount_component(semester, div0, null);
-    			append_dev(div1, t1);
+    			append_dev(div1, t0);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				if (each_blocks[i]) {
@@ -1181,7 +1162,7 @@ var app = (function () {
     				}
     			}
 
-    			append_dev(div1, t2);
+    			append_dev(div1, t1);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -1200,7 +1181,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block_1(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div1, t2);
+    						each_blocks[i].m(div1, t1);
     					}
     				}
 
@@ -1244,7 +1225,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(82:2) {#each all as semester}",
+    		source: "(81:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1301,24 +1282,24 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "mainTitle");
-    			add_location(h1, file, 69, 4, 1771);
+    			add_location(h1, file, 65, 4, 1697);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 68, 2, 1748);
+    			add_location(div0, file, 64, 2, 1674);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
     			attr_dev(img, "width", "60%");
-    			add_location(img, file, 72, 4, 1902);
-    			attr_dev(div1, "class", "col-3 svelte-embmvh");
+    			add_location(img, file, 70, 4, 1842);
+    			attr_dev(div1, "class", "col-3 svelte-1n9tsbv");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 71, 2, 1864);
+    			add_location(div1, file, 69, 2, 1804);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file, 67, 0, 1727);
+    			add_location(div2, file, 63, 0, 1653);
     			attr_dev(h40, "class", "InfoText");
-    			add_location(h40, file, 76, 0, 1981);
+    			add_location(h40, file, 74, 0, 1923);
     			attr_dev(h41, "class", "InfoTextRot");
-    			add_location(h41, file, 77, 0, 2084);
+    			add_location(h41, file, 77, 0, 2032);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 80, 0, 2139);
+    			add_location(div3, file, 79, 0, 2085);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

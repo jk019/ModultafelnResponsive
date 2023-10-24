@@ -4,7 +4,6 @@
 </script>
 
 <div class="card">
-  <!-- display: inline-block, damit die card auf den content getrimmt werden -->
   <div class="card-body">
     <div class="row">
       <div id="text">Semester {semesterNumber}</div>
@@ -16,11 +15,13 @@
 <style>
   #text {
     font-weight: 700;
+    font-size: 15px;
     color: #0064a6;
   }
 
   .card {
-    display: inline-block;
     margin-bottom: 10px;
+    margin-top: 20px;
+    align-items: center;
   }
 </style>

@@ -122,5 +122,8 @@
 
   .card {
     min-height: 163.75px;
+    /* min-width: 185px; */
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 </style>

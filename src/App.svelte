@@ -9,9 +9,7 @@
         {
           group: "Informatik",
           color: "#002c57",
-          modules: [
-            { name: "Software Engineering 1", credits: 6 },
-          ],
+          modules: [{ name: "Software Engineering 1", credits: 6 }],
         },
         {
           group: "Wirtschaft",
@@ -23,7 +21,7 @@
           ],
         },
         {
-          group: "Sonstige",          
+          group: "Sonstige",
           color: "#67c0b5",
           modules: [
             { name: "Mathematik", credits: 6 },
@@ -39,9 +37,7 @@
         {
           group: "Informatik",
           color: "#002c57",
-          modules: [
-            { name: "Requirements Engineering", credits: 6 },
-          ],
+          modules: [{ name: "Requirements Engineering", credits: 6 }],
         },
         {
           group: "Wirtschaft",
@@ -53,7 +49,7 @@
           ],
         },
         {
-          group: "Sonstige",          
+          group: "Sonstige",
           color: "#67c0b5",
           modules: [
             { name: "Wahlpflichtmodul", credits: 6 },
@@ -67,47 +63,48 @@
 
 <div class="row">
   <div class="col">
-    <h1 class="mainTitle">Modultafel Bachelorstudiengang Wirtschaftsinformatik</h1>
+    <h1 class="mainTitle">
+      Modultafel Bachelorstudiengang Wirtschaftsinformatik
+    </h1>
   </div>
   <div class="col-3" id="zhawSML">
-    <img src="images/logoSML.jpg" alt="Logo SML" width="60%">
+    <img src="images/logoSML.jpg" alt="Logo SML" width="60%" />
   </div>
 </div>
 
-<h4 class="InfoText">Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.</h4>
+<h4 class="InfoText">
+  Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.
+</h4>
 <h4 class="InfoTextRot">Das ist ein Warntext</h4>
-
 
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
-      <div class="col-sm-auto"> <!-- col-sm-auto statt nur col-sm damit die Semester nicht so breit sind -->
-        <br>
-        <Semester semesterNumber={semester.number} totalCredits=20/>
+      <div class="col-md-auto">
+        <!-- col-sm-auto statt nur col-sm damit die Semester nicht so breit sind -->
+        <Semester semesterNumber={semester.number} totalCredits="20" />
       </div>
 
       {#each semester.semesterModules as group}
-      <div class="col-sm" style="--groupBG: {group.color}80"> <!--80 stands for the opacity of the background color-->
-        <div class="row">
-        {#each group.modules as module}
-        <div class="col-sm-6">
-          <br>
-          <Modul
-            color= "{group.color}";
-            name={module.name}
-            gruppe={group.group}
-            badge={module.credits}
-          /><br></div>
-        {/each}
-      </div></div>
-
+        <div class="col-md" style="--groupBG: {group.color}80">
+          <!--80 stands for the opacity of the background color-->
+          <div class="row">
+            {#each group.modules as module}
+              <div class="col-xl-6">
+                <Modul
+                  color={group.color}
+                  name={module.name}
+                  gruppe={group.group}
+                  badge={module.credits}
+                />
+              </div>
+            {/each}
+          </div>
+        </div>
       {/each}
     </div>
   {/each}
 </div>
-
-
-
 
 <style>
   /* Füge CSS-Stile für die Module hinzu */
@@ -117,7 +114,7 @@
     text-align: center;
   }
 
-  #zhawSML{
+  #zhawSML {
     align-items: left;
   }
 </style>
