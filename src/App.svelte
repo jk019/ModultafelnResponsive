@@ -80,16 +80,18 @@
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
+      <!-- col-md-auto statt col-sm / auto, damit die Semester nicht so breit sind-->
       <div class="col-md-auto">
-        <!-- col-sm-auto statt nur col-sm damit die Semester nicht so breit sind -->
         <Semester semesterNumber={semester.number} totalCredits="20" />
       </div>
 
       {#each semester.semesterModules as group}
+      <!-- col-md statt col-sm -->
         <div class="col-md" style="--groupBG: {group.color}80">
           <!--80 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
+            <!-- col-xl-6 statt col-sm-6 -->
               <div class="col-xl-6">
                 <Modul
                   color={group.color}
