@@ -41,7 +41,8 @@
           <h5 class="modal-title" id="exampleModalLongTitle">{name}</h5>
         </div>
         <div class="col">
-          <span class="badge test" style="--badgeBG: {color}">{badge} ECTS</span>
+          <span class="badge test" style="--badgeBG: {color}">{badge} ECTS</span
+          >
         </div>
         <button
           type="button"
@@ -103,6 +104,8 @@
     align-self: stretch; */
 
     padding-bottom: 10px;
+
+    hyphens: auto;
   }
 
   .Modulgruppe {
