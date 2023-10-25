@@ -941,7 +941,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (92:12) {#each group.modules as module}
+    // (103:12) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
     	let modul;
@@ -962,7 +962,7 @@ var app = (function () {
     			div = element("div");
     			create_component(modul.$$.fragment);
     			attr_dev(div, "class", "col-xl-6");
-    			add_location(div, file, 92, 14, 2645);
+    			add_location(div, file, 104, 14, 3022);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -989,14 +989,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(92:12) {#each group.modules as module}",
+    		source: "(103:12) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (88:6) {#each semester.semesterModules as group}
+    // (98:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
@@ -1023,10 +1023,10 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 90, 10, 2567);
+    			add_location(div0, file, 101, 10, 2896);
     			attr_dev(div1, "class", "col-md");
     			set_style(div1, "--groupBG", /*group*/ ctx[4].color + "80");
-    			add_location(div1, file, 88, 8, 2432);
+    			add_location(div1, file, 99, 8, 2761);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1097,14 +1097,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(88:6) {#each semester.semesterModules as group}",
+    		source: "(98:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:2) {#each all as semester}
+    // (91:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
@@ -1116,7 +1116,7 @@ var app = (function () {
     	semester = new Semester({
     			props: {
     				semesterNumber: /*semester*/ ctx[1].number,
-    				totalCredits: "20"
+    				totalCredits: calculateTotalCredits(/*semester*/ ctx[1])
     			},
     			$$inline: true
     		});
@@ -1146,9 +1146,9 @@ var app = (function () {
 
     			t1 = space();
     			attr_dev(div0, "class", "col-md-auto");
-    			add_location(div0, file, 82, 6, 2173);
+    			add_location(div0, file, 93, 6, 2521);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 81, 4, 2148);
+    			add_location(div1, file, 91, 4, 2409);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1225,7 +1225,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(81:2) {#each all as semester}",
+    		source: "(91:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1282,24 +1282,24 @@ var app = (function () {
     			}
 
     			attr_dev(h1, "class", "mainTitle");
-    			add_location(h1, file, 65, 4, 1697);
+    			add_location(h1, file, 75, 4, 1958);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 64, 2, 1674);
+    			add_location(div0, file, 74, 2, 1935);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
     			attr_dev(img, "width", "60%");
-    			add_location(img, file, 70, 4, 1842);
+    			add_location(img, file, 80, 4, 2103);
     			attr_dev(div1, "class", "col-3 svelte-1n9tsbv");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 69, 2, 1804);
+    			add_location(div1, file, 79, 2, 2065);
     			attr_dev(div2, "class", "row");
-    			add_location(div2, file, 63, 0, 1653);
+    			add_location(div2, file, 73, 0, 1914);
     			attr_dev(h40, "class", "InfoText");
-    			add_location(h40, file, 74, 0, 1923);
+    			add_location(h40, file, 84, 0, 2184);
     			attr_dev(h41, "class", "InfoTextRot");
-    			add_location(h41, file, 77, 0, 2032);
+    			add_location(h41, file, 87, 0, 2293);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 79, 0, 2085);
+    			add_location(div3, file, 89, 0, 2346);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1327,7 +1327,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*all*/ 1) {
+    			if (dirty & /*all, calculateTotalCredits*/ 1) {
     				each_value = /*all*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -1394,6 +1394,18 @@ var app = (function () {
     	});
 
     	return block;
+    }
+
+    function calculateTotalCredits(semester) {
+    	let totalCredits = 0;
+
+    	semester.semesterModules.forEach(group => {
+    		group.modules.forEach(module => {
+    			totalCredits += module.credits;
+    		});
+    	});
+
+    	return totalCredits;
     }
 
     function instance($$self, $$props, $$invalidate) {
@@ -1468,7 +1480,7 @@ var app = (function () {
     					modules: [
     						{ name: "Wahlpflichtmodul", credits: 6 },
     						{
-    							name: "Business intelligence",
+    							name: "Business Intelligence",
     							credits: 6
     						}
     					]
@@ -1483,7 +1495,12 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ Modul, Semester, all });
+    	$$self.$capture_state = () => ({
+    		Modul,
+    		Semester,
+    		all,
+    		calculateTotalCredits
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('all' in $$props) $$invalidate(0, all = $$props.all);

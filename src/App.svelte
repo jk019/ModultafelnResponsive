@@ -53,12 +53,22 @@
           color: "#67c0b5",
           modules: [
             { name: "Wahlpflichtmodul", credits: 6 },
-            { name: "Business intelligence", credits: 6 },
+            { name: "Business Intelligence", credits: 6 },
           ],
         },
       ],
     },
   ];
+
+  function calculateTotalCredits(semester) {
+    let totalCredits = 0;
+    semester.semesterModules.forEach((group) => {
+      group.modules.forEach((module) => {
+        totalCredits += module.credits;
+      });
+    });
+    return totalCredits;
+  }
 </script>
 
 <div class="row">
@@ -82,16 +92,16 @@
     <div class="row">
       <!-- col-md-auto statt col-sm / auto, damit die Semester nicht so breit sind-->
       <div class="col-md-auto">
-        <Semester semesterNumber={semester.number} totalCredits="20" />
+        <Semester semesterNumber={semester.number} totalCredits={calculateTotalCredits(semester)} />
       </div>
 
       {#each semester.semesterModules as group}
-      <!-- col-md statt col-sm -->
+        <!-- col-md statt col-sm -->
         <div class="col-md" style="--groupBG: {group.color}80">
           <!--80 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
-            <!-- col-xl-6 statt col-sm-6 -->
+              <!-- col-xl-6 statt col-sm-6 -->
               <div class="col-xl-6">
                 <Modul
                   color={group.color}
