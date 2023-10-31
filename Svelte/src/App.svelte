@@ -92,7 +92,10 @@
     <div class="row">
       <!-- col-md-auto statt col-sm / auto, damit die Semester nicht so breit sind-->
       <div class="col-md-auto">
-        <Semester semesterNumber={semester.number} totalCredits={calculateTotalCredits(semester)} />
+        <Semester
+          semesterNumber={semester.number}
+          totalCredits={calculateTotalCredits(semester)}
+        />
       </div>
 
       {#each semester.semesterModules as group}

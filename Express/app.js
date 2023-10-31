@@ -5,11 +5,14 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const xlsx = require("xlsx");
 const fs = require("fs");
+const svelteViewEngine = require("svelte-view-engine");
 
 //const {add} = require("nodemon/lib/rules");
-app.set("view engine", "ejs");
 
 const TEMP_DIR = "public/tmp/";
+
+let dir = "./pages";
+let type = "html";
 
 // Provides static resources for the frontend & file upload
 app.use(
@@ -19,6 +22,24 @@ app.use(
     tempFileDir: TEMP_DIR,
   })
 );
+
+app.engine(
+  type,
+  svelteViewEngine({
+    template: "./template.html", // see Root template below
+    dir,
+    type,
+    init: true,
+    watch: true,
+    liveReload: true,
+    svelte: {
+      // rollup-plugin-svelte config
+    },
+  })
+);
+
+app.set("view engine", type);
+app.set("views", dir);
 
 app.post("/upload", function (req, res) {
   let excelFile;
@@ -119,13 +140,13 @@ app.post("/upload", function (req, res) {
     //const returnFile = __dirname + '/tmp/' + Date.now() + "_" + 'Modultafel.html'
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
     res.render(
-      "main",
-      {
+      "App",
+      /* {
         usedModulegroups: usedModulegroups,
         semesterArray: semesterArray,
         wahlmodule: wahlmodule,
         settings: settings[0],
-      },
+      }, */
       (err, html) => {
         fs.writeFile(returnFile, html, () => {
           res.download(returnFile);
