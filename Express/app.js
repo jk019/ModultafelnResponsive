@@ -141,14 +141,23 @@ app.post("/upload", function (req, res) {
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
     res.render(
       "App",
-      /* {
+      {
         usedModulegroups: usedModulegroups,
         semesterArray: semesterArray,
         wahlmodule: wahlmodule,
         settings: settings[0],
-      }, */
+      },
       (err, html) => {
-        fs.writeFile(returnFile, html, () => {
+        if (err) {
+          return res
+            .status(500)
+            .send(err.message || "Error rendering the view");
+        }
+        console.log(html); // Add this line
+        fs.writeFile(returnFile, html, (err) => {
+          if (err) {
+            return res.status(500).send(err.message || "Error writing to file");
+          }
           res.download(returnFile);
         });
       }
