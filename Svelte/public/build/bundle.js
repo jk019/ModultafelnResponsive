@@ -1,2 +1,1782 @@
-var app=function(e){"use strict";function t(){}function n(e){return e()}function s(){return Object.create(null)}function r(e){e.forEach(n)}function o(e){return"function"==typeof e}function i(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function l(e,t){e.appendChild(t)}function a(e,t,n){e.insertBefore(t,n||null)}function u(e){e.parentNode&&e.parentNode.removeChild(e)}function c(e,t){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(t)}function d(e){return document.createElement(e)}function m(e){return document.createTextNode(e)}function f(){return m(" ")}function g(e,t,n){null==n?e.removeAttribute(t):e.getAttribute(t)!==n&&e.setAttribute(t,n)}function p(e,t){t=""+t,e.data!==t&&(e.data=t)}function h(e,t,n,s){null==n?e.style.removeProperty(t):e.style.setProperty(t,n,s?"important":"")}let b;function v(e){b=e}const $=[],y=[];let q=[];const x=[],M=Promise.resolve();let w=!1;function E(e){q.push(e)}const _=new Set;let C=0;function S(){if(0!==C)return;const e=b;do{try{for(;C<$.length;){const e=$[C];C++,v(e),k(e.$$)}}catch(e){throw $.length=0,C=0,e}for(v(null),$.length=0,C=0;y.length;)y.pop()();for(let e=0;e<q.length;e+=1){const t=q[e];_.has(t)||(_.add(t),t())}q.length=0}while($.length);for(;x.length;)x.pop()();w=!1,_.clear(),v(e)}function k(e){if(null!==e.fragment){e.update(),r(e.before_update);const t=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,t),e.after_update.forEach(E)}}const T=new Set;let B;function L(){B={r:0,c:[],p:B}}function N(){B.r||r(B.c),B=B.p}function P(e,t){e&&e.i&&(T.delete(e),e.i(t))}function A(e,t,n,s){if(e&&e.o){if(T.has(e))return;T.add(e),B.c.push((()=>{T.delete(e),s&&(n&&e.d(1),s())})),e.o(t)}else s&&s()}function W(e){e&&e.c()}function I(e,t,s,i){const{fragment:l,after_update:a}=e.$$;l&&l.m(t,s),i||E((()=>{const t=e.$$.on_mount.map(n).filter(o);e.$$.on_destroy?e.$$.on_destroy.push(...t):r(t),e.$$.on_mount=[]})),a.forEach(E)}function j(e,t){const n=e.$$;null!==n.fragment&&(!function(e){const t=[],n=[];q.forEach((s=>-1===e.indexOf(s)?t.push(s):n.push(s))),n.forEach((e=>e())),q=t}(n.after_update),r(n.on_destroy),n.fragment&&n.fragment.d(t),n.on_destroy=n.fragment=null,n.ctx=[])}function O(e,t){-1===e.$$.dirty[0]&&($.push(e),w||(w=!0,M.then(S)),e.$$.dirty.fill(0)),e.$$.dirty[t/31|0]|=1<<t%31}function G(e,n,o,i,l,a,c,d=[-1]){const m=b;v(e);const f=e.$$={fragment:null,ctx:[],props:a,update:t,not_equal:l,bound:s(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(m?m.$$.context:[])),callbacks:s(),dirty:d,skip_bound:!1,root:n.target||m.$$.root};c&&c(f.root);let g=!1;if(f.ctx=o?o(e,n.props||{},((t,n,...s)=>{const r=s.length?s[0]:n;return f.ctx&&l(f.ctx[t],f.ctx[t]=r)&&(!f.skip_bound&&f.bound[t]&&f.bound[t](r),g&&O(e,t)),n})):[],f.update(),g=!0,r(f.before_update),f.fragment=!!i&&i(f.ctx),n.target){if(n.hydrate){const e=function(e){return Array.from(e.childNodes)}(n.target);f.fragment&&f.fragment.l(e),e.forEach(u)}else f.fragment&&f.fragment.c();n.intro&&P(e.$$.fragment),I(e,n.target,n.anchor,n.customElement),S()}v(m)}class H{$destroy(){j(this,1),this.$destroy=t}$on(e,n){if(!o(n))return t;const s=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return s.push(n),()=>{const e=s.indexOf(n);-1!==e&&s.splice(e,1)}}$set(e){var t;this.$$set&&(t=e,0!==Object.keys(t).length)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}function D(e){let n,s,r,o,i,c,b,v,$,y,q,x,M,w,E,_,C,S,k,T,B,L,N,P,A,W,I,j,O,G,H,D;return{c(){n=d("div"),s=d("div"),r=d("div"),o=d("p"),i=m(e[1]),c=f(),b=d("div"),v=d("a"),$=m(e[0]),y=f(),q=d("span"),x=m(e[2]),M=m(" ECTS"),w=f(),E=d("div"),_=d("div"),C=d("div"),S=d("div"),k=d("div"),T=d("h5"),B=m(e[0]),L=f(),N=d("div"),P=d("span"),A=m(e[2]),W=m(" ECTS"),I=f(),j=d("button"),j.innerHTML='<span aria-hidden="true">×</span>',O=f(),G=d("div"),G.innerHTML="<h5>Beschreibung des Moduls:</h5>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\n        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim\n        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis\n        volutpat est velit egestas dui. Tristique senectus et netus et malesuada\n        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh\n        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor\n        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus\n        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum\n        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate\n        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis\n        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent\n        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus\n        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor\n        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque\n        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque\n        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus\n        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.\n        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh\n        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium\n        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat\n        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.\n        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus\n        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie\n        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc\n        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque\n        viverra justo nec ultrices.",H=f(),D=d("div"),D.innerHTML='<button type="button" class="btn btn-primary">Download PDF</button> \n        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>',h(o,"--groupcolor",e[3]),g(o,"class","Modulgruppe svelte-1qwlutn"),g(r,"class","row"),g(v,"class","Modulname svelte-1qwlutn"),g(v,"id","Modulname"),g(v,"data-toggle","modal"),g(v,"data-target","#exampleModalCenter"),g(b,"class","row"),g(q,"class","badge mt-auto svelte-1qwlutn"),h(q,"--badgeBG",e[3]),g(s,"class","card-body d-flex flex-column svelte-1qwlutn"),g(s,"id","ModulBody"),g(n,"class","card svelte-1qwlutn"),g(T,"class","modal-title"),g(T,"id","exampleModalLongTitle"),g(k,"class","col"),g(P,"class","badge test svelte-1qwlutn"),h(P,"--badgeBG",e[3]),g(N,"class","col"),g(j,"type","button"),g(j,"class","close"),g(j,"data-dismiss","modal"),g(j,"aria-label","Close"),g(S,"class","modal-header"),g(G,"class","modal-body"),g(D,"class","modal-footer"),g(C,"class","modal-content"),g(_,"class","modal-dialog modal-dialog-centered"),g(_,"role","document"),g(E,"class","modal fade"),g(E,"id","exampleModalCenter"),g(E,"tabindex","-1"),g(E,"role","dialog"),g(E,"aria-labelledby","exampleModalCenterTitle"),g(E,"aria-hidden","true")},m(e,t){a(e,n,t),l(n,s),l(s,r),l(r,o),l(o,i),l(s,c),l(s,b),l(b,v),l(v,$),l(s,y),l(s,q),l(q,x),l(q,M),a(e,w,t),a(e,E,t),l(E,_),l(_,C),l(C,S),l(S,k),l(k,T),l(T,B),l(S,L),l(S,N),l(N,P),l(P,A),l(P,W),l(S,I),l(S,j),l(C,O),l(C,G),l(C,H),l(C,D)},p(e,[t]){2&t&&p(i,e[1]),8&t&&h(o,"--groupcolor",e[3]),1&t&&p($,e[0]),4&t&&p(x,e[2]),8&t&&h(q,"--badgeBG",e[3]),1&t&&p(B,e[0]),4&t&&p(A,e[2]),8&t&&h(P,"--badgeBG",e[3])},i:t,o:t,d(e){e&&u(n),e&&u(w),e&&u(E)}}}function V(e,t,n){let{name:s}=t,{gruppe:r}=t,{badge:o}=t,{color:i}=t;return e.$$set=e=>{"name"in e&&n(0,s=e.name),"gruppe"in e&&n(1,r=e.gruppe),"badge"in e&&n(2,o=e.badge),"color"in e&&n(3,i=e.color)},[s,r,o,i]}class z extends H{constructor(e){super(),G(this,e,V,D,i,{name:0,gruppe:1,badge:2,color:3})}}function U(e){let n,s,r,o,i,c,h,b,v,$;return{c(){n=d("div"),s=d("div"),r=d("div"),o=d("div"),i=m("Semester "),c=m(e[1]),h=f(),b=d("span"),v=m(e[0]),$=m(" ECTS"),g(o,"id","text"),g(o,"class","svelte-1ryqm2k"),g(r,"class","row"),g(b,"class","badgeTotal"),g(s,"class","card-body"),g(n,"class","card svelte-1ryqm2k")},m(e,t){a(e,n,t),l(n,s),l(s,r),l(r,o),l(o,i),l(o,c),l(s,h),l(s,b),l(b,v),l(b,$)},p(e,[t]){2&t&&p(c,e[1]),1&t&&p(v,e[0])},i:t,o:t,d(e){e&&u(n)}}}function K(e,t,n){let{totalCredits:s}=t,{semesterNumber:r}=t;return e.$$set=e=>{"totalCredits"in e&&n(0,s=e.totalCredits),"semesterNumber"in e&&n(1,r=e.semesterNumber)},[s,r]}class R extends H{constructor(e){super(),G(this,e,K,U,i,{totalCredits:0,semesterNumber:1})}}function F(e,t,n){const s=e.slice();return s[1]=t[n],s}function Q(e,t,n){const s=e.slice();return s[4]=t[n],s}function J(e,t,n){const s=e.slice();return s[7]=t[n],s}function X(e){let n,s,r;return s=new z({props:{color:e[4].color,name:e[7].name,gruppe:e[4].group,badge:e[7].credits}}),{c(){n=d("div"),W(s.$$.fragment),g(n,"class","col-xl-6")},m(e,t){a(e,n,t),I(s,n,null),r=!0},p:t,i(e){r||(P(s.$$.fragment,e),r=!0)},o(e){A(s.$$.fragment,e),r=!1},d(e){e&&u(n),j(s)}}}function Y(e){let t,n,s,r=e[4].modules,o=[];for(let t=0;t<r.length;t+=1)o[t]=X(J(e,r,t));const i=e=>A(o[e],1,1,(()=>{o[e]=null}));return{c(){t=d("div"),n=d("div");for(let e=0;e<o.length;e+=1)o[e].c();g(n,"class","row"),g(t,"class","col-md"),h(t,"--groupBG",e[4].color+"80")},m(e,r){a(e,t,r),l(t,n);for(let e=0;e<o.length;e+=1)o[e]&&o[e].m(n,null);s=!0},p(e,t){if(1&t){let s;for(r=e[4].modules,s=0;s<r.length;s+=1){const i=J(e,r,s);o[s]?(o[s].p(i,t),P(o[s],1)):(o[s]=X(i),o[s].c(),P(o[s],1),o[s].m(n,null))}for(L(),s=r.length;s<o.length;s+=1)i(s);N()}},i(e){if(!s){for(let e=0;e<r.length;e+=1)P(o[e]);s=!0}},o(e){o=o.filter(Boolean);for(let e=0;e<o.length;e+=1)A(o[e]);s=!1},d(e){e&&u(t),c(o,e)}}}function Z(e){let t,n,s,r,o,i;s=new R({props:{semesterNumber:e[1].number,totalCredits:te(e[1])}});let m=e[1].semesterModules,p=[];for(let t=0;t<m.length;t+=1)p[t]=Y(Q(e,m,t));const h=e=>A(p[e],1,1,(()=>{p[e]=null}));return{c(){t=d("div"),n=d("div"),W(s.$$.fragment),r=f();for(let e=0;e<p.length;e+=1)p[e].c();o=f(),g(n,"class","col-md-auto"),g(t,"class","row")},m(e,u){a(e,t,u),l(t,n),I(s,n,null),l(t,r);for(let e=0;e<p.length;e+=1)p[e]&&p[e].m(t,null);l(t,o),i=!0},p(e,n){if(1&n){let s;for(m=e[1].semesterModules,s=0;s<m.length;s+=1){const r=Q(e,m,s);p[s]?(p[s].p(r,n),P(p[s],1)):(p[s]=Y(r),p[s].c(),P(p[s],1),p[s].m(t,o))}for(L(),s=m.length;s<p.length;s+=1)h(s);N()}},i(e){if(!i){P(s.$$.fragment,e);for(let e=0;e<m.length;e+=1)P(p[e]);i=!0}},o(e){A(s.$$.fragment,e),p=p.filter(Boolean);for(let e=0;e<p.length;e+=1)A(p[e]);i=!1},d(e){e&&u(t),j(s),c(p,e)}}}function ee(e){let t,n,s,r,o,i,l,m,p=e[0],h=[];for(let t=0;t<p.length;t+=1)h[t]=Z(F(e,p,t));const b=e=>A(h[e],1,1,(()=>{h[e]=null}));return{c(){t=d("div"),t.innerHTML='<div class="col"><h1 class="mainTitle">Modultafel Bachelorstudiengang Wirtschaftsinformatik</h1></div> \n  <div class="col-3 svelte-1n9tsbv" id="zhawSML"><img src="images/logoSML.jpg" alt="Logo SML" width="60%"/></div>',n=f(),s=d("h4"),s.textContent="Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.",r=f(),o=d("h4"),o.textContent="Das ist ein Warntext",i=f(),l=d("div");for(let e=0;e<h.length;e+=1)h[e].c();g(t,"class","row"),g(s,"class","InfoText"),g(o,"class","InfoTextRot"),g(l,"class","custom-container")},m(e,u){a(e,t,u),a(e,n,u),a(e,s,u),a(e,r,u),a(e,o,u),a(e,i,u),a(e,l,u);for(let e=0;e<h.length;e+=1)h[e]&&h[e].m(l,null);m=!0},p(e,[t]){if(1&t){let n;for(p=e[0],n=0;n<p.length;n+=1){const s=F(e,p,n);h[n]?(h[n].p(s,t),P(h[n],1)):(h[n]=Z(s),h[n].c(),P(h[n],1),h[n].m(l,null))}for(L(),n=p.length;n<h.length;n+=1)b(n);N()}},i(e){if(!m){for(let e=0;e<p.length;e+=1)P(h[e]);m=!0}},o(e){h=h.filter(Boolean);for(let e=0;e<h.length;e+=1)A(h[e]);m=!1},d(e){e&&u(t),e&&u(n),e&&u(s),e&&u(r),e&&u(o),e&&u(i),e&&u(l),c(h,e)}}}function te(e){let t=0;return e.semesterModules.forEach((e=>{e.modules.forEach((e=>{t+=e.credits}))})),t}function ne(e){return[[{number:"1",semesterModules:[{group:"Informatik",color:"#002c57",modules:[{name:"Software Engineering 1",credits:6}]},{group:"Wirtschaft",color:"#009bac",modules:[{name:"Einführung BWL",credits:6},{name:"Wissenschaftliches Schreiben",credits:6},{name:"Accounting",credits:6}]},{group:"Sonstige",color:"#67c0b5",modules:[{name:"Mathematik",credits:6},{name:"VWL 1",credits:6},{name:"English C1",credits:6}]}]},{number:"2",semesterModules:[{group:"Informatik",color:"#002c57",modules:[{name:"Requirements Engineering",credits:6}]},{group:"Wirtschaft",color:"#009bac",modules:[{name:"Prozessmodellierung",credits:6},{name:"Strategisches Management",credits:6},{name:"Marketing",credits:6}]},{group:"Sonstige",color:"#67c0b5",modules:[{name:"Wahlpflichtmodul",credits:6},{name:"Business Intelligence",credits:6}]}]}]]}var se=new class extends H{constructor(e){super(),G(this,e,ne,ee,i,{})}}({target:document.body});return e.default=se,e.prerender=!0,Object.defineProperty(e,"__esModule",{value:!0}),e}({});
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+var app = (function (exports) {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    let src_url_equal_anchor;
+    function src_url_equal(element_src, url) {
+        if (!src_url_equal_anchor) {
+            src_url_equal_anchor = document.createElement('a');
+        }
+        src_url_equal_anchor.href = url;
+        return element_src === src_url_equal_anchor.href;
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        if (node.parentNode) {
+            node.parentNode.removeChild(node);
+        }
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_style(node, key, value, important) {
+        if (value == null) {
+            node.style.removeProperty(key);
+        }
+        else {
+            node.style.setProperty(key, value, important ? 'important' : '');
+        }
+    }
+    function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, cancelable, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    let render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = /* @__PURE__ */ Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    // flush() calls callbacks in this order:
+    // 1. All beforeUpdate callbacks, in order: parents before children
+    // 2. All bind:this callbacks, in reverse order: children before parents.
+    // 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+    //    for afterUpdates called during the initial onMount, which are called in
+    //    reverse order: children before parents.
+    // Since callbacks might update component values, which could trigger another
+    // call to flush(), the following steps guard against this:
+    // 1. During beforeUpdate, any updated components will be added to the
+    //    dirty_components array and will cause a reentrant call to flush(). Because
+    //    the flush index is kept outside the function, the reentrant call will pick
+    //    up where the earlier call left off and go through all dirty components. The
+    //    current_component value is saved and restored so that the reentrant call will
+    //    not interfere with the "parent" flush() call.
+    // 2. bind:this callbacks cannot trigger new flush() calls.
+    // 3. During afterUpdate, any updated components will NOT have their afterUpdate
+    //    callback called a second time; the seen_callbacks set, outside the flush()
+    //    function, guarantees this behavior.
+    const seen_callbacks = new Set();
+    let flushidx = 0; // Do *not* move this inside the flush() function
+    function flush() {
+        // Do not reenter flush while dirty components are updated, as this can
+        // result in an infinite loop. Instead, let the inner flush handle it.
+        // Reentrancy is ok afterwards for bindings etc.
+        if (flushidx !== 0) {
+            return;
+        }
+        const saved_component = current_component;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            try {
+                while (flushidx < dirty_components.length) {
+                    const component = dirty_components[flushidx];
+                    flushidx++;
+                    set_current_component(component);
+                    update(component.$$);
+                }
+            }
+            catch (e) {
+                // reset dirty state to not end up in a deadlocked state and then rethrow
+                dirty_components.length = 0;
+                flushidx = 0;
+                throw e;
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            flushidx = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        seen_callbacks.clear();
+        set_current_component(saved_component);
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    /**
+     * Useful for example to execute remaining `afterUpdate` callbacks before executing `destroy`.
+     */
+    function flush_render_callbacks(fns) {
+        const filtered = [];
+        const targets = [];
+        render_callbacks.forEach((c) => fns.indexOf(c) === -1 ? filtered.push(c) : targets.push(c));
+        targets.forEach((c) => c());
+        render_callbacks = filtered;
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+        else if (callback) {
+            callback();
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = component.$$.on_mount.map(run).filter(is_function);
+                // if the component was destroyed immediately
+                // it will update the `$$.on_destroy` reference to `null`.
+                // the destructured on_destroy may still reference to the old array
+                if (component.$$.on_destroy) {
+                    component.$$.on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            flush_render_callbacks($$.after_update);
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: [],
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            if (!is_function(callback)) {
+                return noop;
+            }
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.59.2' }, detail), { bubbles: true }));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    /* src\Modul.svelte generated by Svelte v3.59.2 */
+
+    const file$2 = "src\\Modul.svelte";
+
+    function create_fragment$2(ctx) {
+    	let div3;
+    	let div2;
+    	let div0;
+    	let p;
+    	let t0;
+    	let t1;
+    	let div1;
+    	let a;
+    	let t2;
+    	let t3;
+    	let span0;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let div11;
+    	let div10;
+    	let div9;
+    	let div6;
+    	let div4;
+    	let h50;
+    	let t7;
+    	let t8;
+    	let div5;
+    	let span1;
+    	let t9;
+    	let t10;
+    	let t11;
+    	let button0;
+    	let span2;
+    	let t13;
+    	let div7;
+    	let h51;
+    	let t15;
+    	let t16;
+    	let div8;
+    	let button1;
+    	let t18;
+    	let button2;
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			p = element("p");
+    			t0 = text(/*gruppe*/ ctx[1]);
+    			t1 = space();
+    			div1 = element("div");
+    			a = element("a");
+    			t2 = text(/*name*/ ctx[0]);
+    			t3 = space();
+    			span0 = element("span");
+    			t4 = text(/*badge*/ ctx[2]);
+    			t5 = text(" ECTS");
+    			t6 = space();
+    			div11 = element("div");
+    			div10 = element("div");
+    			div9 = element("div");
+    			div6 = element("div");
+    			div4 = element("div");
+    			h50 = element("h5");
+    			t7 = text(/*name*/ ctx[0]);
+    			t8 = space();
+    			div5 = element("div");
+    			span1 = element("span");
+    			t9 = text(/*badge*/ ctx[2]);
+    			t10 = text(" ECTS");
+    			t11 = space();
+    			button0 = element("button");
+    			span2 = element("span");
+    			span2.textContent = "×";
+    			t13 = space();
+    			div7 = element("div");
+    			h51 = element("h5");
+    			h51.textContent = "Beschreibung des Moduls:";
+    			t15 = text("\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim\r\n        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis\r\n        volutpat est velit egestas dui. Tristique senectus et netus et malesuada\r\n        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh\r\n        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor\r\n        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus\r\n        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum\r\n        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate\r\n        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis\r\n        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent\r\n        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus\r\n        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor\r\n        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque\r\n        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque\r\n        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus\r\n        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.\r\n        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh\r\n        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium\r\n        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat\r\n        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.\r\n        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus\r\n        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie\r\n        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc\r\n        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque\r\n        viverra justo nec ultrices.");
+    			t16 = space();
+    			div8 = element("div");
+    			button1 = element("button");
+    			button1.textContent = "Download PDF";
+    			t18 = space();
+    			button2 = element("button");
+    			button2.textContent = "Close";
+    			set_style(p, "--groupcolor", /*color*/ ctx[3]);
+    			attr_dev(p, "class", "Modulgruppe svelte-fn5pue");
+    			add_location(p, file$2, 11, 6, 300);
+    			attr_dev(div0, "class", "row");
+    			add_location(div0, file$2, 10, 4, 275);
+    			attr_dev(a, "class", "Modulname svelte-fn5pue");
+    			attr_dev(a, "id", "Modulname");
+    			attr_dev(a, "data-toggle", "modal");
+    			attr_dev(a, "data-target", "#exampleModalCenter");
+    			add_location(a, file$2, 14, 6, 408);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$2, 13, 4, 383);
+    			attr_dev(span0, "class", "badge mt-auto svelte-fn5pue");
+    			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
+    			add_location(span0, file$2, 23, 4, 666);
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-fn5pue");
+    			attr_dev(div2, "id", "ModulBody");
+    			add_location(div2, file$2, 9, 2, 212);
+    			attr_dev(div3, "class", "card svelte-fn5pue");
+    			add_location(div3, file$2, 7, 0, 107);
+    			attr_dev(h50, "class", "modal-title");
+    			attr_dev(h50, "id", "exampleModalLongTitle");
+    			add_location(h50, file$2, 40, 10, 1109);
+    			attr_dev(div4, "class", "col");
+    			add_location(div4, file$2, 39, 8, 1080);
+    			attr_dev(span1, "class", "badge test svelte-fn5pue");
+    			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
+    			add_location(span1, file$2, 43, 10, 1226);
+    			attr_dev(div5, "class", "col");
+    			add_location(div5, file$2, 42, 8, 1197);
+    			attr_dev(span2, "aria-hidden", "true");
+    			add_location(span2, file$2, 52, 10, 1477);
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "class", "close");
+    			attr_dev(button0, "data-dismiss", "modal");
+    			attr_dev(button0, "aria-label", "Close");
+    			add_location(button0, file$2, 46, 8, 1335);
+    			attr_dev(div6, "class", "modal-header");
+    			add_location(div6, file$2, 38, 6, 1044);
+    			add_location(h51, file$2, 56, 8, 1591);
+    			attr_dev(div7, "class", "modal-body");
+    			add_location(div7, file$2, 55, 6, 1557);
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "class", "btn btn-primary");
+    			add_location(button1, file$2, 85, 8, 3853);
+    			attr_dev(button2, "type", "button");
+    			attr_dev(button2, "class", "btn btn-secondary");
+    			attr_dev(button2, "data-dismiss", "modal");
+    			add_location(button2, file$2, 86, 8, 3930);
+    			attr_dev(div8, "class", "modal-footer");
+    			add_location(div8, file$2, 84, 6, 3817);
+    			attr_dev(div9, "class", "modal-content");
+    			add_location(div9, file$2, 37, 4, 1009);
+    			attr_dev(div10, "class", "modal-dialog modal-dialog-centered");
+    			attr_dev(div10, "role", "document");
+    			add_location(div10, file$2, 36, 2, 939);
+    			attr_dev(div11, "class", "modal fade");
+    			attr_dev(div11, "id", "exampleModalCenter");
+    			attr_dev(div11, "tabindex", "-1");
+    			attr_dev(div11, "role", "dialog");
+    			attr_dev(div11, "aria-labelledby", "exampleModalCenterTitle");
+    			attr_dev(div11, "aria-hidden", "true");
+    			add_location(div11, file$2, 28, 0, 778);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, p);
+    			append_dev(p, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div1, a);
+    			append_dev(a, t2);
+    			append_dev(div2, t3);
+    			append_dev(div2, span0);
+    			append_dev(span0, t4);
+    			append_dev(span0, t5);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div6);
+    			append_dev(div6, div4);
+    			append_dev(div4, h50);
+    			append_dev(h50, t7);
+    			append_dev(div6, t8);
+    			append_dev(div6, div5);
+    			append_dev(div5, span1);
+    			append_dev(span1, t9);
+    			append_dev(span1, t10);
+    			append_dev(div6, t11);
+    			append_dev(div6, button0);
+    			append_dev(button0, span2);
+    			append_dev(div9, t13);
+    			append_dev(div9, div7);
+    			append_dev(div7, h51);
+    			append_dev(div7, t15);
+    			append_dev(div9, t16);
+    			append_dev(div9, div8);
+    			append_dev(div8, button1);
+    			append_dev(div8, t18);
+    			append_dev(div8, button2);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*gruppe*/ 2) set_data_dev(t0, /*gruppe*/ ctx[1]);
+
+    			if (dirty & /*color*/ 8) {
+    				set_style(p, "--groupcolor", /*color*/ ctx[3]);
+    			}
+
+    			if (dirty & /*name*/ 1) set_data_dev(t2, /*name*/ ctx[0]);
+    			if (dirty & /*badge*/ 4) set_data_dev(t4, /*badge*/ ctx[2]);
+
+    			if (dirty & /*color*/ 8) {
+    				set_style(span0, "--badgeBG", /*color*/ ctx[3]);
+    			}
+
+    			if (dirty & /*name*/ 1) set_data_dev(t7, /*name*/ ctx[0]);
+    			if (dirty & /*badge*/ 4) set_data_dev(t9, /*badge*/ ctx[2]);
+
+    			if (dirty & /*color*/ 8) {
+    				set_style(span1, "--badgeBG", /*color*/ ctx[3]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div11);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Modul', slots, []);
+    	let { name } = $$props;
+    	let { gruppe } = $$props;
+    	let { badge } = $$props;
+    	let { color } = $$props;
+
+    	$$self.$$.on_mount.push(function () {
+    		if (name === undefined && !('name' in $$props || $$self.$$.bound[$$self.$$.props['name']])) {
+    			console.warn("<Modul> was created without expected prop 'name'");
+    		}
+
+    		if (gruppe === undefined && !('gruppe' in $$props || $$self.$$.bound[$$self.$$.props['gruppe']])) {
+    			console.warn("<Modul> was created without expected prop 'gruppe'");
+    		}
+
+    		if (badge === undefined && !('badge' in $$props || $$self.$$.bound[$$self.$$.props['badge']])) {
+    			console.warn("<Modul> was created without expected prop 'badge'");
+    		}
+
+    		if (color === undefined && !('color' in $$props || $$self.$$.bound[$$self.$$.props['color']])) {
+    			console.warn("<Modul> was created without expected prop 'color'");
+    		}
+    	});
+
+    	const writable_props = ['name', 'gruppe', 'badge', 'color'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Modul> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('gruppe' in $$props) $$invalidate(1, gruppe = $$props.gruppe);
+    		if ('badge' in $$props) $$invalidate(2, badge = $$props.badge);
+    		if ('color' in $$props) $$invalidate(3, color = $$props.color);
+    	};
+
+    	$$self.$capture_state = () => ({ name, gruppe, badge, color });
+
+    	$$self.$inject_state = $$props => {
+    		if ('name' in $$props) $$invalidate(0, name = $$props.name);
+    		if ('gruppe' in $$props) $$invalidate(1, gruppe = $$props.gruppe);
+    		if ('badge' in $$props) $$invalidate(2, badge = $$props.badge);
+    		if ('color' in $$props) $$invalidate(3, color = $$props.color);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [name, gruppe, badge, color];
+    }
+
+    class Modul extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { name: 0, gruppe: 1, badge: 2, color: 3 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Modul",
+    			options,
+    			id: create_fragment$2.name
+    		});
+    	}
+
+    	get name() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set name(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get gruppe() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set gruppe(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get badge() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set badge(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get color() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set color(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\Semester.svelte generated by Svelte v3.59.2 */
+
+    const file$1 = "src\\Semester.svelte";
+
+    function create_fragment$1(ctx) {
+    	let div3;
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let span;
+    	let t3;
+    	let t4;
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text("Semester ");
+    			t1 = text(/*semesterNumber*/ ctx[1]);
+    			t2 = space();
+    			span = element("span");
+    			t3 = text(/*totalCredits*/ ctx[0]);
+    			t4 = text(" ECTS");
+    			attr_dev(div0, "id", "text");
+    			attr_dev(div0, "class", "svelte-1ryqm2k");
+    			add_location(div0, file$1, 8, 6, 157);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$1, 7, 4, 132);
+    			attr_dev(span, "class", "badgeTotal");
+    			add_location(span, file$1, 10, 4, 221);
+    			attr_dev(div2, "class", "card-body");
+    			add_location(div2, file$1, 6, 2, 103);
+    			attr_dev(div3, "class", "card svelte-1ryqm2k");
+    			add_location(div3, file$1, 5, 0, 81);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div0, t1);
+    			append_dev(div2, t2);
+    			append_dev(div2, span);
+    			append_dev(span, t3);
+    			append_dev(span, t4);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*semesterNumber*/ 2) set_data_dev(t1, /*semesterNumber*/ ctx[1]);
+    			if (dirty & /*totalCredits*/ 1) set_data_dev(t3, /*totalCredits*/ ctx[0]);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Semester', slots, []);
+    	let { totalCredits } = $$props;
+    	let { semesterNumber } = $$props;
+
+    	$$self.$$.on_mount.push(function () {
+    		if (totalCredits === undefined && !('totalCredits' in $$props || $$self.$$.bound[$$self.$$.props['totalCredits']])) {
+    			console.warn("<Semester> was created without expected prop 'totalCredits'");
+    		}
+
+    		if (semesterNumber === undefined && !('semesterNumber' in $$props || $$self.$$.bound[$$self.$$.props['semesterNumber']])) {
+    			console.warn("<Semester> was created without expected prop 'semesterNumber'");
+    		}
+    	});
+
+    	const writable_props = ['totalCredits', 'semesterNumber'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Semester> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('totalCredits' in $$props) $$invalidate(0, totalCredits = $$props.totalCredits);
+    		if ('semesterNumber' in $$props) $$invalidate(1, semesterNumber = $$props.semesterNumber);
+    	};
+
+    	$$self.$capture_state = () => ({ totalCredits, semesterNumber });
+
+    	$$self.$inject_state = $$props => {
+    		if ('totalCredits' in $$props) $$invalidate(0, totalCredits = $$props.totalCredits);
+    		if ('semesterNumber' in $$props) $$invalidate(1, semesterNumber = $$props.semesterNumber);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [totalCredits, semesterNumber];
+    }
+
+    class Semester extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { totalCredits: 0, semesterNumber: 1 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Semester",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+
+    	get totalCredits() {
+    		throw new Error("<Semester>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set totalCredits(value) {
+    		throw new Error("<Semester>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get semesterNumber() {
+    		throw new Error("<Semester>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set semesterNumber(value) {
+    		throw new Error("<Semester>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\App.svelte generated by Svelte v3.59.2 */
+    const file = "src\\App.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[3] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[6] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[9] = list[i];
+    	return child_ctx;
+    }
+
+    // (343:12) {#each group.modules as module}
+    function create_each_block_2(ctx) {
+    	let div;
+    	let modul;
+    	let current;
+
+    	modul = new Modul({
+    			props: {
+    				color: /*group*/ ctx[6].color,
+    				name: /*module*/ ctx[9].name,
+    				gruppe: /*group*/ ctx[6].group,
+    				badge: /*module*/ ctx[9].credits
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			create_component(modul.$$.fragment);
+    			attr_dev(div, "class", "col-xl-6");
+    			add_location(div, file, 344, 14, 12721);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(modul, div, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(modul.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(modul.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_component(modul);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2.name,
+    		type: "each",
+    		source: "(343:12) {#each group.modules as module}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (338:6) {#each semester.semesterModules as group}
+    function create_each_block_1(ctx) {
+    	let div1;
+    	let div0;
+    	let current;
+    	let each_value_2 = /*group*/ ctx[6].modules;
+    	validate_each_argument(each_value_2);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div0, "class", "row");
+    			add_location(div0, file, 341, 10, 12595);
+    			attr_dev(div1, "class", "col-md");
+    			set_style(div1, "--groupBG", /*group*/ ctx[6].color + "80");
+    			add_location(div1, file, 339, 8, 12460);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div0, null);
+    				}
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*all*/ 1) {
+    				each_value_2 = /*group*/ ctx[6].modules;
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div0, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value_2.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(338:6) {#each semester.semesterModules as group}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (328:2) {#each all as semester}
+    function create_each_block(ctx) {
+    	let div1;
+    	let div0;
+    	let semester;
+    	let t0;
+    	let t1;
+    	let current;
+
+    	semester = new Semester({
+    			props: {
+    				semesterNumber: /*semester*/ ctx[3].number,
+    				totalCredits: calculateTotalCredits(/*semester*/ ctx[3])
+    			},
+    			$$inline: true
+    		});
+
+    	let each_value_1 = /*semester*/ ctx[3].semesterModules;
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			create_component(semester.$$.fragment);
+    			t0 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			attr_dev(div0, "class", "col-md-auto");
+    			add_location(div0, file, 330, 6, 12189);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file, 328, 4, 12077);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			mount_component(semester, div0, null);
+    			append_dev(div1, t0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div1, null);
+    				}
+    			}
+
+    			append_dev(div1, t1);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*all*/ 1) {
+    				each_value_1 = /*semester*/ ctx[3].semesterModules;
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div1, t1);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(semester.$$.fragment, local);
+
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(semester.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			destroy_component(semester);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(328:2) {#each all as semester}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let div2;
+    	let div0;
+    	let h1;
+    	let t1;
+    	let div1;
+    	let img;
+    	let img_src_value;
+    	let t2;
+    	let h40;
+    	let t4;
+    	let h41;
+    	let t6;
+    	let div3;
+    	let current;
+    	let each_value = /*all*/ ctx[0];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Modultafel Bachelorstudiengang Wirtschaftsinformatik";
+    			t1 = space();
+    			div1 = element("div");
+    			img = element("img");
+    			t2 = space();
+    			h40 = element("h4");
+    			h40.textContent = "Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.";
+    			t4 = space();
+    			h41 = element("h4");
+    			h41.textContent = "Das ist ein Warntext";
+    			t6 = space();
+    			div3 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(h1, "class", "mainTitle");
+    			add_location(h1, file, 311, 4, 11620);
+    			attr_dev(div0, "class", "col");
+    			add_location(div0, file, 310, 2, 11597);
+    			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "Logo SML");
+    			attr_dev(img, "width", "60%");
+    			add_location(img, file, 317, 4, 11771);
+    			attr_dev(div1, "class", "col-3 svelte-1n9tsbv");
+    			attr_dev(div1, "id", "zhawSML");
+    			add_location(div1, file, 316, 2, 11733);
+    			attr_dev(div2, "class", "row");
+    			add_location(div2, file, 309, 0, 11576);
+    			attr_dev(h40, "class", "InfoText");
+    			add_location(h40, file, 321, 0, 11852);
+    			attr_dev(h41, "class", "InfoTextRot");
+    			add_location(h41, file, 324, 0, 11961);
+    			attr_dev(div3, "class", "custom-container");
+    			add_location(div3, file, 326, 0, 12014);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, h1);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div1, img);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, h40, anchor);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, h41, anchor);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, div3, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				if (each_blocks[i]) {
+    					each_blocks[i].m(div3, null);
+    				}
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*all, calculateTotalCredits*/ 1) {
+    				each_value = /*all*/ ctx[0];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div3, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(h40);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(h41);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(div3);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function calculateTotalCredits(semester) {
+    	let totalCredits = 0;
+
+    	semester.semesterModules.forEach(group => {
+    		group.modules.forEach(module => {
+    			totalCredits += module.credits;
+    		});
+    	});
+
+    	return totalCredits;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+
+    	let vorlage = {
+    		"usedModulegroups": [
+    			{
+    				"name": "San Juan",
+    				"count": 3,
+    				"FarbeModulkaestchen": "#334771",
+    				"Hintergrundfarbe": "#8f95b3",
+    				"Schriftfarbe": "#FFFFFF",
+    				"Reihenfolge": 1
+    			},
+    			{
+    				"name": "Eastern Blue",
+    				"count": 1,
+    				"FarbeModulkaestchen": "#1e7cb8",
+    				"Hintergrundfarbe": "#9db9dd",
+    				"Schriftfarbe": "#000000",
+    				"Reihenfolge": 2
+    			}
+    		],
+    		"semesterArray": [
+    			[
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulkuerzel": "w.BA.XX.2BWL-WIN.XX",
+    					"Modulbezeichnung": "Einführung BWL",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulkuerzel": "w.BA.XX.2WMWI.XX",
+    					"Modulbezeichnung": "Wissenschaftliche Methoden der Wirtschaftsinformatik",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulkuerzel": "w.BA.XX.2WIN.XX",
+    					"Modulbezeichnung": "Einführung Wirtschaftsinformatik",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "Eastern Blue",
+    					"Modulkuerzel": "w.BA.XX.2SWEng.XX",
+    					"Modulbezeichnung": "Software Engineering",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+    					"FarbeModulkaestchen": "#1e7cb8",
+    					"Hintergrundfarbe": "#9db9dd",
+    					"Schriftfarbe": "#000000"
+    				},
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "Pacific Blue",
+    					"Modulkuerzel": "w.BA.XX.2Mathe1-WIN.XX",
+    					"Modulbezeichnung": "Mathematik 1",
+    					"ECTS": 3,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#00aebe",
+    					"Hintergrundfarbe": "#a3d7e0",
+    					"Schriftfarbe": "#000000"
+    				},
+    				{
+    					"Semester": "1. Semester",
+    					"Modulgruppe": "Half Baked",
+    					"Modulkuerzel": "w.BA.XX.2BusE1.XX",
+    					"Modulbezeichnung": "Business English 1",
+    					"ECTS": 3,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+    					"FarbeModulkaestchen": "#90cec5",
+    					"Hintergrundfarbe": "#cde8e2",
+    					"Schriftfarbe": "#000000"
+    				}
+    			],
+    			[
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulkuerzel": "w.BA.XX.2FinAcc-WIN.XX",
+    					"Modulbezeichnung": "Financial and Management Accounting",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulkuerzel": "w.BA.XX.2Komm-WIN.XX",
+    					"Modulbezeichnung": "Kommunikation",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "Eastern Blue",
+    					"Modulkuerzel": "w.BA.XX.2REng.XX",
+    					"Modulbezeichnung": "Requirements Engineering",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
+    					"FarbeModulkaestchen": "#1e7cb8",
+    					"Hintergrundfarbe": "#9db9dd",
+    					"Schriftfarbe": "#000000"
+    				},
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "Pacific Blue",
+    					"Modulkuerzel": "w.BA.XX.2Mathe2-WIN.XX",
+    					"Modulbezeichnung": "Mathematik 2",
+    					"ECTS": 3,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#00aebe",
+    					"Hintergrundfarbe": "#a3d7e0",
+    					"Schriftfarbe": "#000000"
+    				},
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "Pacific Blue",
+    					"Modulkuerzel": "w.BA.XX.2VWL-WIN.XX",
+    					"Modulbezeichnung": "VWL",
+    					"ECTS": 6,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
+    					"FarbeModulkaestchen": "#00aebe",
+    					"Hintergrundfarbe": "#a3d7e0",
+    					"Schriftfarbe": "#000000"
+    				},
+    				{
+    					"Semester": "2. Semester",
+    					"Modulgruppe": "Half Baked",
+    					"Modulkuerzel": "w.BA.XX.2BusE2.XX",
+    					"Modulbezeichnung": "Business English 2",
+    					"ECTS": 3,
+    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
+    					"FarbeModulkaestchen": "#90cec5",
+    					"Hintergrundfarbe": "#cde8e2",
+    					"Schriftfarbe": "#000000"
+    				}
+    			],
+    			[
+    				{
+    					"Semester": "3. Semester",
+    					"Modulgruppe": "San Juan",
+    					"Modulbezeichnung": "Wahlpflichtmodul 1",
+    					"ECTS": 3,
+    					"Wahlpflichtmodul": "Crisis Management: Action Planning & Directing\r\nData Protection and Governance\r\nDigital Transformation in Financial Services\r\nDigitalization and Law\r\nHC-Marketing und Competence Management\r\nM&A Integrationsmanagement\r\nMachine Learning: Eine anwendungsorientierte Einführung\r\nPython-Grundlagen & Anwendung in Data Science",
+    					"FarbeModulkaestchen": "#334771",
+    					"Hintergrundfarbe": "#8f95b3",
+    					"Schriftfarbe": "#FFFFFF"
+    				},
+    				{
+    					"Semester": "3. Semester",
+    					"Modulgruppe": "Eastern Blue",
+    					"Modulbezeichnung": "Wahlpflichtmodul 2",
+    					"ECTS": 3,
+    					"Wahlpflichtmodul": "Data Protection and Governance\r\r\nM&A Integrationsmanagement\r\r\nHC-Marketing und Competence Management",
+    					"FarbeModulkaestchen": "#1e7cb8",
+    					"Hintergrundfarbe": "#9db9dd",
+    					"Schriftfarbe": "#000000"
+    				}
+    			]
+    		],
+    		"wahlmodule": [
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Crisis Management: Action Planning & Directing",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Data Protection and Governance",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Digital Transformation in Financial Services",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Digitalization and Law",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "HC-Marketing und Competence Management",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "M&A Integrationsmanagement",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Machine Learning: Eine anwendungsorientierte Einführung",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Python-Grundlagen & Anwendung in Data Science",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Sportmarketing",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			},
+    			{
+    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
+    				"Modulbezeichnung": "Zertifizierung Projektmanagement",
+    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
+    			}
+    		]
+    	};
+
+    	let all = [
+    		{
+    			number: "1",
+    			semesterModules: [
+    				{
+    					group: "Informatik",
+    					color: "#002c57",
+    					modules: [
+    						{
+    							name: "Software Engineering 1",
+    							credits: 6
+    						}
+    					]
+    				},
+    				{
+    					group: "Wirtschaft",
+    					color: "#009bac",
+    					modules: [
+    						{ name: "Einführung BWL", credits: 6 },
+    						{
+    							name: "Wissenschaftliches Schreiben",
+    							credits: 6
+    						},
+    						{ name: "Accounting", credits: 6 }
+    					]
+    				},
+    				{
+    					group: "Sonstige",
+    					color: "#67c0b5",
+    					modules: [
+    						{ name: "Mathematik", credits: 6 },
+    						{ name: "VWL 1", credits: 6 },
+    						{ name: "English C1", credits: 6 }
+    					]
+    				}
+    			]
+    		},
+    		{
+    			number: "2",
+    			semesterModules: [
+    				{
+    					group: "Informatik",
+    					color: "#002c57",
+    					modules: [
+    						{
+    							name: "Requirements Engineering",
+    							credits: 6
+    						}
+    					]
+    				},
+    				{
+    					group: "Wirtschaft",
+    					color: "#009bac",
+    					modules: [
+    						{ name: "Prozessmodellierung", credits: 6 },
+    						{
+    							name: "Strategisches Management",
+    							credits: 6
+    						},
+    						{ name: "Marketing", credits: 6 }
+    					]
+    				},
+    				{
+    					group: "Sonstige",
+    					color: "#67c0b5",
+    					modules: [
+    						{ name: "Wahlpflichtmodul", credits: 6 },
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						}
+    					]
+    				}
+    			]
+    		}
+    	];
+
+    	let Modulgruppen = [];
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		Modul,
+    		Semester,
+    		vorlage,
+    		all,
+    		calculateTotalCredits,
+    		Modulgruppen
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('vorlage' in $$props) vorlage = $$props.vorlage;
+    		if ('all' in $$props) $$invalidate(0, all = $$props.all);
+    		if ('Modulgruppen' in $$props) Modulgruppen = $$props.Modulgruppen;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [all];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    var app = new App({
+      target: document.body,
+    });
+
+    const prerender = true;
+
+    exports.default = app;
+    exports.prerender = prerender;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    return exports;
+
+})({});
 //# sourceMappingURL=bundle.js.map
