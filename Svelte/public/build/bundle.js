@@ -519,61 +519,61 @@ var app = (function (exports) {
     			t16 = space();
     			div8 = element("div");
     			button1 = element("button");
-    			button1.textContent = "Download PDF";
+    			button1.textContent = "Download Modulbeschreibung";
     			t18 = space();
     			button2 = element("button");
-    			button2.textContent = "Close";
+    			button2.textContent = "Schliessen";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
-    			attr_dev(p, "class", "Modulgruppe svelte-fn5pue");
+    			attr_dev(p, "class", "Modulgruppe svelte-1wg3owh");
     			add_location(p, file$2, 11, 6, 300);
     			attr_dev(div0, "class", "row");
     			add_location(div0, file$2, 10, 4, 275);
-    			attr_dev(a, "class", "Modulname svelte-fn5pue");
+    			attr_dev(a, "class", "Modulname svelte-1wg3owh");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
     			add_location(a, file$2, 14, 6, 408);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$2, 13, 4, 383);
-    			attr_dev(span0, "class", "badge mt-auto svelte-fn5pue");
+    			attr_dev(span0, "class", "badge mt-auto svelte-1wg3owh");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span0, file$2, 23, 4, 666);
-    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-fn5pue");
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-1wg3owh");
     			attr_dev(div2, "id", "ModulBody");
     			add_location(div2, file$2, 9, 2, 212);
-    			attr_dev(div3, "class", "card svelte-fn5pue");
+    			attr_dev(div3, "class", "card svelte-1wg3owh");
     			add_location(div3, file$2, 7, 0, 107);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
-    			add_location(h50, file$2, 40, 10, 1109);
-    			attr_dev(div4, "class", "col");
+    			add_location(h50, file$2, 40, 10, 1115);
+    			attr_dev(div4, "class", "col-6 p-0");
     			add_location(div4, file$2, 39, 8, 1080);
-    			attr_dev(span1, "class", "badge test svelte-fn5pue");
+    			attr_dev(span1, "class", "badge svelte-1wg3owh");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
-    			add_location(span1, file$2, 43, 10, 1226);
+    			add_location(span1, file$2, 43, 10, 1232);
     			attr_dev(div5, "class", "col");
-    			add_location(div5, file$2, 42, 8, 1197);
+    			add_location(div5, file$2, 42, 8, 1203);
     			attr_dev(span2, "aria-hidden", "true");
-    			add_location(span2, file$2, 52, 10, 1477);
+    			add_location(span2, file$2, 51, 10, 1466);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
-    			add_location(button0, file$2, 46, 8, 1335);
-    			attr_dev(div6, "class", "modal-header");
+    			add_location(button0, file$2, 45, 8, 1324);
+    			attr_dev(div6, "class", "modal-header svelte-1wg3owh");
     			add_location(div6, file$2, 38, 6, 1044);
-    			add_location(h51, file$2, 56, 8, 1591);
-    			attr_dev(div7, "class", "modal-body");
-    			add_location(div7, file$2, 55, 6, 1557);
+    			add_location(h51, file$2, 55, 8, 1580);
+    			attr_dev(div7, "class", "modal-body svelte-1wg3owh");
+    			add_location(div7, file$2, 54, 6, 1546);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$2, 85, 8, 3853);
+    			add_location(button1, file$2, 84, 8, 3842);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-secondary");
     			attr_dev(button2, "data-dismiss", "modal");
-    			add_location(button2, file$2, 86, 8, 3930);
+    			add_location(button2, file$2, 87, 8, 3955);
     			attr_dev(div8, "class", "modal-footer");
-    			add_location(div8, file$2, 84, 6, 3817);
+    			add_location(div8, file$2, 83, 6, 3806);
     			attr_dev(div9, "class", "modal-content");
     			add_location(div9, file$2, 37, 4, 1009);
     			attr_dev(div10, "class", "modal-dialog modal-dialog-centered");
@@ -801,7 +801,7 @@ var app = (function (exports) {
     			t3 = text(/*totalCredits*/ ctx[0]);
     			t4 = text(" ECTS");
     			attr_dev(div0, "id", "text");
-    			attr_dev(div0, "class", "svelte-1ryqm2k");
+    			attr_dev(div0, "class", "svelte-ouif6o");
     			add_location(div0, file$1, 8, 6, 157);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$1, 7, 4, 132);
@@ -809,7 +809,7 @@ var app = (function (exports) {
     			add_location(span, file$1, 10, 4, 221);
     			attr_dev(div2, "class", "card-body");
     			add_location(div2, file$1, 6, 2, 103);
-    			attr_dev(div3, "class", "card svelte-1ryqm2k");
+    			attr_dev(div3, "class", "card svelte-ouif6o");
     			add_location(div3, file$1, 5, 0, 81);
     		},
     		l: function claim(nodes) {
@@ -941,7 +941,7 @@ var app = (function (exports) {
     	return child_ctx;
     }
 
-    // (343:12) {#each group.modules as module}
+    // (357:12) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
     	let modul;
@@ -962,7 +962,7 @@ var app = (function (exports) {
     			div = element("div");
     			create_component(modul.$$.fragment);
     			attr_dev(div, "class", "col-xl-6");
-    			add_location(div, file, 344, 14, 12721);
+    			add_location(div, file, 358, 14, 13182);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -989,14 +989,14 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(343:12) {#each group.modules as module}",
+    		source: "(357:12) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (338:6) {#each semester.semesterModules as group}
+    // (352:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
@@ -1023,10 +1023,10 @@ var app = (function (exports) {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 341, 10, 12595);
+    			add_location(div0, file, 355, 10, 13056);
     			attr_dev(div1, "class", "col-md");
-    			set_style(div1, "--groupBG", /*group*/ ctx[6].color + "80");
-    			add_location(div1, file, 339, 8, 12460);
+    			set_style(div1, "--groupBG", /*group*/ ctx[6].color + "70");
+    			add_location(div1, file, 353, 8, 12921);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1097,14 +1097,14 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(338:6) {#each semester.semesterModules as group}",
+    		source: "(352:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:2) {#each all as semester}
+    // (342:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
@@ -1146,9 +1146,9 @@ var app = (function (exports) {
 
     			t1 = space();
     			attr_dev(div0, "class", "col-md-auto");
-    			add_location(div0, file, 330, 6, 12189);
+    			add_location(div0, file, 344, 6, 12650);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 328, 4, 12077);
+    			add_location(div1, file, 342, 4, 12538);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1225,7 +1225,7 @@ var app = (function (exports) {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(328:2) {#each all as semester}",
+    		source: "(342:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1237,15 +1237,23 @@ var app = (function (exports) {
     	let div0;
     	let h1;
     	let t1;
+    	let h40;
+    	let t3;
     	let div1;
     	let img;
     	let img_src_value;
-    	let t2;
-    	let h40;
     	let t4;
     	let h41;
     	let t6;
+    	let h42;
+    	let t8;
     	let div3;
+    	let t9;
+    	let div4;
+    	let p0;
+    	let t11;
+    	let div5;
+    	let p1;
     	let current;
     	let each_value = /*all*/ ctx[0];
     	validate_each_argument(each_value);
@@ -1266,40 +1274,59 @@ var app = (function (exports) {
     			h1 = element("h1");
     			h1.textContent = "Modultafel Bachelorstudiengang Wirtschaftsinformatik";
     			t1 = space();
+    			h40 = element("h4");
+    			h40.textContent = "Business Infromation Systems, Vollzeit, ab Herbstsemster 2021";
+    			t3 = space();
     			div1 = element("div");
     			img = element("img");
-    			t2 = space();
-    			h40 = element("h4");
-    			h40.textContent = "Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.";
     			t4 = space();
     			h41 = element("h4");
-    			h41.textContent = "Das ist ein Warntext";
+    			h41.textContent = "Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.";
     			t6 = space();
+    			h42 = element("h4");
+    			h42.textContent = "Das ist ein Warntext";
+    			t8 = space();
     			div3 = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
+    			t9 = space();
+    			div4 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "* = Dieses Modul wird in englischer Sprache durchgeführt.";
+    			t11 = space();
+    			div5 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option \"Querformat\" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf 0 gesetzt sind.";
     			attr_dev(h1, "class", "mainTitle");
-    			add_location(h1, file, 311, 4, 11620);
+    			add_location(h1, file, 325, 4, 11993);
+    			attr_dev(h40, "class", "mb-3");
+    			add_location(h40, file, 328, 4, 12092);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 310, 2, 11597);
+    			add_location(div0, file, 324, 2, 11970);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
     			attr_dev(img, "width", "60%");
-    			add_location(img, file, 317, 4, 11771);
-    			attr_dev(div1, "class", "col-3 svelte-1n9tsbv");
+    			add_location(img, file, 331, 4, 12227);
+    			attr_dev(div1, "class", "col-3 svelte-ckjskx");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 316, 2, 11733);
-    			attr_dev(div2, "class", "row");
-    			add_location(div2, file, 309, 0, 11576);
-    			attr_dev(h40, "class", "InfoText");
-    			add_location(h40, file, 321, 0, 11852);
-    			attr_dev(h41, "class", "InfoTextRot");
-    			add_location(h41, file, 324, 0, 11961);
+    			add_location(div1, file, 330, 2, 12189);
+    			attr_dev(div2, "class", "row test svelte-ckjskx");
+    			add_location(div2, file, 323, 0, 11944);
+    			attr_dev(h41, "class", "InfoText");
+    			add_location(h41, file, 335, 0, 12308);
+    			attr_dev(h42, "class", "InfoTextRot mb-4");
+    			add_location(h42, file, 338, 0, 12417);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 326, 0, 12014);
+    			add_location(div3, file, 340, 0, 12475);
+    			add_location(p0, file, 375, 2, 13565);
+    			attr_dev(div4, "class", "row mt-3 ml-2");
+    			add_location(div4, file, 374, 0, 13534);
+    			add_location(p1, file, 378, 2, 13665);
+    			attr_dev(div5, "class", "row ml-2");
+    			add_location(div5, file, 377, 0, 13639);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1308,14 +1335,16 @@ var app = (function (exports) {
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div0);
     			append_dev(div0, h1);
-    			append_dev(div2, t1);
+    			append_dev(div0, t1);
+    			append_dev(div0, h40);
+    			append_dev(div2, t3);
     			append_dev(div2, div1);
     			append_dev(div1, img);
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, h40, anchor);
     			insert_dev(target, t4, anchor);
     			insert_dev(target, h41, anchor);
     			insert_dev(target, t6, anchor);
+    			insert_dev(target, h42, anchor);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, div3, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1324,6 +1353,12 @@ var app = (function (exports) {
     				}
     			}
 
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, p0);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, p1);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -1375,13 +1410,17 @@ var app = (function (exports) {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(h40);
     			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(h41);
     			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(h42);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(div3);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(div5);
     		}
     	};
 
@@ -1651,7 +1690,7 @@ var app = (function (exports) {
     			semesterModules: [
     				{
     					group: "Informatik",
-    					color: "#002c57",
+    					color: "#1e7cb8",
     					modules: [
     						{
     							name: "Software Engineering 1",
@@ -1661,7 +1700,7 @@ var app = (function (exports) {
     				},
     				{
     					group: "Wirtschaft",
-    					color: "#009bac",
+    					color: "#6799ca",
     					modules: [
     						{ name: "Einführung BWL", credits: 6 },
     						{
@@ -1673,7 +1712,16 @@ var app = (function (exports) {
     				},
     				{
     					group: "Sonstige",
-    					color: "#67c0b5",
+    					color: "#9db9dd",
+    					modules: [
+    						{ name: "Mathematik", credits: 6 },
+    						{ name: "VWL 1", credits: 6 },
+    						{ name: "English C1", credits: 6 }
+    					]
+    				},
+    				{
+    					group: "Andere MG",
+    					color: "#cfdbef",
     					modules: [
     						{ name: "Mathematik", credits: 6 },
     						{ name: "VWL 1", credits: 6 },
@@ -1687,7 +1735,7 @@ var app = (function (exports) {
     			semesterModules: [
     				{
     					group: "Informatik",
-    					color: "#002c57",
+    					color: "#1e7cb8",
     					modules: [
     						{
     							name: "Requirements Engineering",
@@ -1697,7 +1745,7 @@ var app = (function (exports) {
     				},
     				{
     					group: "Wirtschaft",
-    					color: "#009bac",
+    					color: "#6799ca",
     					modules: [
     						{ name: "Prozessmodellierung", credits: 6 },
     						{
@@ -1709,7 +1757,7 @@ var app = (function (exports) {
     				},
     				{
     					group: "Sonstige",
-    					color: "#67c0b5",
+    					color: "#9db9dd",
     					modules: [
     						{ name: "Wahlpflichtmodul", credits: 6 },
     						{
@@ -1717,6 +1765,11 @@ var app = (function (exports) {
     							credits: 6
     						}
     					]
+    				},
+    				{
+    					group: "Andere MG",
+    					color: "#cfdbef",
+    					modules: []
     				}
     			]
     		}

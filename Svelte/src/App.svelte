@@ -242,12 +242,12 @@
       semesterModules: [
         {
           group: "Informatik",
-          color: "#002c57",
+          color: "#1e7cb8",
           modules: [{ name: "Software Engineering 1", credits: 6 }],
         },
         {
           group: "Wirtschaft",
-          color: "#009bac",
+          color: "#6799ca",
           modules: [
             { name: "Einführung BWL", credits: 6 },
             { name: "Wissenschaftliches Schreiben", credits: 6 },
@@ -256,7 +256,16 @@
         },
         {
           group: "Sonstige",
-          color: "#67c0b5",
+          color: "#9db9dd",
+          modules: [
+            { name: "Mathematik", credits: 6 },
+            { name: "VWL 1", credits: 6 },
+            { name: "English C1", credits: 6 },
+          ],
+        },
+        {
+          group: "Andere MG",
+          color: "#cfdbef",
           modules: [
             { name: "Mathematik", credits: 6 },
             { name: "VWL 1", credits: 6 },
@@ -270,12 +279,12 @@
       semesterModules: [
         {
           group: "Informatik",
-          color: "#002c57",
+          color: "#1e7cb8",
           modules: [{ name: "Requirements Engineering", credits: 6 }],
         },
         {
           group: "Wirtschaft",
-          color: "#009bac",
+          color: "#6799ca",
           modules: [
             { name: "Prozessmodellierung", credits: 6 },
             { name: "Strategisches Management", credits: 6 },
@@ -284,11 +293,16 @@
         },
         {
           group: "Sonstige",
-          color: "#67c0b5",
+          color: "#9db9dd",
           modules: [
             { name: "Wahlpflichtmodul", credits: 6 },
             { name: "Business Intelligence", credits: 6 },
           ],
+        },
+        {
+          group: "Andere MG",
+          color: "#cfdbef",
+          modules: [],
         },
       ],
     },
@@ -307,12 +321,12 @@
 </script>
 
 
-<div class="row">
+<div class="row test">
   <div class="col">
     <h1 class="mainTitle">
       Modultafel Bachelorstudiengang Wirtschaftsinformatik
     </h1>
-    
+    <h4 class="mb-3">Business Infromation Systems, Vollzeit, ab Herbstsemster 2021</h4>
   </div>
   <div class="col-3" id="zhawSML">
     <img src="images/logoSML.jpg" alt="Logo SML" width="60%" />
@@ -337,12 +351,12 @@
 
       {#each semester.semesterModules as group}
         <!-- col-md statt col-sm -->
-        <div class="col-md" style="--groupBG: {group.color}80">
-          <!--80 stands for the opacity of the background color-->
+        <div class="col-md" style="--groupBG: {group.color}70">
+          <!--70 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
               <!-- col-xl-6 statt col-sm-6 -->
-              <div class="col-xl-6">  
+              <div class="col-xl-6">
                 <Modul
                   color={group.color}
                   name={module.name}
@@ -374,6 +388,13 @@
   }
 
   #zhawSML {
-    align-items: left;
+    display: flex;
+    justify-content: end;
+  }
+
+  .test {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>

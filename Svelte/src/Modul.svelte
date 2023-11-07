@@ -37,12 +37,11 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col">
+        <div class="col-6 p-0">
           <h5 class="modal-title" id="exampleModalLongTitle">{name}</h5>
         </div>
         <div class="col">
-          <span class="badge test" style="--badgeBG: {color}">{badge} ECTS</span
-          >
+          <span class="badge" style="--badgeBG: {color}">{badge} ECTS</span>
         </div>
         <button
           type="button"
@@ -83,9 +82,11 @@
         viverra justo nec ultrices.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Download PDF</button>
+        <button type="button" class="btn btn-primary"
+          >Download Modulbeschreibung</button
+        >
         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-          >Close</button
+          >Schliessen</button
         >
       </div>
     </div>
@@ -94,19 +95,21 @@
 
 <style>
   #Modulname {
-    font-weight: 200;
-    color: black;
-    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    color:#000000;
+    padding-bottom: 2px;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
   }
 
   .Modulgruppe {
     color: var(--groupcolor);
-    font-weight: 800;
+    font-weight: 700;
+    margin-bottom: 5px;
   }
 
   #ModulBody {
-    padding: 20px; /* Innenabstand für die Module */
+    padding: 10px; /* Innenabstand für die Module */
     border: 1px solid #ccc; /* Rahmen um die Module */
     text-align: center;
   }
@@ -116,9 +119,17 @@
   }
 
   .card {
-    min-height: 163.75px;
-    /* min-width: 185px; */
-    margin-top: 20px;
+    min-height: 99px;
+    margin-top: 15px;
     margin-bottom: 10px;
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .modal-body {
+    height: 60vh;
+    overflow-y: auto;
   }
 </style>

@@ -79,26 +79,12 @@ button:focus {
   /* 2dp — Elevation */
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
     0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
-
-  border-radius: 8px;
-  background: #fff;
-
-  /* 2dp — Elevation */
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
 }
 
 .cardM {
   display: flex;
   flex-direction: column;
   align-items: left;
-
-  border-radius: 8px;
-  background: #fff;
-
-  /* 2dp — Elevation */
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
 
   border-radius: 8px;
   background: #fff;
@@ -125,7 +111,6 @@ button:focus {
 
 .badge {
   display: flex;
-  padding: 0px 7px;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -134,7 +119,7 @@ button:focus {
 }
 
 .badgeTotal {
-  padding: 0px 7px;
+  padding: 3px 7px;
   flex-direction: column;
   align-items: left;
   border-radius: 4px;
@@ -148,16 +133,16 @@ button:focus {
 .InfoTextRot {
   color: #f00;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
 .InfoText {
-  color: #0064a6;
+  color: #000000;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -168,12 +153,13 @@ button:focus {
 }
 
 .mainTitle {
-  color: #0064a6;
+  color: #000000;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 0px;
 }
 
 .custom-container{

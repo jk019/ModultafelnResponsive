@@ -21,7 +21,7 @@
 
   .card {
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
     align-items: center;
   }
 </style>
