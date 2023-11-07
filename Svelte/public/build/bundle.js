@@ -524,31 +524,31 @@ var app = (function (exports) {
     			button2 = element("button");
     			button2.textContent = "Schliessen";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
-    			attr_dev(p, "class", "Modulgruppe svelte-1wg3owh");
+    			attr_dev(p, "class", "Modulgruppe svelte-mxgy1v");
     			add_location(p, file$2, 11, 6, 300);
     			attr_dev(div0, "class", "row");
     			add_location(div0, file$2, 10, 4, 275);
-    			attr_dev(a, "class", "Modulname svelte-1wg3owh");
+    			attr_dev(a, "class", "Modulname svelte-mxgy1v");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
     			add_location(a, file$2, 14, 6, 408);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$2, 13, 4, 383);
-    			attr_dev(span0, "class", "badge mt-auto svelte-1wg3owh");
+    			attr_dev(span0, "class", "badge mt-auto svelte-mxgy1v");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span0, file$2, 23, 4, 666);
-    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-1wg3owh");
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-mxgy1v");
     			attr_dev(div2, "id", "ModulBody");
     			add_location(div2, file$2, 9, 2, 212);
-    			attr_dev(div3, "class", "card svelte-1wg3owh");
+    			attr_dev(div3, "class", "card svelte-mxgy1v");
     			add_location(div3, file$2, 7, 0, 107);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
     			add_location(h50, file$2, 40, 10, 1115);
     			attr_dev(div4, "class", "col-6 p-0");
     			add_location(div4, file$2, 39, 8, 1080);
-    			attr_dev(span1, "class", "badge svelte-1wg3owh");
+    			attr_dev(span1, "class", "badge svelte-mxgy1v");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span1, file$2, 43, 10, 1232);
     			attr_dev(div5, "class", "col");
@@ -560,10 +560,10 @@ var app = (function (exports) {
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
     			add_location(button0, file$2, 45, 8, 1324);
-    			attr_dev(div6, "class", "modal-header svelte-1wg3owh");
+    			attr_dev(div6, "class", "modal-header svelte-mxgy1v");
     			add_location(div6, file$2, 38, 6, 1044);
     			add_location(h51, file$2, 55, 8, 1580);
-    			attr_dev(div7, "class", "modal-body svelte-1wg3owh");
+    			attr_dev(div7, "class", "modal-body svelte-mxgy1v");
     			add_location(div7, file$2, 54, 6, 1546);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
@@ -777,7 +777,6 @@ var app = (function (exports) {
     const file$1 = "src\\Semester.svelte";
 
     function create_fragment$1(ctx) {
-    	let div3;
     	let div2;
     	let div1;
     	let div0;
@@ -790,7 +789,6 @@ var app = (function (exports) {
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -802,28 +800,25 @@ var app = (function (exports) {
     			t4 = text(" ECTS");
     			attr_dev(div0, "id", "text");
     			attr_dev(div0, "class", "svelte-ouif6o");
-    			add_location(div0, file$1, 8, 6, 157);
-    			attr_dev(div1, "class", "row");
-    			add_location(div1, file$1, 7, 4, 132);
+    			add_location(div0, file$1, 8, 6, 166);
     			attr_dev(span, "class", "badgeTotal");
-    			add_location(span, file$1, 10, 4, 221);
-    			attr_dev(div2, "class", "card-body");
-    			add_location(div2, file$1, 6, 2, 103);
-    			attr_dev(div3, "class", "card svelte-ouif6o");
-    			add_location(div3, file$1, 5, 0, 81);
+    			add_location(span, file$1, 10, 4, 239);
+    			attr_dev(div1, "class", "card-body");
+    			add_location(div1, file$1, 6, 2, 103);
+    			attr_dev(div2, "class", "card svelte-ouif6o");
+    			add_location(div2, file$1, 5, 0, 81);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, div2);
+    			insert_dev(target, div2, anchor);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t0);
     			append_dev(div0, t1);
-    			append_dev(div2, t2);
-    			append_dev(div2, span);
+    			append_dev(div1, t2);
+    			append_dev(div1, span);
     			append_dev(span, t3);
     			append_dev(span, t4);
     		},
@@ -834,7 +829,7 @@ var app = (function (exports) {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div2);
     		}
     	};
 
@@ -941,7 +936,7 @@ var app = (function (exports) {
     	return child_ctx;
     }
 
-    // (357:12) {#each group.modules as module}
+    // (420:12) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
     	let modul;
@@ -962,7 +957,7 @@ var app = (function (exports) {
     			div = element("div");
     			create_component(modul.$$.fragment);
     			attr_dev(div, "class", "col-xl-6");
-    			add_location(div, file, 358, 14, 13182);
+    			add_location(div, file, 421, 14, 15307);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -989,14 +984,14 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(357:12) {#each group.modules as module}",
+    		source: "(420:12) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (352:6) {#each semester.semesterModules as group}
+    // (415:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
@@ -1023,10 +1018,10 @@ var app = (function (exports) {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 355, 10, 13056);
+    			add_location(div0, file, 418, 10, 15181);
     			attr_dev(div1, "class", "col-md");
     			set_style(div1, "--groupBG", /*group*/ ctx[6].color + "70");
-    			add_location(div1, file, 353, 8, 12921);
+    			add_location(div1, file, 416, 8, 15046);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1097,14 +1092,14 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(352:6) {#each semester.semesterModules as group}",
+    		source: "(415:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (342:2) {#each all as semester}
+    // (405:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
@@ -1146,9 +1141,9 @@ var app = (function (exports) {
 
     			t1 = space();
     			attr_dev(div0, "class", "col-md-auto");
-    			add_location(div0, file, 344, 6, 12650);
+    			add_location(div0, file, 407, 6, 14775);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 342, 4, 12538);
+    			add_location(div1, file, 405, 4, 14663);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1225,7 +1220,7 @@ var app = (function (exports) {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(342:2) {#each all as semester}",
+    		source: "(405:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1299,34 +1294,34 @@ var app = (function (exports) {
     			t11 = space();
     			div5 = element("div");
     			p1 = element("p");
-    			p1.textContent = "Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option \"Querformat\" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf 0 gesetzt sind.";
-    			attr_dev(h1, "class", "mainTitle");
-    			add_location(h1, file, 325, 4, 11993);
-    			attr_dev(h40, "class", "mb-3");
-    			add_location(h40, file, 328, 4, 12092);
+    			p1.textContent = "Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option\r\n    \"Querformat\" aktiviert ist und die Seitenränder in den Seiteneigenschaften\r\n    auf 0 gesetzt sind.";
+    			attr_dev(h1, "class", "mainTitle svelte-jbqnbb");
+    			add_location(h1, file, 386, 4, 14091);
+    			attr_dev(h40, "class", "mb-3 secondTitle");
+    			add_location(h40, file, 389, 4, 14190);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 324, 2, 11970);
+    			add_location(div0, file, 385, 2, 14068);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
-    			attr_dev(img, "width", "60%");
-    			add_location(img, file, 331, 4, 12227);
-    			attr_dev(div1, "class", "col-3 svelte-ckjskx");
+    			attr_dev(img, "width", "100%");
+    			add_location(img, file, 394, 4, 14351);
+    			attr_dev(div1, "class", "col-2 svelte-jbqnbb");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 330, 2, 12189);
-    			attr_dev(div2, "class", "row test svelte-ckjskx");
-    			add_location(div2, file, 323, 0, 11944);
+    			add_location(div1, file, 393, 2, 14313);
+    			attr_dev(div2, "class", "row test svelte-jbqnbb");
+    			add_location(div2, file, 384, 0, 14042);
     			attr_dev(h41, "class", "InfoText");
-    			add_location(h41, file, 335, 0, 12308);
+    			add_location(h41, file, 398, 0, 14433);
     			attr_dev(h42, "class", "InfoTextRot mb-4");
-    			add_location(h42, file, 338, 0, 12417);
+    			add_location(h42, file, 401, 0, 14542);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 340, 0, 12475);
-    			add_location(p0, file, 375, 2, 13565);
+    			add_location(div3, file, 403, 0, 14600);
+    			add_location(p0, file, 438, 2, 15690);
     			attr_dev(div4, "class", "row mt-3 ml-2");
-    			add_location(div4, file, 374, 0, 13534);
-    			add_location(p1, file, 378, 2, 13665);
+    			add_location(div4, file, 437, 0, 15659);
+    			add_location(p1, file, 441, 2, 15790);
     			attr_dev(div5, "class", "row ml-2");
-    			add_location(div5, file, 377, 0, 13639);
+    			add_location(div5, file, 440, 0, 15764);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1452,233 +1447,233 @@ var app = (function (exports) {
     	validate_slots('App', slots, []);
 
     	let vorlage = {
-    		"usedModulegroups": [
+    		usedModulegroups: [
     			{
-    				"name": "San Juan",
-    				"count": 3,
-    				"FarbeModulkaestchen": "#334771",
-    				"Hintergrundfarbe": "#8f95b3",
-    				"Schriftfarbe": "#FFFFFF",
-    				"Reihenfolge": 1
+    				name: "San Juan",
+    				count: 3,
+    				FarbeModulkaestchen: "#334771",
+    				Hintergrundfarbe: "#8f95b3",
+    				Schriftfarbe: "#FFFFFF",
+    				Reihenfolge: 1
     			},
     			{
-    				"name": "Eastern Blue",
-    				"count": 1,
-    				"FarbeModulkaestchen": "#1e7cb8",
-    				"Hintergrundfarbe": "#9db9dd",
-    				"Schriftfarbe": "#000000",
-    				"Reihenfolge": 2
+    				name: "Eastern Blue",
+    				count: 1,
+    				FarbeModulkaestchen: "#1e7cb8",
+    				Hintergrundfarbe: "#9db9dd",
+    				Schriftfarbe: "#000000",
+    				Reihenfolge: 2
     			}
     		],
-    		"semesterArray": [
+    		semesterArray: [
     			[
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulkuerzel": "w.BA.XX.2BWL-WIN.XX",
-    					"Modulbezeichnung": "Einführung BWL",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "1. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulkuerzel: "w.BA.XX.2BWL-WIN.XX",
+    					Modulbezeichnung: "Einführung BWL",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulkuerzel": "w.BA.XX.2WMWI.XX",
-    					"Modulbezeichnung": "Wissenschaftliche Methoden der Wirtschaftsinformatik",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "1. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulkuerzel: "w.BA.XX.2WMWI.XX",
+    					Modulbezeichnung: "Wissenschaftliche Methoden der Wirtschaftsinformatik",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulkuerzel": "w.BA.XX.2WIN.XX",
-    					"Modulbezeichnung": "Einführung Wirtschaftsinformatik",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "1. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulkuerzel: "w.BA.XX.2WIN.XX",
+    					Modulbezeichnung: "Einführung Wirtschaftsinformatik",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "Eastern Blue",
-    					"Modulkuerzel": "w.BA.XX.2SWEng.XX",
-    					"Modulbezeichnung": "Software Engineering",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
-    					"FarbeModulkaestchen": "#1e7cb8",
-    					"Hintergrundfarbe": "#9db9dd",
-    					"Schriftfarbe": "#000000"
+    					Semester: "1. Semester",
+    					Modulgruppe: "Eastern Blue",
+    					Modulkuerzel: "w.BA.XX.2SWEng.XX",
+    					Modulbezeichnung: "Software Engineering",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+    					FarbeModulkaestchen: "#1e7cb8",
+    					Hintergrundfarbe: "#9db9dd",
+    					Schriftfarbe: "#000000"
     				},
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "Pacific Blue",
-    					"Modulkuerzel": "w.BA.XX.2Mathe1-WIN.XX",
-    					"Modulbezeichnung": "Mathematik 1",
-    					"ECTS": 3,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#00aebe",
-    					"Hintergrundfarbe": "#a3d7e0",
-    					"Schriftfarbe": "#000000"
+    					Semester: "1. Semester",
+    					Modulgruppe: "Pacific Blue",
+    					Modulkuerzel: "w.BA.XX.2Mathe1-WIN.XX",
+    					Modulbezeichnung: "Mathematik 1",
+    					ECTS: 3,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#00aebe",
+    					Hintergrundfarbe: "#a3d7e0",
+    					Schriftfarbe: "#000000"
     				},
     				{
-    					"Semester": "1. Semester",
-    					"Modulgruppe": "Half Baked",
-    					"Modulkuerzel": "w.BA.XX.2BusE1.XX",
-    					"Modulbezeichnung": "Business English 1",
-    					"ECTS": 3,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
-    					"FarbeModulkaestchen": "#90cec5",
-    					"Hintergrundfarbe": "#cde8e2",
-    					"Schriftfarbe": "#000000"
+    					Semester: "1. Semester",
+    					Modulgruppe: "Half Baked",
+    					Modulkuerzel: "w.BA.XX.2BusE1.XX",
+    					Modulbezeichnung: "Business English 1",
+    					ECTS: 3,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+    					FarbeModulkaestchen: "#90cec5",
+    					Hintergrundfarbe: "#cde8e2",
+    					Schriftfarbe: "#000000"
     				}
     			],
     			[
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulkuerzel": "w.BA.XX.2FinAcc-WIN.XX",
-    					"Modulbezeichnung": "Financial and Management Accounting",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "2. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulkuerzel: "w.BA.XX.2FinAcc-WIN.XX",
+    					Modulbezeichnung: "Financial and Management Accounting",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulkuerzel": "w.BA.XX.2Komm-WIN.XX",
-    					"Modulbezeichnung": "Kommunikation",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "2. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulkuerzel: "w.BA.XX.2Komm-WIN.XX",
+    					Modulbezeichnung: "Kommunikation",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "Eastern Blue",
-    					"Modulkuerzel": "w.BA.XX.2REng.XX",
-    					"Modulbezeichnung": "Requirements Engineering",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
-    					"FarbeModulkaestchen": "#1e7cb8",
-    					"Hintergrundfarbe": "#9db9dd",
-    					"Schriftfarbe": "#000000"
+    					Semester: "2. Semester",
+    					Modulgruppe: "Eastern Blue",
+    					Modulkuerzel: "w.BA.XX.2REng.XX",
+    					Modulbezeichnung: "Requirements Engineering",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
+    					FarbeModulkaestchen: "#1e7cb8",
+    					Hintergrundfarbe: "#9db9dd",
+    					Schriftfarbe: "#000000"
     				},
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "Pacific Blue",
-    					"Modulkuerzel": "w.BA.XX.2Mathe2-WIN.XX",
-    					"Modulbezeichnung": "Mathematik 2",
-    					"ECTS": 3,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#00aebe",
-    					"Hintergrundfarbe": "#a3d7e0",
-    					"Schriftfarbe": "#000000"
+    					Semester: "2. Semester",
+    					Modulgruppe: "Pacific Blue",
+    					Modulkuerzel: "w.BA.XX.2Mathe2-WIN.XX",
+    					Modulbezeichnung: "Mathematik 2",
+    					ECTS: 3,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#00aebe",
+    					Hintergrundfarbe: "#a3d7e0",
+    					Schriftfarbe: "#000000"
     				},
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "Pacific Blue",
-    					"Modulkuerzel": "w.BA.XX.2VWL-WIN.XX",
-    					"Modulbezeichnung": "VWL",
-    					"ECTS": 6,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
-    					"FarbeModulkaestchen": "#00aebe",
-    					"Hintergrundfarbe": "#a3d7e0",
-    					"Schriftfarbe": "#000000"
+    					Semester: "2. Semester",
+    					Modulgruppe: "Pacific Blue",
+    					Modulkuerzel: "w.BA.XX.2VWL-WIN.XX",
+    					Modulbezeichnung: "VWL",
+    					ECTS: 6,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
+    					FarbeModulkaestchen: "#00aebe",
+    					Hintergrundfarbe: "#a3d7e0",
+    					Schriftfarbe: "#000000"
     				},
     				{
-    					"Semester": "2. Semester",
-    					"Modulgruppe": "Half Baked",
-    					"Modulkuerzel": "w.BA.XX.2BusE2.XX",
-    					"Modulbezeichnung": "Business English 2",
-    					"ECTS": 3,
-    					"Link": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
-    					"FarbeModulkaestchen": "#90cec5",
-    					"Hintergrundfarbe": "#cde8e2",
-    					"Schriftfarbe": "#000000"
+    					Semester: "2. Semester",
+    					Modulgruppe: "Half Baked",
+    					Modulkuerzel: "w.BA.XX.2BusE2.XX",
+    					Modulbezeichnung: "Business English 2",
+    					ECTS: 3,
+    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
+    					FarbeModulkaestchen: "#90cec5",
+    					Hintergrundfarbe: "#cde8e2",
+    					Schriftfarbe: "#000000"
     				}
     			],
     			[
     				{
-    					"Semester": "3. Semester",
-    					"Modulgruppe": "San Juan",
-    					"Modulbezeichnung": "Wahlpflichtmodul 1",
-    					"ECTS": 3,
-    					"Wahlpflichtmodul": "Crisis Management: Action Planning & Directing\r\nData Protection and Governance\r\nDigital Transformation in Financial Services\r\nDigitalization and Law\r\nHC-Marketing und Competence Management\r\nM&A Integrationsmanagement\r\nMachine Learning: Eine anwendungsorientierte Einführung\r\nPython-Grundlagen & Anwendung in Data Science",
-    					"FarbeModulkaestchen": "#334771",
-    					"Hintergrundfarbe": "#8f95b3",
-    					"Schriftfarbe": "#FFFFFF"
+    					Semester: "3. Semester",
+    					Modulgruppe: "San Juan",
+    					Modulbezeichnung: "Wahlpflichtmodul 1",
+    					ECTS: 3,
+    					Wahlpflichtmodul: "Crisis Management: Action Planning & Directing\r\nData Protection and Governance\r\nDigital Transformation in Financial Services\r\nDigitalization and Law\r\nHC-Marketing und Competence Management\r\nM&A Integrationsmanagement\r\nMachine Learning: Eine anwendungsorientierte Einführung\r\nPython-Grundlagen & Anwendung in Data Science",
+    					FarbeModulkaestchen: "#334771",
+    					Hintergrundfarbe: "#8f95b3",
+    					Schriftfarbe: "#FFFFFF"
     				},
     				{
-    					"Semester": "3. Semester",
-    					"Modulgruppe": "Eastern Blue",
-    					"Modulbezeichnung": "Wahlpflichtmodul 2",
-    					"ECTS": 3,
-    					"Wahlpflichtmodul": "Data Protection and Governance\r\r\nM&A Integrationsmanagement\r\r\nHC-Marketing und Competence Management",
-    					"FarbeModulkaestchen": "#1e7cb8",
-    					"Hintergrundfarbe": "#9db9dd",
-    					"Schriftfarbe": "#000000"
+    					Semester: "3. Semester",
+    					Modulgruppe: "Eastern Blue",
+    					Modulbezeichnung: "Wahlpflichtmodul 2",
+    					ECTS: 3,
+    					Wahlpflichtmodul: "Data Protection and Governance\r\r\nM&A Integrationsmanagement\r\r\nHC-Marketing und Competence Management",
+    					FarbeModulkaestchen: "#1e7cb8",
+    					Hintergrundfarbe: "#9db9dd",
+    					Schriftfarbe: "#000000"
     				}
     			]
     		],
-    		"wahlmodule": [
+    		wahlmodule: [
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Crisis Management: Action Planning & Directing",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Crisis Management: Action Planning & Directing",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Data Protection and Governance",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Data Protection and Governance",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Digital Transformation in Financial Services",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Digital Transformation in Financial Services",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Digitalization and Law",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Digitalization and Law",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "HC-Marketing und Competence Management",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "HC-Marketing und Competence Management",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "M&A Integrationsmanagement",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "M&A Integrationsmanagement",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Machine Learning: Eine anwendungsorientierte Einführung",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Machine Learning: Eine anwendungsorientierte Einführung",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Python-Grundlagen & Anwendung in Data Science",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Python-Grundlagen & Anwendung in Data Science",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Sportmarketing",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Sportmarketing",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			},
     			{
-    				"Modulkürzel": "w.BA.XX.2DigLaw.XX",
-    				"Modulbezeichnung": "Zertifizierung Projektmanagement",
+    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
+    				Modulbezeichnung: "Zertifizierung Projektmanagement",
     				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
     			}
     		]
@@ -1707,6 +1702,9 @@ var app = (function (exports) {
     							name: "Wissenschaftliches Schreiben",
     							credits: 6
     						},
+    						{ name: "Accounting", credits: 6 },
+    						{ name: "Accounting", credits: 6 },
+    						{ name: "Accounting", credits: 6 },
     						{ name: "Accounting", credits: 6 }
     					]
     				},
@@ -1716,7 +1714,7 @@ var app = (function (exports) {
     					modules: [
     						{ name: "Mathematik", credits: 6 },
     						{ name: "VWL 1", credits: 6 },
-    						{ name: "English C1", credits: 6 }
+    						{ name: "English C1*", credits: 6 }
     					]
     				},
     				{
@@ -1725,7 +1723,7 @@ var app = (function (exports) {
     					modules: [
     						{ name: "Mathematik", credits: 6 },
     						{ name: "VWL 1", credits: 6 },
-    						{ name: "English C1", credits: 6 }
+    						{ name: "English C1*", credits: 6 }
     					]
     				}
     			]
@@ -1763,6 +1761,26 @@ var app = (function (exports) {
     						{
     							name: "Business Intelligence",
     							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
     						}
     					]
     				},
@@ -1770,6 +1788,73 @@ var app = (function (exports) {
     					group: "Andere MG",
     					color: "#cfdbef",
     					modules: []
+    				}
+    			]
+    		},
+    		{
+    			number: "3",
+    			semesterModules: [
+    				{
+    					group: "Informatik",
+    					color: "#1e7cb8",
+    					modules: [
+    						{
+    							name: "Requirements Engineering",
+    							credits: 6
+    						}
+    					]
+    				},
+    				{
+    					group: "Wirtschaft",
+    					color: "#6799ca",
+    					modules: [
+    						{ name: "Prozessmodellierung", credits: 6 },
+    						{
+    							name: "Strategisches Management",
+    							credits: 6
+    						},
+    						{ name: "Marketing", credits: 6 }
+    					]
+    				},
+    				{
+    					group: "Sonstige",
+    					color: "#9db9dd",
+    					modules: [
+    						{ name: "Wahlpflichtmodul", credits: 6 },
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							credits: 6
+    						}
+    					]
+    				},
+    				{
+    					group: "Andere MG",
+    					color: "#cfdbef",
+    					modules: [
+    						{ name: "English C1*", credits: 6 },
+    						{ name: "English C1*", credits: 6 },
+    						{ name: "English C1*", credits: 6 }
+    					]
     				}
     			]
     		}

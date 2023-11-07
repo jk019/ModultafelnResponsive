@@ -97,7 +97,7 @@
   #Modulname {
     font-weight: bold;
     font-size: 10px;
-    color:#000000;
+    color: #000000;
     padding-bottom: 2px;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
   }

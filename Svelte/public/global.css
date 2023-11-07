@@ -152,7 +152,7 @@ button:focus {
   background-color: var(--groupBG);
 }
 
-.mainTitle {
+/* .mainTitle {
   color: #000000;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
@@ -160,7 +160,7 @@ button:focus {
   font-weight: 700;
   line-height: normal;
   margin-bottom: 0px;
-}
+} */
 
 .custom-container{
   max-width: 97%; /* Hier kannst du die gewünschte Breite in Pixeln oder einem anderen Wert festlegen */
