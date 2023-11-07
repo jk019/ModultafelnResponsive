@@ -1,0 +1,45 @@
+$primary: #0164A7;
+$font-family-sans-serif: HelveticaRoundedBold, Arial, "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-serif: HelveticaRoundedBold, Arial, "Helvetica Neue", Helvetica, serif !default;
+$font-family-monospace: $font-family-sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+body {
+  margin: 1em !important;
+}
+
+.navbar {
+  flex-wrap: nowrap !important;
+}
+
+.navbar-brand {
+  margin: 0 1em;
+}
+
+.row {
+  flex-wrap: nowrap !important;
+}
+
+.card-title, .card-text {
+  margin-bottom: 0 !important;
+  hyphens: auto;
+}
+
+.card-body {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.card {
+  min-height: 8em !important;
+  border-radius: 0.15rem !important;
+  border-width: 0px !important;
+  width: 15rem !important;
+}
+
+#ects {
+  border-radius: 0 0 0.15rem 0.15rem;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";

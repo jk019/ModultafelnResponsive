@@ -1,0 +1,35 @@
+{
+  "name": "modultafel",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "svelte-view-engine": "^1.2.0-b",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmeisterhans/Modultafel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmeisterhans/Modultafel/issues"
+  },
+  "homepage": "https://github.com/mmeisterhans/Modultafel#readme",
+  "description": "",
+  "engines": {
+    "node": "18.x"
+  }
+}
