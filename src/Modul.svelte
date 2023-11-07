@@ -96,16 +96,8 @@
   #Modulname {
     font-weight: 200;
     color: black;
-
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-    align-self: stretch; */
-
     padding-bottom: 10px;
-
-    hyphens: auto;
+    hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
   }
 
   .Modulgruppe {

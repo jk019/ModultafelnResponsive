@@ -524,31 +524,31 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Close";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
-    			attr_dev(p, "class", "Modulgruppe svelte-fn5pue");
+    			attr_dev(p, "class", "Modulgruppe svelte-1w6ik0h");
     			add_location(p, file$2, 11, 6, 300);
     			attr_dev(div0, "class", "row");
     			add_location(div0, file$2, 10, 4, 275);
-    			attr_dev(a, "class", "Modulname svelte-fn5pue");
+    			attr_dev(a, "class", "Modulname svelte-1w6ik0h");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
     			add_location(a, file$2, 14, 6, 408);
     			attr_dev(div1, "class", "row");
     			add_location(div1, file$2, 13, 4, 383);
-    			attr_dev(span0, "class", "badge mt-auto svelte-fn5pue");
+    			attr_dev(span0, "class", "badge mt-auto svelte-1w6ik0h");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span0, file$2, 23, 4, 666);
-    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-fn5pue");
+    			attr_dev(div2, "class", "card-body d-flex flex-column svelte-1w6ik0h");
     			attr_dev(div2, "id", "ModulBody");
     			add_location(div2, file$2, 9, 2, 212);
-    			attr_dev(div3, "class", "card svelte-fn5pue");
+    			attr_dev(div3, "class", "card svelte-1w6ik0h");
     			add_location(div3, file$2, 7, 0, 107);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
     			add_location(h50, file$2, 40, 10, 1109);
     			attr_dev(div4, "class", "col");
     			add_location(div4, file$2, 39, 8, 1080);
-    			attr_dev(span1, "class", "badge test svelte-fn5pue");
+    			attr_dev(span1, "class", "badge test svelte-1w6ik0h");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
     			add_location(span1, file$2, 43, 10, 1226);
     			attr_dev(div5, "class", "col");
@@ -962,7 +962,7 @@ var app = (function () {
     			div = element("div");
     			create_component(modul.$$.fragment);
     			attr_dev(div, "class", "col-xl-6");
-    			add_location(div, file, 104, 14, 3022);
+    			add_location(div, file, 104, 14, 3027);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1023,10 +1023,10 @@ var app = (function () {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 101, 10, 2896);
+    			add_location(div0, file, 101, 10, 2901);
     			attr_dev(div1, "class", "col-md");
     			set_style(div1, "--groupBG", /*group*/ ctx[4].color + "80");
-    			add_location(div1, file, 99, 8, 2761);
+    			add_location(div1, file, 99, 8, 2766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1146,9 +1146,9 @@ var app = (function () {
 
     			t1 = space();
     			attr_dev(div0, "class", "col-md-auto");
-    			add_location(div0, file, 93, 6, 2521);
+    			add_location(div0, file, 93, 6, 2526);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 91, 4, 2409);
+    			add_location(div1, file, 91, 4, 2414);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1246,6 +1246,12 @@ var app = (function () {
     	let h41;
     	let t6;
     	let div3;
+    	let t7;
+    	let div4;
+    	let p0;
+    	let t9;
+    	let div5;
+    	let p1;
     	let current;
     	let each_value = /*all*/ ctx[0];
     	validate_each_argument(each_value);
@@ -1281,6 +1287,14 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
+    			t7 = space();
+    			div4 = element("div");
+    			p0 = element("p");
+    			p0.textContent = "* = Dieses Modul wird in englischer Sprache durchgeführt.";
+    			t9 = space();
+    			div5 = element("div");
+    			p1 = element("p");
+    			p1.textContent = "Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option \"Querformat\" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf 0 gesetzt sind.";
     			attr_dev(h1, "class", "mainTitle");
     			add_location(h1, file, 75, 4, 1958);
     			attr_dev(div0, "class", "col");
@@ -1296,10 +1310,16 @@ var app = (function () {
     			add_location(div2, file, 73, 0, 1914);
     			attr_dev(h40, "class", "InfoText");
     			add_location(h40, file, 84, 0, 2184);
-    			attr_dev(h41, "class", "InfoTextRot");
+    			attr_dev(h41, "class", "InfoTextRot mb-4");
     			add_location(h41, file, 87, 0, 2293);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 89, 0, 2346);
+    			add_location(div3, file, 89, 0, 2351);
+    			add_location(p0, file, 121, 4, 3414);
+    			attr_dev(div4, "class", "row mt-3 ml-2");
+    			add_location(div4, file, 120, 2, 3381);
+    			add_location(p1, file, 124, 4, 3520);
+    			attr_dev(div5, "class", "row ml-2");
+    			add_location(div5, file, 123, 2, 3492);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1324,6 +1344,12 @@ var app = (function () {
     				}
     			}
 
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, p0);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, p1);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -1382,6 +1408,10 @@ var app = (function () {
     			if (detaching) detach_dev(t6);
     			if (detaching) detach_dev(div3);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(div5);
     		}
     	};
 

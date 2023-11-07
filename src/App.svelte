@@ -85,7 +85,7 @@
 <h4 class="InfoText">
   Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.
 </h4>
-<h4 class="InfoTextRot">Das ist ein Warntext</h4>
+<h4 class="InfoTextRot mb-4">Das ist ein Warntext</h4>
 
 <div class="custom-container">
   {#each all as semester}
@@ -117,6 +117,14 @@
     </div>
   {/each}
 </div>
+
+  <div class="row mt-3 ml-2">
+    <p>* = Dieses Modul wird in englischer Sprache durchgeführt.</p>
+  </div>
+  <div class="row ml-2">
+    <p>Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf 0 gesetzt sind.</p>
+  </div>
+
 
 <style>
   /* Füge CSS-Stile für die Module hinzu */
