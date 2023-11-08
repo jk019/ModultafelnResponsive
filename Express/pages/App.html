@@ -2,7 +2,9 @@
   import Modul from "./Modul.svelte";
   import Semester from "./Semester.svelte";
 
-  let all = [
+  export let all;
+
+  /*  let all = [
     {
       number: "1",
       semesterModules: [
@@ -58,7 +60,7 @@
         },
       ],
     },
-  ];
+  ]; */
 
   function calculateTotalCredits(semester) {
     let totalCredits = 0;
