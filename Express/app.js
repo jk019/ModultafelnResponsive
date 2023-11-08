@@ -65,87 +65,107 @@ app.post("/upload", function (req, res) {
     const modules = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames[1]]);
     const wahlmodule = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames[2]]);
 
-    modules.map((module) => {
-      module.FarbeModulkaestchen = settings.find(
-        (settings) => settings.Modulgruppe == module.Modulgruppe
-      ).FarbeModulkaestchen;
-      module.Hintergrundfarbe = settings.find(
-        (settings) => settings.Modulgruppe == module.Modulgruppe
-      ).Hintergrundfarbe;
-      module.Schriftfarbe = settings.find(
-        (settings) => settings.Modulgruppe == module.Modulgruppe
-      ).Schriftfarbe;
+    // Create a map for easy access to settings by Modulgruppe.
+    const settingsMap = new Map(settings.map((s) => [s.Modulgruppe, s]));
+
+    modules.forEach((module) => {
+      // Access the settings for the module's Modulgruppe directly from the map.
+      const setting = settingsMap.get(module.Modulgruppe);
+      module.FarbeModulkaestchen = setting.FarbeModulkaestchen;
+      module.Hintergrundfarbe = setting.Hintergrundfarbe;
+      module.Schriftfarbe = setting.Schriftfarbe;
     });
 
-    let semesterArray = [];
-    let addedSemesters = [];
+    // Create a map to track semesters and modules.
+    const semesterMap = new Map();
     modules.forEach((module) => {
-      let currentSemesterNumber = module.Semester.split(".")[0];
-      if (!addedSemesters.includes(currentSemesterNumber)) {
-        semesterArray.push(
-          modules.filter(
-            (module) => module.Semester == currentSemesterNumber + ". Semester"
-          )
-        );
-        addedSemesters.push(currentSemesterNumber);
+      const currentSemester = module.Semester;
+      if (!semesterMap.has(currentSemester)) {
+        semesterMap.set(currentSemester, []);
       }
+      semesterMap.get(currentSemester).push(module);
     });
 
-    let usedModulegroups = [];
-    //let counter
-    modules.forEach((module) => {
-      if (
-        usedModulegroups.find((modul) => modul.name == module.Modulgruppe) ==
-        undefined
-      ) {
-        let FarbeModulkaestchen = settings.find(
-          (settings) => settings.Modulgruppe == module.Modulgruppe
-        ).FarbeModulkaestchen;
-        let Hintergrundfarbe = settings.find(
-          (settings) => settings.Modulgruppe == module.Modulgruppe
-        ).Hintergrundfarbe;
-        let Schriftfarbe = settings.find(
-          (settings) => settings.Modulgruppe == module.Modulgruppe
-        ).Schriftfarbe;
-        let Reihenfolge = settings.find(
-          (settings) => settings.Modulgruppe == module.Modulgruppe
-        ).Reihenfolge;
+    // Now convert the semesterMap to an array, if needed
+    let semesterArray = Array.from(semesterMap.values());
 
-        usedModulegroups.push({
-          name: module.Modulgruppe,
-          count: 1,
-          FarbeModulkaestchen: FarbeModulkaestchen,
-          Hintergrundfarbe: Hintergrundfarbe,
-          Schriftfarbe: Schriftfarbe,
-          Reihenfolge: Reihenfolge,
+    // Create a map for usedModulegroups to ensure uniqueness and ease of update.
+    let usedModulegroupsMap = new Map();
+    modules.forEach((module) => {
+      const groupName = module.Modulgruppe;
+      if (!usedModulegroupsMap.has(groupName)) {
+        const setting = settingsMap.get(groupName);
+        usedModulegroupsMap.set(groupName, {
+          name: groupName,
+          count: 0,
+          FarbeModulkaestchen: setting.FarbeModulkaestchen,
+          Hintergrundfarbe: setting.Hintergrundfarbe,
+          Schriftfarbe: setting.Schriftfarbe,
+          Reihenfolge: setting.Reihenfolge,
         });
       }
     });
 
-    // Counting amount of Modules within a ModuleGroup and pushes to usedModulegroups Array
-    usedModulegroups.forEach((modulgruppe) => {
-      semesterArray.forEach((semester) => {
-        let counter = 0;
-        semester.forEach((module) => {
-          if (module.Modulgruppe == modulgruppe.name) {
-            counter++;
-          }
-        });
-        if (counter > modulgruppe.count) {
-          modulgruppe.count = counter;
-        }
+    // Count the modules in each module group within each semester.
+    semesterMap.forEach((modulesInSemester) => {
+      modulesInSemester.forEach((module) => {
+        const modulgruppe = usedModulegroupsMap.get(module.Modulgruppe);
+        modulgruppe.count++;
       });
     });
+
+    // Now convert the usedModulegroupsMap to an array
+    let usedModulegroups = Array.from(usedModulegroupsMap.values());
+
+    function transformModulesForSemester(
+      modulesInSemester,
+      usedModulegroupsMap
+    ) {
+      // We will first group modules by their Modulgruppe.
+      const groupsMap = new Map();
+      modulesInSemester.forEach((module) => {
+        if (!groupsMap.has(module.Modulgruppe)) {
+          groupsMap.set(module.Modulgruppe, {
+            group: module.Modulgruppe,
+            color: usedModulegroupsMap.get(module.Modulgruppe).Hintergrundfarbe,
+            modules: [],
+          });
+        }
+        groupsMap.get(module.Modulgruppe).modules.push({
+          name: module.Modulbezeichnung,
+          credits: module.ECTS,
+        });
+      });
+
+      // Now convert the map to the array format required by the frontend.
+      return Array.from(groupsMap.values());
+    }
+
+    // Finally, we will map over the semesters to structure the whole array.
+    let all = Array.from(semesterMap.keys())
+      .sort()
+      .map((semesterNumber) => {
+        const modulesInSemester = semesterMap.get(semesterNumber);
+        const semesterModules = transformModulesForSemester(
+          modulesInSemester,
+          usedModulegroupsMap
+        );
+        return {
+          number: semesterNumber.split(".")[0], // Assuming the semester number is always the first part before a dot.
+          semesterModules: semesterModules,
+        };
+      });
+
+    console.log(all);
 
     //const returnFile = __dirname + '/tmp/' + Date.now() + "_" + 'Modultafel.html'
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
     res.render(
       "App",
       {
-        usedModulegroups: usedModulegroups,
-        semesterArray: semesterArray,
-        wahlmodule: wahlmodule,
-        settings: settings[0],
+        all: all,
+        // wahlmodule: wahlmodule,
+        // settings: settings[0],
       },
       (err, html) => {
         if (err) {
