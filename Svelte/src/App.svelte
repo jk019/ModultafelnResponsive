@@ -388,7 +388,7 @@
       Modultafel Bachelorstudiengang Wirtschaftsinformatik
     </h1>
     <h4 class="mb-3 secondTitle">
-      Business Infromation Systems, Vollzeit, ab Herbstsemster 2021
+      Business Information Systems, Vollzeit, ab Herbstsemester 2021
     </h4>
   </div>
   <div class="col-2" id="zhawSML">
