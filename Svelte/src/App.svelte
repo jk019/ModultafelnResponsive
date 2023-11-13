@@ -363,7 +363,7 @@
           modules: [
             { name: "English C1*", credits: 6 },
             { name: "English C1*", credits: 6 },
-            { name: "English C1*", credits: 6 },
+            { name: "English C1*", credits: 4 },
           ],
         },
       ],
