@@ -133,7 +133,10 @@ app.post("/upload", function (req, res) {
         }
         groupsMap.get(module.Modulgruppe).modules.push({
           name: module.Modulbezeichnung,
+          shortname: module.Modulkuerzel,
+          description: module.Modulbeschreibung,
           credits: module.ECTS,
+          url: module.Link,
         });
       });
 
