@@ -4,64 +4,6 @@
 
   export let all;
 
-  /*  let all = [
-    {
-      number: "1",
-      semesterModules: [
-        {
-          group: "Informatik",
-          color: "#002c57",
-          modules: [{ name: "Software Engineering 1", credits: 6 }],
-        },
-        {
-          group: "Wirtschaft",
-          color: "#009bac",
-          modules: [
-            { name: "Einführung BWL", credits: 6 },
-            { name: "Wissenschaftliches Schreiben", credits: 6 },
-            { name: "Accounting", credits: 6 },
-          ],
-        },
-        {
-          group: "Sonstige",
-          color: "#67c0b5",
-          modules: [
-            { name: "Mathematik", credits: 6 },
-            { name: "VWL 1", credits: 6 },
-            { name: "English C1", credits: 6 },
-          ],
-        },
-      ],
-    },
-    {
-      number: "2",
-      semesterModules: [
-        {
-          group: "Informatik",
-          color: "#002c57",
-          modules: [{ name: "Requirements Engineering", credits: 6 }],
-        },
-        {
-          group: "Wirtschaft",
-          color: "#009bac",
-          modules: [
-            { name: "Prozessmodellierung", credits: 6 },
-            { name: "Strategisches Management", credits: 6 },
-            { name: "Marketing", credits: 6 },
-          ],
-        },
-        {
-          group: "Sonstige",
-          color: "#67c0b5",
-          modules: [
-            { name: "Wahlpflichtmodul", credits: 6 },
-            { name: "Business Intelligence", credits: 6 },
-          ],
-        },
-      ],
-    },
-  ]; */
-
   function calculateTotalCredits(semester) {
     let totalCredits = 0;
     semester.semesterModules.forEach((group) => {
