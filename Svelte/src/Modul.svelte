@@ -5,6 +5,9 @@
   export let color;
   export let description;
   export let url;
+
+  // Generate a unique ID for the modal
+  let modalId = `modal-${name.replace(/\s+/g, "-")}`;
 </script>
 
 <div class="card">
@@ -18,7 +21,7 @@
         class="Modulname"
         id="Modulname"
         data-toggle="modal"
-        data-target="#exampleModalCenter"
+        data-target={`#${modalId}`}
         >{name}
       </a>
     </div>
@@ -30,7 +33,7 @@
 <!-- Modal -->
 <div
   class="modal fade"
-  id="exampleModalCenter"
+  id={modalId}
   tabindex="-1"
   role="dialog"
   aria-labelledby="exampleModalCenterTitle"
@@ -56,13 +59,13 @@
       </div>
       <div class="modal-body">
         <h5>Beschreibung des Moduls:</h5>
-        {description} 
+        {description}
       </div>
       <div class="modal-footer">
         <form action={url} method="get" target="_blank">
-        <button type="submit" class="btn btn-primary" 
-          >Download Modulbeschreibung</button
-        >
+          <button type="submit" class="btn btn-primary"
+            >Download Modulbeschreibung</button
+          >
         </form>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"
           >Schliessen</button
