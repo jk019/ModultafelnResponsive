@@ -1,5 +1,7 @@
 <script>
   export let name;
+  export let shortname;
+  export let is_elective; // Boolean
   export let gruppe;
   export let badge;
   export let color;
@@ -26,7 +28,7 @@
       </a>
     </div>
     <!-- Jeweils eine eigene row erstellt, damit die Elemente untereinander sind -->
-    <span class="badge mt-auto" style="--badgeBG: {color}">{badge} ECTS</span>
+    <span class="badge mt-auto d-inline-block align-self-center" style="--badgeBG: {color}">{badge} ECTS</span>
   </div>
 </div>
 
@@ -42,21 +44,26 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col-6 p-0">
-          <h5 class="modal-title" id="exampleModalLongTitle">{name}</h5>
+        <div class="row modalHeaderRow justify-content-between">
+            <h5 class="modal-title col-auto" id="exampleModalLongTitle">{name}</h5>
+            <span class="badge col-auto w-auto" style="--badgeBG: {color}">{badge} ECTS</span>
         </div>
-        <div class="col">
-          <span class="badge" style="--badgeBG: {color}">{badge} ECTS</span>
-        </div>
-        <button
+        <!-- <button
           type="button"
           class="close"
           data-dismiss="modal"
           aria-label="Close"
         >
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button> -->
+        <div class="modulShortnameRow row">
+          <div class="col-auto"><b>Modulkürzel: </b></div>
+          <div class="col-auto Shortname text-right">
+            {shortname}
+          </div>
+        </div>
       </div>
+
       <div class="modal-body">
         <h5>Beschreibung des Moduls:</h5>
         {description}
@@ -105,13 +112,35 @@
     margin-top: 15px;
     margin-bottom: 10px;
   }
-  .modal-header {
-    display: flex;
-    align-items: center;
-  }
-
+ 
   .modal-body {
     height: 60vh;
     overflow-y: auto;
+  }
+
+  .modulShortnameRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .modalHeaderRow {
+    margin-bottom: 5px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Shortname {
+    padding-right: 0px;
   }
 </style>
