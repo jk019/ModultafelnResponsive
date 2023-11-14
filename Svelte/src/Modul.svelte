@@ -3,6 +3,8 @@
   export let gruppe;
   export let badge;
   export let color;
+  export let description;
+  export let url;
 </script>
 
 <div class="card">
@@ -54,37 +56,14 @@
       </div>
       <div class="modal-body">
         <h5>Beschreibung des Moduls:</h5>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim
-        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis
-        volutpat est velit egestas dui. Tristique senectus et netus et malesuada
-        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh
-        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor
-        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus
-        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum
-        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate
-        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis
-        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent
-        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus
-        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor
-        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque
-        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque
-        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus
-        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.
-        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh
-        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium
-        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat
-        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.
-        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus
-        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie
-        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc
-        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque
-        viverra justo nec ultrices.
+        {description} 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"
+        <form action={url} method="get" target="_blank">
+        <button type="submit" class="btn btn-primary" 
           >Download Modulbeschreibung</button
         >
+        </form>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"
           >Schliessen</button
         >

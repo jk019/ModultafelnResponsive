@@ -474,9 +474,11 @@ var app = (function (exports) {
     	let h51;
     	let t15;
     	let t16;
+    	let t17;
     	let div8;
+    	let form;
     	let button1;
-    	let t18;
+    	let t19;
     	let button2;
 
     	const block = {
@@ -515,77 +517,83 @@ var app = (function (exports) {
     			div7 = element("div");
     			h51 = element("h5");
     			h51.textContent = "Beschreibung des Moduls:";
-    			t15 = text("\r\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor\r\n        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim\r\n        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis\r\n        volutpat est velit egestas dui. Tristique senectus et netus et malesuada\r\n        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh\r\n        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor\r\n        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus\r\n        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum\r\n        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate\r\n        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis\r\n        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent\r\n        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus\r\n        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor\r\n        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque\r\n        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque\r\n        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus\r\n        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.\r\n        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh\r\n        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium\r\n        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat\r\n        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.\r\n        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus\r\n        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie\r\n        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc\r\n        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque\r\n        viverra justo nec ultrices.");
-    			t16 = space();
+    			t15 = space();
+    			t16 = text(/*description*/ ctx[4]);
+    			t17 = space();
     			div8 = element("div");
+    			form = element("form");
     			button1 = element("button");
     			button1.textContent = "Download Modulbeschreibung";
-    			t18 = space();
+    			t19 = space();
     			button2 = element("button");
     			button2.textContent = "Schliessen";
     			set_style(p, "--groupcolor", /*color*/ ctx[3]);
     			attr_dev(p, "class", "Modulgruppe svelte-mxgy1v");
-    			add_location(p, file$2, 11, 6, 300);
+    			add_location(p, file$2, 13, 6, 346);
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file$2, 10, 4, 275);
+    			add_location(div0, file$2, 12, 4, 321);
     			attr_dev(a, "class", "Modulname svelte-mxgy1v");
     			attr_dev(a, "id", "Modulname");
     			attr_dev(a, "data-toggle", "modal");
     			attr_dev(a, "data-target", "#exampleModalCenter");
-    			add_location(a, file$2, 14, 6, 408);
+    			add_location(a, file$2, 16, 6, 454);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file$2, 13, 4, 383);
+    			add_location(div1, file$2, 15, 4, 429);
     			attr_dev(span0, "class", "badge mt-auto svelte-mxgy1v");
     			set_style(span0, "--badgeBG", /*color*/ ctx[3]);
-    			add_location(span0, file$2, 23, 4, 666);
+    			add_location(span0, file$2, 25, 4, 712);
     			attr_dev(div2, "class", "card-body d-flex flex-column svelte-mxgy1v");
     			attr_dev(div2, "id", "ModulBody");
-    			add_location(div2, file$2, 9, 2, 212);
+    			add_location(div2, file$2, 11, 2, 258);
     			attr_dev(div3, "class", "card svelte-mxgy1v");
-    			add_location(div3, file$2, 7, 0, 107);
+    			add_location(div3, file$2, 9, 0, 153);
     			attr_dev(h50, "class", "modal-title");
     			attr_dev(h50, "id", "exampleModalLongTitle");
-    			add_location(h50, file$2, 40, 10, 1115);
+    			add_location(h50, file$2, 42, 10, 1161);
     			attr_dev(div4, "class", "col-6 p-0");
-    			add_location(div4, file$2, 39, 8, 1080);
+    			add_location(div4, file$2, 41, 8, 1126);
     			attr_dev(span1, "class", "badge svelte-mxgy1v");
     			set_style(span1, "--badgeBG", /*color*/ ctx[3]);
-    			add_location(span1, file$2, 43, 10, 1232);
+    			add_location(span1, file$2, 45, 10, 1278);
     			attr_dev(div5, "class", "col");
-    			add_location(div5, file$2, 42, 8, 1203);
+    			add_location(div5, file$2, 44, 8, 1249);
     			attr_dev(span2, "aria-hidden", "true");
-    			add_location(span2, file$2, 51, 10, 1466);
+    			add_location(span2, file$2, 53, 10, 1512);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "close");
     			attr_dev(button0, "data-dismiss", "modal");
     			attr_dev(button0, "aria-label", "Close");
-    			add_location(button0, file$2, 45, 8, 1324);
+    			add_location(button0, file$2, 47, 8, 1370);
     			attr_dev(div6, "class", "modal-header svelte-mxgy1v");
-    			add_location(div6, file$2, 38, 6, 1044);
-    			add_location(h51, file$2, 55, 8, 1580);
+    			add_location(div6, file$2, 40, 6, 1090);
+    			add_location(h51, file$2, 57, 8, 1626);
     			attr_dev(div7, "class", "modal-body svelte-mxgy1v");
-    			add_location(div7, file$2, 54, 6, 1546);
-    			attr_dev(button1, "type", "button");
+    			add_location(div7, file$2, 56, 6, 1592);
+    			attr_dev(button1, "type", "submit");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$2, 84, 8, 3842);
+    			add_location(button1, file$2, 62, 8, 1799);
+    			attr_dev(form, "action", /*url*/ ctx[5]);
+    			attr_dev(form, "method", "get");
+    			attr_dev(form, "target", "_blank");
+    			add_location(form, file$2, 61, 8, 1741);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-secondary");
     			attr_dev(button2, "data-dismiss", "modal");
-    			add_location(button2, file$2, 87, 8, 3955);
+    			add_location(button2, file$2, 66, 8, 1930);
     			attr_dev(div8, "class", "modal-footer");
-    			add_location(div8, file$2, 83, 6, 3806);
+    			add_location(div8, file$2, 60, 6, 1705);
     			attr_dev(div9, "class", "modal-content");
-    			add_location(div9, file$2, 37, 4, 1009);
+    			add_location(div9, file$2, 39, 4, 1055);
     			attr_dev(div10, "class", "modal-dialog modal-dialog-centered");
     			attr_dev(div10, "role", "document");
-    			add_location(div10, file$2, 36, 2, 939);
+    			add_location(div10, file$2, 38, 2, 985);
     			attr_dev(div11, "class", "modal fade");
     			attr_dev(div11, "id", "exampleModalCenter");
     			attr_dev(div11, "tabindex", "-1");
     			attr_dev(div11, "role", "dialog");
     			attr_dev(div11, "aria-labelledby", "exampleModalCenterTitle");
     			attr_dev(div11, "aria-hidden", "true");
-    			add_location(div11, file$2, 28, 0, 778);
+    			add_location(div11, file$2, 30, 0, 824);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -624,10 +632,12 @@ var app = (function (exports) {
     			append_dev(div9, div7);
     			append_dev(div7, h51);
     			append_dev(div7, t15);
-    			append_dev(div9, t16);
+    			append_dev(div7, t16);
+    			append_dev(div9, t17);
     			append_dev(div9, div8);
-    			append_dev(div8, button1);
-    			append_dev(div8, t18);
+    			append_dev(div8, form);
+    			append_dev(form, button1);
+    			append_dev(div8, t19);
     			append_dev(div8, button2);
     		},
     		p: function update(ctx, [dirty]) {
@@ -649,6 +659,12 @@ var app = (function (exports) {
 
     			if (dirty & /*color*/ 8) {
     				set_style(span1, "--badgeBG", /*color*/ ctx[3]);
+    			}
+
+    			if (dirty & /*description*/ 16) set_data_dev(t16, /*description*/ ctx[4]);
+
+    			if (dirty & /*url*/ 32) {
+    				attr_dev(form, "action", /*url*/ ctx[5]);
     			}
     		},
     		i: noop,
@@ -678,6 +694,8 @@ var app = (function (exports) {
     	let { gruppe } = $$props;
     	let { badge } = $$props;
     	let { color } = $$props;
+    	let { description } = $$props;
+    	let { url } = $$props;
 
     	$$self.$$.on_mount.push(function () {
     		if (name === undefined && !('name' in $$props || $$self.$$.bound[$$self.$$.props['name']])) {
@@ -695,9 +713,17 @@ var app = (function (exports) {
     		if (color === undefined && !('color' in $$props || $$self.$$.bound[$$self.$$.props['color']])) {
     			console.warn("<Modul> was created without expected prop 'color'");
     		}
+
+    		if (description === undefined && !('description' in $$props || $$self.$$.bound[$$self.$$.props['description']])) {
+    			console.warn("<Modul> was created without expected prop 'description'");
+    		}
+
+    		if (url === undefined && !('url' in $$props || $$self.$$.bound[$$self.$$.props['url']])) {
+    			console.warn("<Modul> was created without expected prop 'url'");
+    		}
     	});
 
-    	const writable_props = ['name', 'gruppe', 'badge', 'color'];
+    	const writable_props = ['name', 'gruppe', 'badge', 'color', 'description', 'url'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Modul> was created with unknown prop '${key}'`);
@@ -708,28 +734,47 @@ var app = (function (exports) {
     		if ('gruppe' in $$props) $$invalidate(1, gruppe = $$props.gruppe);
     		if ('badge' in $$props) $$invalidate(2, badge = $$props.badge);
     		if ('color' in $$props) $$invalidate(3, color = $$props.color);
+    		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+    		if ('url' in $$props) $$invalidate(5, url = $$props.url);
     	};
 
-    	$$self.$capture_state = () => ({ name, gruppe, badge, color });
+    	$$self.$capture_state = () => ({
+    		name,
+    		gruppe,
+    		badge,
+    		color,
+    		description,
+    		url
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('name' in $$props) $$invalidate(0, name = $$props.name);
     		if ('gruppe' in $$props) $$invalidate(1, gruppe = $$props.gruppe);
     		if ('badge' in $$props) $$invalidate(2, badge = $$props.badge);
     		if ('color' in $$props) $$invalidate(3, color = $$props.color);
+    		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+    		if ('url' in $$props) $$invalidate(5, url = $$props.url);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [name, gruppe, badge, color];
+    	return [name, gruppe, badge, color, description, url];
     }
 
     class Modul extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { name: 0, gruppe: 1, badge: 2, color: 3 });
+
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
+    			name: 0,
+    			gruppe: 1,
+    			badge: 2,
+    			color: 3,
+    			description: 4,
+    			url: 5
+    		});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -770,6 +815,22 @@ var app = (function (exports) {
     	set color(value) {
     		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get description() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set description(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get url() {
+    		throw new Error("<Modul>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set url(value) {
+    		throw new Error("<Modul>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src\Semester.svelte generated by Svelte v3.59.2 */
@@ -777,6 +838,7 @@ var app = (function (exports) {
     const file$1 = "src\\Semester.svelte";
 
     function create_fragment$1(ctx) {
+    	let div3;
     	let div2;
     	let div1;
     	let div0;
@@ -789,6 +851,7 @@ var app = (function (exports) {
 
     	const block = {
     		c: function create() {
+    			div3 = element("div");
     			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -800,25 +863,28 @@ var app = (function (exports) {
     			t4 = text(" ECTS");
     			attr_dev(div0, "id", "text");
     			attr_dev(div0, "class", "svelte-ouif6o");
-    			add_location(div0, file$1, 8, 6, 166);
+    			add_location(div0, file$1, 8, 6, 157);
+    			attr_dev(div1, "class", "row");
+    			add_location(div1, file$1, 7, 4, 132);
     			attr_dev(span, "class", "badgeTotal");
-    			add_location(span, file$1, 10, 4, 239);
-    			attr_dev(div1, "class", "card-body");
-    			add_location(div1, file$1, 6, 2, 103);
-    			attr_dev(div2, "class", "card svelte-ouif6o");
-    			add_location(div2, file$1, 5, 0, 81);
+    			add_location(span, file$1, 10, 4, 221);
+    			attr_dev(div2, "class", "card-body");
+    			add_location(div2, file$1, 6, 2, 103);
+    			attr_dev(div3, "class", "card svelte-ouif6o");
+    			add_location(div3, file$1, 5, 0, 81);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t0);
     			append_dev(div0, t1);
-    			append_dev(div1, t2);
-    			append_dev(div1, span);
+    			append_dev(div2, t2);
+    			append_dev(div2, span);
     			append_dev(span, t3);
     			append_dev(span, t4);
     		},
@@ -829,7 +895,7 @@ var app = (function (exports) {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(div3);
     		}
     	};
 
@@ -920,23 +986,23 @@ var app = (function (exports) {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i];
+    	child_ctx[2] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
+    	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[8] = list[i];
     	return child_ctx;
     }
 
-    // (420:12) {#each group.modules as module}
+    // (186:12) {#each group.modules as module}
     function create_each_block_2(ctx) {
     	let div;
     	let modul;
@@ -944,10 +1010,12 @@ var app = (function (exports) {
 
     	modul = new Modul({
     			props: {
-    				color: /*group*/ ctx[6].color,
-    				name: /*module*/ ctx[9].name,
-    				gruppe: /*group*/ ctx[6].group,
-    				badge: /*module*/ ctx[9].credits
+    				color: /*group*/ ctx[5].color,
+    				name: /*module*/ ctx[8].name,
+    				gruppe: /*group*/ ctx[5].group,
+    				badge: /*module*/ ctx[8].credits,
+    				description: /*module*/ ctx[8].description,
+    				url: /*module*/ ctx[8].url
     			},
     			$$inline: true
     		});
@@ -957,7 +1025,7 @@ var app = (function (exports) {
     			div = element("div");
     			create_component(modul.$$.fragment);
     			attr_dev(div, "class", "col-xl-6");
-    			add_location(div, file, 421, 14, 15307);
+    			add_location(div, file, 187, 14, 7216);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -984,19 +1052,19 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(420:12) {#each group.modules as module}",
+    		source: "(186:12) {#each group.modules as module}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (415:6) {#each semester.semesterModules as group}
+    // (181:6) {#each semester.semesterModules as group}
     function create_each_block_1(ctx) {
     	let div1;
     	let div0;
     	let current;
-    	let each_value_2 = /*group*/ ctx[6].modules;
+    	let each_value_2 = /*group*/ ctx[5].modules;
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
 
@@ -1018,10 +1086,10 @@ var app = (function (exports) {
     			}
 
     			attr_dev(div0, "class", "row");
-    			add_location(div0, file, 418, 10, 15181);
+    			add_location(div0, file, 184, 10, 7090);
     			attr_dev(div1, "class", "col-md");
-    			set_style(div1, "--groupBG", /*group*/ ctx[6].color + "70");
-    			add_location(div1, file, 416, 8, 15046);
+    			set_style(div1, "--groupBG", /*group*/ ctx[5].color + "70");
+    			add_location(div1, file, 182, 8, 6955);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1037,7 +1105,7 @@ var app = (function (exports) {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*all*/ 1) {
-    				each_value_2 = /*group*/ ctx[6].modules;
+    				each_value_2 = /*group*/ ctx[5].modules;
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -1092,14 +1160,14 @@ var app = (function (exports) {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(415:6) {#each semester.semesterModules as group}",
+    		source: "(181:6) {#each semester.semesterModules as group}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (405:2) {#each all as semester}
+    // (171:2) {#each all as semester}
     function create_each_block(ctx) {
     	let div1;
     	let div0;
@@ -1110,13 +1178,13 @@ var app = (function (exports) {
 
     	semester = new Semester({
     			props: {
-    				semesterNumber: /*semester*/ ctx[3].number,
-    				totalCredits: calculateTotalCredits(/*semester*/ ctx[3])
+    				semesterNumber: /*semester*/ ctx[2].number,
+    				totalCredits: calculateTotalCredits(/*semester*/ ctx[2])
     			},
     			$$inline: true
     		});
 
-    	let each_value_1 = /*semester*/ ctx[3].semesterModules;
+    	let each_value_1 = /*semester*/ ctx[2].semesterModules;
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -1141,9 +1209,9 @@ var app = (function (exports) {
 
     			t1 = space();
     			attr_dev(div0, "class", "col-md-auto");
-    			add_location(div0, file, 407, 6, 14775);
+    			add_location(div0, file, 173, 6, 6684);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file, 405, 4, 14663);
+    			add_location(div1, file, 171, 4, 6572);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1162,7 +1230,7 @@ var app = (function (exports) {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*all*/ 1) {
-    				each_value_1 = /*semester*/ ctx[3].semesterModules;
+    				each_value_1 = /*semester*/ ctx[2].semesterModules;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -1220,7 +1288,7 @@ var app = (function (exports) {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(405:2) {#each all as semester}",
+    		source: "(171:2) {#each all as semester}",
     		ctx
     	});
 
@@ -1270,7 +1338,7 @@ var app = (function (exports) {
     			h1.textContent = "Modultafel Bachelorstudiengang Wirtschaftsinformatik";
     			t1 = space();
     			h40 = element("h4");
-    			h40.textContent = "Business Infromation Systems, Vollzeit, ab Herbstsemster 2021";
+    			h40.textContent = "Business Information Systems, Vollzeit, ab Herbstsemester 2021";
     			t3 = space();
     			div1 = element("div");
     			img = element("img");
@@ -1295,33 +1363,33 @@ var app = (function (exports) {
     			div5 = element("div");
     			p1 = element("p");
     			p1.textContent = "Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option\r\n    \"Querformat\" aktiviert ist und die Seitenränder in den Seiteneigenschaften\r\n    auf 0 gesetzt sind.";
-    			attr_dev(h1, "class", "mainTitle svelte-jbqnbb");
-    			add_location(h1, file, 386, 4, 14091);
+    			attr_dev(h1, "class", "mainTitle svelte-1jnb6td");
+    			add_location(h1, file, 152, 4, 5999);
     			attr_dev(h40, "class", "mb-3 secondTitle");
-    			add_location(h40, file, 389, 4, 14190);
+    			add_location(h40, file, 155, 4, 6098);
     			attr_dev(div0, "class", "col");
-    			add_location(div0, file, 385, 2, 14068);
+    			add_location(div0, file, 151, 2, 5976);
     			if (!src_url_equal(img.src, img_src_value = "images/logoSML.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Logo SML");
     			attr_dev(img, "width", "100%");
-    			add_location(img, file, 394, 4, 14351);
-    			attr_dev(div1, "class", "col-2 svelte-jbqnbb");
+    			add_location(img, file, 160, 4, 6260);
+    			attr_dev(div1, "class", "col-2 svelte-1jnb6td");
     			attr_dev(div1, "id", "zhawSML");
-    			add_location(div1, file, 393, 2, 14313);
-    			attr_dev(div2, "class", "row test svelte-jbqnbb");
-    			add_location(div2, file, 384, 0, 14042);
+    			add_location(div1, file, 159, 2, 6222);
+    			attr_dev(div2, "class", "row test svelte-1jnb6td");
+    			add_location(div2, file, 150, 0, 5950);
     			attr_dev(h41, "class", "InfoText");
-    			add_location(h41, file, 398, 0, 14433);
+    			add_location(h41, file, 164, 0, 6342);
     			attr_dev(h42, "class", "InfoTextRot mb-4");
-    			add_location(h42, file, 401, 0, 14542);
+    			add_location(h42, file, 167, 0, 6451);
     			attr_dev(div3, "class", "custom-container");
-    			add_location(div3, file, 403, 0, 14600);
-    			add_location(p0, file, 438, 2, 15690);
+    			add_location(div3, file, 169, 0, 6509);
+    			add_location(p0, file, 206, 2, 7689);
     			attr_dev(div4, "class", "row mt-3 ml-2");
-    			add_location(div4, file, 437, 0, 15659);
-    			add_location(p1, file, 441, 2, 15790);
+    			add_location(div4, file, 205, 0, 7658);
+    			add_location(p1, file, 209, 2, 7789);
     			attr_dev(div5, "class", "row ml-2");
-    			add_location(div5, file, 440, 0, 15764);
+    			add_location(div5, file, 208, 0, 7763);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1446,239 +1514,6 @@ var app = (function (exports) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
 
-    	let vorlage = {
-    		usedModulegroups: [
-    			{
-    				name: "San Juan",
-    				count: 3,
-    				FarbeModulkaestchen: "#334771",
-    				Hintergrundfarbe: "#8f95b3",
-    				Schriftfarbe: "#FFFFFF",
-    				Reihenfolge: 1
-    			},
-    			{
-    				name: "Eastern Blue",
-    				count: 1,
-    				FarbeModulkaestchen: "#1e7cb8",
-    				Hintergrundfarbe: "#9db9dd",
-    				Schriftfarbe: "#000000",
-    				Reihenfolge: 2
-    			}
-    		],
-    		semesterArray: [
-    			[
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulkuerzel: "w.BA.XX.2BWL-WIN.XX",
-    					Modulbezeichnung: "Einführung BWL",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulkuerzel: "w.BA.XX.2WMWI.XX",
-    					Modulbezeichnung: "Wissenschaftliche Methoden der Wirtschaftsinformatik",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulkuerzel: "w.BA.XX.2WIN.XX",
-    					Modulbezeichnung: "Einführung Wirtschaftsinformatik",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "Eastern Blue",
-    					Modulkuerzel: "w.BA.XX.2SWEng.XX",
-    					Modulbezeichnung: "Software Engineering",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
-    					FarbeModulkaestchen: "#1e7cb8",
-    					Hintergrundfarbe: "#9db9dd",
-    					Schriftfarbe: "#000000"
-    				},
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "Pacific Blue",
-    					Modulkuerzel: "w.BA.XX.2Mathe1-WIN.XX",
-    					Modulbezeichnung: "Mathematik 1",
-    					ECTS: 3,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#00aebe",
-    					Hintergrundfarbe: "#a3d7e0",
-    					Schriftfarbe: "#000000"
-    				},
-    				{
-    					Semester: "1. Semester",
-    					Modulgruppe: "Half Baked",
-    					Modulkuerzel: "w.BA.XX.2BusE1.XX",
-    					Modulbezeichnung: "Business English 1",
-    					ECTS: 3,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
-    					FarbeModulkaestchen: "#90cec5",
-    					Hintergrundfarbe: "#cde8e2",
-    					Schriftfarbe: "#000000"
-    				}
-    			],
-    			[
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulkuerzel: "w.BA.XX.2FinAcc-WIN.XX",
-    					Modulbezeichnung: "Financial and Management Accounting",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulkuerzel: "w.BA.XX.2Komm-WIN.XX",
-    					Modulbezeichnung: "Kommunikation",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "Eastern Blue",
-    					Modulkuerzel: "w.BA.XX.2REng.XX",
-    					Modulbezeichnung: "Requirements Engineering",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
-    					FarbeModulkaestchen: "#1e7cb8",
-    					Hintergrundfarbe: "#9db9dd",
-    					Schriftfarbe: "#000000"
-    				},
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "Pacific Blue",
-    					Modulkuerzel: "w.BA.XX.2Mathe2-WIN.XX",
-    					Modulbezeichnung: "Mathematik 2",
-    					ECTS: 3,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#00aebe",
-    					Hintergrundfarbe: "#a3d7e0",
-    					Schriftfarbe: "#000000"
-    				},
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "Pacific Blue",
-    					Modulkuerzel: "w.BA.XX.2VWL-WIN.XX",
-    					Modulbezeichnung: "VWL",
-    					ECTS: 6,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
-    					FarbeModulkaestchen: "#00aebe",
-    					Hintergrundfarbe: "#a3d7e0",
-    					Schriftfarbe: "#000000"
-    				},
-    				{
-    					Semester: "2. Semester",
-    					Modulgruppe: "Half Baked",
-    					Modulkuerzel: "w.BA.XX.2BusE2.XX",
-    					Modulbezeichnung: "Business English 2",
-    					ECTS: 3,
-    					Link: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
-    					FarbeModulkaestchen: "#90cec5",
-    					Hintergrundfarbe: "#cde8e2",
-    					Schriftfarbe: "#000000"
-    				}
-    			],
-    			[
-    				{
-    					Semester: "3. Semester",
-    					Modulgruppe: "San Juan",
-    					Modulbezeichnung: "Wahlpflichtmodul 1",
-    					ECTS: 3,
-    					Wahlpflichtmodul: "Crisis Management: Action Planning & Directing\r\nData Protection and Governance\r\nDigital Transformation in Financial Services\r\nDigitalization and Law\r\nHC-Marketing und Competence Management\r\nM&A Integrationsmanagement\r\nMachine Learning: Eine anwendungsorientierte Einführung\r\nPython-Grundlagen & Anwendung in Data Science",
-    					FarbeModulkaestchen: "#334771",
-    					Hintergrundfarbe: "#8f95b3",
-    					Schriftfarbe: "#FFFFFF"
-    				},
-    				{
-    					Semester: "3. Semester",
-    					Modulgruppe: "Eastern Blue",
-    					Modulbezeichnung: "Wahlpflichtmodul 2",
-    					ECTS: 3,
-    					Wahlpflichtmodul: "Data Protection and Governance\r\r\nM&A Integrationsmanagement\r\r\nHC-Marketing und Competence Management",
-    					FarbeModulkaestchen: "#1e7cb8",
-    					Hintergrundfarbe: "#9db9dd",
-    					Schriftfarbe: "#000000"
-    				}
-    			]
-    		],
-    		wahlmodule: [
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Crisis Management: Action Planning & Directing",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Data Protection and Governance",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Digital Transformation in Financial Services",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Digitalization and Law",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "HC-Marketing und Competence Management",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "M&A Integrationsmanagement",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Machine Learning: Eine anwendungsorientierte Einführung",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Python-Grundlagen & Anwendung in Data Science",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Sportmarketing",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			},
-    			{
-    				Modulkürzel: "w.BA.XX.2DigLaw.XX",
-    				Modulbezeichnung: "Zertifizierung Projektmanagement",
-    				"Link zur Modulbeschreibung": "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/ModuleDescription_w.BA.XX.2DigLaw.XX.pdf"
-    			}
-    		]
-    	};
-
     	let all = [
     		{
     			number: "1",
@@ -1689,7 +1524,9 @@ var app = (function (exports) {
     					modules: [
     						{
     							name: "Software Engineering 1",
-    							credits: 6
+    							description: "description SE1",
+    							credits: 6,
+    							url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf"
     						}
     					]
     				},
@@ -1697,33 +1534,93 @@ var app = (function (exports) {
     					group: "Wirtschaft",
     					color: "#6799ca",
     					modules: [
-    						{ name: "Einführung BWL", credits: 6 },
+    						{
+    							name: "Einführung BWL",
+    							shortname: "short",
+    							is_elective: true,
+    							description: "other description",
+    							credits: 6,
+    							url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+    							wahlmodule: [
+    								{
+    									name: "Wahlmodul xy",
+    									description: "other description",
+    									url: "https://......."
+    								},
+    								{
+    									name: "Wahlmodul xy",
+    									description: "other description",
+    									url: "https://......."
+    								}
+    							]
+    						},
     						{
     							name: "Wissenschaftliches Schreiben",
+    							description: "other description",
     							credits: 6
     						},
-    						{ name: "Accounting", credits: 6 },
-    						{ name: "Accounting", credits: 6 },
-    						{ name: "Accounting", credits: 6 },
-    						{ name: "Accounting", credits: 6 }
+    						{
+    							name: "Accounting",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Accounting",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Accounting",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Accounting",
+    							description: "other description",
+    							credits: 6
+    						}
     					]
     				},
     				{
     					group: "Sonstige",
     					color: "#9db9dd",
     					modules: [
-    						{ name: "Mathematik", credits: 6 },
-    						{ name: "VWL 1", credits: 6 },
-    						{ name: "English C1*", credits: 6 }
+    						{
+    							name: "Mathematik",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "VWL 1",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "English C1*",
+    							description: "other description",
+    							credits: 6
+    						}
     					]
     				},
     				{
     					group: "Andere MG",
     					color: "#cfdbef",
     					modules: [
-    						{ name: "Mathematik", credits: 6 },
-    						{ name: "VWL 1", credits: 6 },
-    						{ name: "English C1*", credits: 6 }
+    						{
+    							name: "Mathematik",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "VWL 1",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "English C1*",
+    							description: "other description",
+    							credits: 6
+    						}
     					]
     				}
     			]
@@ -1737,6 +1634,7 @@ var app = (function (exports) {
     					modules: [
     						{
     							name: "Requirements Engineering",
+    							description: "other description",
     							credits: 6
     						}
     					]
@@ -1745,41 +1643,60 @@ var app = (function (exports) {
     					group: "Wirtschaft",
     					color: "#6799ca",
     					modules: [
-    						{ name: "Prozessmodellierung", credits: 6 },
     						{
-    							name: "Strategisches Management",
+    							name: "Prozessmodellierung",
+    							description: "other description",
     							credits: 6
     						},
-    						{ name: "Marketing", credits: 6 }
+    						{
+    							name: "Strategisches Management",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Marketing",
+    							description: "other description",
+    							credits: 6
+    						}
     					]
     				},
     				{
     					group: "Sonstige",
     					color: "#9db9dd",
     					modules: [
-    						{ name: "Wahlpflichtmodul", credits: 6 },
     						{
-    							name: "Business Intelligence",
+    							name: "Wahlpflichtmodul",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						}
     					]
@@ -1800,6 +1717,7 @@ var app = (function (exports) {
     					modules: [
     						{
     							name: "Requirements Engineering",
+    							description: "other description",
     							credits: 6
     						}
     					]
@@ -1808,41 +1726,60 @@ var app = (function (exports) {
     					group: "Wirtschaft",
     					color: "#6799ca",
     					modules: [
-    						{ name: "Prozessmodellierung", credits: 6 },
     						{
-    							name: "Strategisches Management",
+    							name: "Prozessmodellierung",
+    							description: "other description",
     							credits: 6
     						},
-    						{ name: "Marketing", credits: 6 }
+    						{
+    							name: "Strategisches Management",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Marketing",
+    							description: "other description",
+    							credits: 6
+    						}
     					]
     				},
     				{
     					group: "Sonstige",
     					color: "#9db9dd",
     					modules: [
-    						{ name: "Wahlpflichtmodul", credits: 6 },
     						{
-    							name: "Business Intelligence",
+    							name: "Wahlpflichtmodul",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						},
     						{
     							name: "Business Intelligence",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "Business Intelligence",
+    							description: "other description",
     							credits: 6
     						}
     					]
@@ -1851,9 +1788,21 @@ var app = (function (exports) {
     					group: "Andere MG",
     					color: "#cfdbef",
     					modules: [
-    						{ name: "English C1*", credits: 6 },
-    						{ name: "English C1*", credits: 6 },
-    						{ name: "English C1*", credits: 6 }
+    						{
+    							name: "English C1*",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "English C1*",
+    							description: "other description",
+    							credits: 6
+    						},
+    						{
+    							name: "English C1*",
+    							description: "other description",
+    							credits: 4
+    						}
     					]
     				}
     			]
@@ -1870,14 +1819,12 @@ var app = (function (exports) {
     	$$self.$capture_state = () => ({
     		Modul,
     		Semester,
-    		vorlage,
     		all,
     		calculateTotalCredits,
     		Modulgruppen
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('vorlage' in $$props) vorlage = $$props.vorlage;
     		if ('all' in $$props) $$invalidate(0, all = $$props.all);
     		if ('Modulgruppen' in $$props) Modulgruppen = $$props.Modulgruppen;
     	};
