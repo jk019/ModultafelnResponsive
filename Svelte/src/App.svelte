@@ -30,7 +30,7 @@
             },
             { name: "Wissenschaftliches Schreiben", description: "other description",credits: 6 },
             { name: "Accounting", description: "other description",credits: 6 },
-            { name: "Accounting", description: "other description",credits: 6 },
+            { name: "GPI", description: "other description", credits: 6, url:"https://abc.com/" },
             { name: "Accounting", description: "other description",credits: 6 },
             { name: "Accounting", description: "other description",credits: 6 },
           ],
