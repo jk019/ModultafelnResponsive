@@ -3,7 +3,7 @@
   import Semester from "./Semester.svelte";
   import Wahlmodul from "./Wahlmodul.svelte";
 
-  let allm = [
+  let all_oldmerge = [
     {
       number: "1",
       semesterModules: [
@@ -302,14 +302,16 @@
               url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
               wahlmodule: [
                 {
-                  name: "Wahlmodul xy",
-                  description: "other description",
-                  url: "https://.......",
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
                 },
                 {
-                  name: "Wahlmodul xy",
-                  description: "other description",
-                  url: "https://.......",
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
                 },
               ],
             },
