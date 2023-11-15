@@ -1,7 +1,7 @@
 <script>
   import Modul from "./Modul.svelte";
   import Semester from "./Semester.svelte";
-
+  import Wahlmodul from "./Wahlmodul.svelte";
 
   let all = [
     {
@@ -10,48 +10,107 @@
         {
           group: "Informatik",
           color: "#1e7cb8",
-          modules: [{ name: "Software Engineering 1", description: "description SE1", credits: 6 ,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf"}],
+          modules: [
+            {
+              name: "Software Engineering 1",
+              is_elective: false,
+              description: "description SE1",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+          ],
         },
         {
           group: "Wirtschaft",
           color: "#6799ca",
           modules: [
             {
-              name: "Einführung BWL",
+              name: "Wahlmodul mit Funktionalität",
               shortname: "short",
               is_elective: true,
               description: "other description",
               credits: 6,
               url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
               wahlmodule: [
-                { name: "Wahlmodul xy", description: "other description", url: "https://......." },
-                { name: "Wahlmodul xy", description: "other description", url: "https://......." },
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
               ],
             },
-            { name: "Wissenschaftliches Schreiben", description: "other description",credits: 6 },
-            { name: "Accounting", description: "other description",credits: 6 },
-            { name: "GPI", description: "other description", credits: 6, url:"https://abc.com/" },
-            { name: "Accounting", description: "other description",credits: 6 },
-            { name: "Accounting", description: "other description",credits: 6 },
+            {
+              name: "Wissenschaftliches Schreiben",
+              is_elective: false,
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Accounting",
+              is_elective: false,
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "GPI",
+              is_elective: false,
+              description: "other description",
+              credits: 6,
+              url: "https://abc.com/",
+            },
+            {
+              name: "Accounting",
+              is_elective: false,
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Accounting",
+              is_elective: false,
+              description: "other description",
+              credits: 6,
+            },
           ],
         },
         {
           group: "Sonstige",
           color: "#9db9dd",
           modules: [
-            { name: "Mathematik", description: "other description",credits: 6 },
-            { name: "VWL 1", description: "other description",credits: 6 },
-            { name: "English C1*", description: "other description",credits: 6 },
+            {
+              name: "Mathematik",
+              description: "other description",
+              credits: 6,
+            },
+            { name: "VWL 1", description: "other description", credits: 6 },
+            {
+              name: "English C1*",
+              description: "other description",
+              credits: 6,
+            },
           ],
         },
         {
           group: "Andere MG",
           color: "#cfdbef",
           modules: [
-            { name: "Mathematik", description: "other description",credits: 6 },
-            { name: "VWL 1", description: "other description",credits: 6 },
-            { name: "English C1*", description: "other description",credits: 6 },
+            {
+              name: "Mathematik",
+              description: "other description",
+              credits: 6,
+            },
+            { name: "VWL 1", description: "other description", credits: 6 },
+            {
+              name: "English C1*",
+              description: "other description",
+              credits: 6,
+            },
           ],
         },
       ],
@@ -62,28 +121,70 @@
         {
           group: "Informatik",
           color: "#1e7cb8",
-          modules: [{ name: "Requirements Engineering", description: "other description",credits: 6 }],
+          modules: [
+            {
+              name: "Requirements Engineering",
+              description: "other description",
+              credits: 6,
+            },
+          ],
         },
         {
           group: "Wirtschaft",
           color: "#6799ca",
           modules: [
-            { name: "Prozessmodellierung", description: "other description",credits: 6 },
-            { name: "Strategisches Management", description: "other description",credits: 6 },
-            { name: "Marketing", description: "other description",credits: 6 },
+            {
+              name: "Prozessmodellierung",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Strategisches Management",
+              description: "other description",
+              credits: 6,
+            },
+            { name: "Marketing", description: "other description", credits: 6 },
           ],
         },
         {
           group: "Sonstige",
           color: "#9db9dd",
           modules: [
-            { name: "Wahlpflichtmodul", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
+            {
+              name: "Wahlpflichtmodul",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
           ],
         },
         {
@@ -99,37 +200,91 @@
         {
           group: "Informatik",
           color: "#1e7cb8",
-          modules: [{ name: "Requirements Engineering", description: "other description",credits: 6 }],
+          modules: [
+            {
+              name: "Requirements Engineering",
+              description: "other description",
+              credits: 6,
+            },
+          ],
         },
         {
           group: "Wirtschaft",
           color: "#6799ca",
           modules: [
-            { name: "Prozessmodellierung", description: "other description",credits: 6 },
-            { name: "Strategisches Management", description: "other description",credits: 6 },
-            { name: "Marketing", description: "other description",credits: 6 },
+            {
+              name: "Prozessmodellierung",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Strategisches Management",
+              description: "other description",
+              credits: 6,
+            },
+            { name: "Marketing", description: "other description", credits: 6 },
           ],
         },
         {
           group: "Sonstige",
           color: "#9db9dd",
           modules: [
-            { name: "Wahlpflichtmodul", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
-            { name: "Business Intelligence", description: "other description",credits: 6 },
+            {
+              name: "Wahlpflichtmodul",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "Business Intelligence",
+              description: "other description",
+              credits: 6,
+            },
           ],
         },
         {
           group: "Andere MG",
           color: "#cfdbef",
           modules: [
-            { name: "English C1*", description: "other description",credits: 6 },
-            { name: "English C1*", description: "other description",credits: 6 },
-            { name: "English C1*", description: "other description",credits: 4 },
+            {
+              name: "English C1*",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "English C1*",
+              description: "other description",
+              credits: 6,
+            },
+            {
+              name: "English C1*",
+              description: "other description",
+              credits: 4,
+            },
           ],
         },
       ],
@@ -145,7 +300,6 @@
     });
     return totalCredits;
   }
-  let Modulgruppen = [];
 </script>
 
 <div class="row test">
@@ -186,14 +340,31 @@
             {#each group.modules as module}
               <!-- col-xl-6 statt col-sm-6 -->
               <div class="col-xl-6">
+
+
+                <!-- if Elective, then other logic-->
+                {#if module.is_elective == true}
+                  <Wahlmodul
+                    color={group.color}
+                    name={module.name}
+                    gruppe={group.group}
+                    badge={module.credits}
+                    description="jetzt ist es ein Wahlmodul"
+                    url={module.url}
+                    wahlmodule = {module.wahlmodule}
+                  />
+                {:else}
                 <Modul
                   color={group.color}
                   name={module.name}
                   gruppe={group.group}
                   badge={module.credits}
                   description={module.description}
-                  url = {module.url}
+                  url={module.url}
                 />
+                {/if}
+
+
               </div>
             {/each}
           </div>
