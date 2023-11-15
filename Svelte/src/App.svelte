@@ -3,7 +3,7 @@
   import Semester from "./Semester.svelte";
   import Wahlmodul from "./Wahlmodul.svelte";
 
-  let all = [
+  let allm = [
     {
       number: "1",
       semesterModules: [
@@ -121,13 +121,7 @@
         {
           group: "Informatik",
           color: "#1e7cb8",
-          modules: [
-            {
-              name: "Requirements Engineering",
-              description: "other description",
-              credits: 6,
-            },
-          ],
+          modules: [{ name: "Requirements Engineering", description: "other description",credits: 6 }],
         },
         {
           group: "Wirtschaft",
@@ -289,6 +283,189 @@
         },
       ],
     },
+  ]; 
+
+  let all = [
+    {
+      number: "1",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#8f95b3",
+          modules: [
+            {
+              name: "Einführung BWL",
+              shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul xy",
+                  description: "other description",
+                  url: "https://.......",
+                },
+                {
+                  name: "Wahlmodul xy",
+                  description: "other description",
+                  url: "https://.......",
+                },
+              ],
+            },
+            {
+              name: "Wissenschaftliche Methoden der Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WMWI.XX",
+              description: "Pretty bad",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
+            },
+            {
+              name: "Einführung Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#a3d7e0",
+          modules: [
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [
+            {
+              name: "Business English 1",
+              shortname: "w.BA.XX.2BusE1.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: "2",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#8f95b3",
+          modules: [
+            {
+              name: "Financial and Management Accounting",
+              shortname: "w.BA.XX.2FinAcc-WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
+            },
+            {
+              name: "Kommunikation",
+              shortname: "w.BA.XX.2Komm-WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Requirements Engineering",
+              shortname: "w.BA.XX.2REng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#a3d7e0",
+          modules: [
+            {
+              name: "Mathematik 2",
+              shortname: "w.BA.XX.2Mathe2-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
+            },
+            {
+              name: "VWL",
+              shortname: "w.BA.XX.2VWL-WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [
+            {
+              name: "Business English 2",
+              shortname: "w.BA.XX.2BusE2.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: "3",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#8f95b3",
+          modules: [
+            {
+              name: "Wahlpflichtmodul 1",
+              credits: 3,
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Wahlpflichtmodul 2",
+              credits: 3,
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#a3d7e0",
+          modules: [],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [],
+        },
+      ],
+    },
   ];
 
   function calculateTotalCredits(semester) {
@@ -357,6 +534,7 @@
                 <Modul
                   color={group.color}
                   name={module.name}
+                  shortname={module.shortname}
                   gruppe={group.group}
                   badge={module.credits}
                   description={module.description}
