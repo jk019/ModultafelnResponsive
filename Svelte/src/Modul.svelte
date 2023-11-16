@@ -188,7 +188,7 @@
     background-color: #ffffff;
     display: flex;
     justify-content: center;
-    padding: 0px 0px 5px 0px;
+    padding: 0px 0px 2px 0px;
     border: 0px;
   }
 
@@ -203,7 +203,6 @@
     font-weight: bold;
     font-size: 10px;
     color: #000000;
-    padding-bottom: 2px;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
     line-height: 1.1;
 
@@ -229,7 +228,7 @@
   }
 
   .badge {
-    padding: 5px;
+    padding: 3px;
   }
 
   #ModulCard {
@@ -277,33 +276,48 @@
 
   @media (min-width: 700px) {
     #ModulCard {
-      height: 95px;
+      height: 65px;
+    }
+    #Modulname {
+      font-size: 8px;
+    }
+    #ModulCardBadge {
+      font-size: 8px;
     }
   }
 
   @media (min-width: 815px) {
     #ModulCard {
-      height: 88px;
+      height: 65px;
+    }
+    #Modulname {
+      font-size: 8px;
     }
   }
 
   @media (min-width: 867px) {
     #ModulCard {
-      height: 75px;
+      height: 50px;
+    }
+    #Modulname {
+      font-size: 7px;
+    }
+    #ModulCardBadge {
+      font-size: 7px;
     }
   }
 
   @media (min-width: 1105px) {
     #ModulCard {
-      height: 94px;
+      height: 50px;
     }
   }
 
-  @media (min-width: 1250px) {
+  /* @media (min-width: 1250px) {
     #ModulCard {
-      height: 75px;
+      height: 50px;
     }
-  }
+  } */
 
   @media (min-width: 1600px) {
     #ModulCard {

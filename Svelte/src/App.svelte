@@ -690,6 +690,9 @@
     display: flex;
     justify-content: center;
     width: calc(100% / var(--module-columns));
+
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   #headerRow {
@@ -730,13 +733,13 @@
     }
   }
 
-  @media (min-width: 1105px) {
+  @media (min-width: 873px) {
     :root {
       --module-columns: 3;
     }
   }
 
-  @media (min-width: 1840px) {
+  @media (min-width: 1300px) {
     :root {
       --module-columns: 4;
     }
@@ -744,14 +747,14 @@
 
   /* ------- TEST (change font-size by different screen size ) ------- */
 
-  @media (max-width: 727px) {
+  @media (max-width: 740px) {
     #headerRow {
       justify-content: center;
       text-align: center;
     }
   }
 
-  @media (max-width: 727px) {
+  @media (max-width: 740px) {
     #headerColumn, .InfoText, .InfoTextRot {
       text-align: center;
     }
@@ -798,7 +801,7 @@
     .mainTitle {
       color: #000000;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 25px;
+      font-size: 20px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -807,10 +810,10 @@
   }
 
   @media (min-width: 1000px) {
-    .secondTitle, .InfoText, .InfoTextRot {
+    .secondTitle {
       /* color: #000000; */
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 20px;
+      font-size: 15px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -822,7 +825,7 @@
     .InfoText, .InfoTextRot {
       /* color: #000000; */
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 15px;
+      font-size: 12px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -832,13 +835,13 @@
 
   /* Media Queries ZHAW Logo */
 
-  @media (max-width: 727px) {
+  @media (max-width: 740px) {
     #zhawSmlLogo {
       display: none;
     }
   }
 
-  @media (min-width: 727px) {
+  @media (min-width: 741px) {
     #zhawSmlLogoBanner {
       display: none;
     }
@@ -850,15 +853,15 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 780px) {
     #zhawSmlLogo {
-      max-height: 63px;
+      max-height: 55px;
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 900px) {
     #zhawSmlLogo {
-      max-height: 76px;
+      max-height: 63px;
     }
   }
 
