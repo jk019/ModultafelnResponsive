@@ -121,7 +121,13 @@
         {
           group: "Informatik",
           color: "#1e7cb8",
-          modules: [{ name: "Requirements Engineering", description: "other description",credits: 6 }],
+          modules: [
+            {
+              name: "Requirements Engineering",
+              description: "other description",
+              credits: 6,
+            },
+          ],
         },
         {
           group: "Wirtschaft",
@@ -283,7 +289,7 @@
         },
       ],
     },
-  ]; 
+  ];
 
   let all = [
     {
@@ -291,11 +297,139 @@
       semesterModules: [
         {
           group: "San Juan",
-          color: "#8f95b3",
+          color: "#1e7cb8",
           modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wp.fma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+            {
+              name: "Wiss. Methoden der Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WMWI.XX",
+              description: "Pretty bad",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
+            },
             {
               name: "Einführung BWL",
               shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: false,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+            {
+              name: "Einführung Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
+            },
+            {
+              name: "Financial and Management Accounting",
+              shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: false,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [
+            {
+              name: "Business English 1",
+              shortname: "w.BA.XX.2BusE1.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+            },
+            {
+              name: "Business English 1",
+              shortname: "w.BA.XX.2BusE1.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: "2",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
               is_elective: true,
               description: "Not so nice",
               credits: 6,
@@ -316,7 +450,15 @@
               ],
             },
             {
-              name: "Wissenschaftliche Methoden der Wirtschaftsinformatik",
+              name: "Einführung BWL",
+              shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: false,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+            {
+              name: "Wiss. Methoden der Wirtschaftsinformatik",
               shortname: "w.BA.XX.2WMWI.XX",
               description: "Pretty bad",
               credits: 6,
@@ -332,7 +474,7 @@
         },
         {
           group: "Eastern Blue",
-          color: "#9db9dd",
+          color: "#6799ca",
           modules: [
             {
               name: "Software Engineering",
@@ -344,7 +486,7 @@
         },
         {
           group: "Pacific Blue",
-          color: "#a3d7e0",
+          color: "#9db9dd",
           modules: [
             {
               name: "Mathematik 1",
@@ -369,102 +511,92 @@
       ],
     },
     {
-      number: "2",
-      semesterModules: [
-        {
-          group: "San Juan",
-          color: "#8f95b3",
-          modules: [
-            {
-              name: "Financial and Management Accounting",
-              shortname: "w.BA.XX.2FinAcc-WIN.XX",
-              credits: 6,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2FinAcc-WIN.XX.pdf",
-            },
-            {
-              name: "Kommunikation",
-              shortname: "w.BA.XX.2Komm-WIN.XX",
-              credits: 6,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Komm-WIN.XX.pdf",
-            },
-          ],
-        },
-        {
-          group: "Eastern Blue",
-          color: "#9db9dd",
-          modules: [
-            {
-              name: "Requirements Engineering",
-              shortname: "w.BA.XX.2REng.XX",
-              credits: 6,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2REng.XX.pdf",
-            },
-          ],
-        },
-        {
-          group: "Pacific Blue",
-          color: "#a3d7e0",
-          modules: [
-            {
-              name: "Mathematik 2",
-              shortname: "w.BA.XX.2Mathe2-WIN.XX",
-              credits: 3,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe2-WIN.XX.pdf",
-            },
-            {
-              name: "VWL",
-              shortname: "w.BA.XX.2VWL-WIN.XX",
-              credits: 6,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2VWL-WIN.XX.pdf",
-            },
-          ],
-        },
-        {
-          group: "Half Baked",
-          color: "#cde8e2",
-          modules: [
-            {
-              name: "Business English 2",
-              shortname: "w.BA.XX.2BusE2.XX",
-              credits: 3,
-              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE2.XX.pdf",
-            },
-          ],
-        },
-      ],
-    },
-    {
       number: "3",
       semesterModules: [
         {
           group: "San Juan",
-          color: "#8f95b3",
+          color: "#1e7cb8",
           modules: [
             {
-              name: "Wahlpflichtmodul 1",
-              credits: 3,
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+            {
+              name: "Einführung BWL",
+              shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: false,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+            {
+              name: "Wiss. Methoden der Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WMWI.XX",
+              description: "Pretty bad",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WMWI.XX.pdf",
+            },
+            {
+              name: "Einführung Wirtschaftsinformatik",
+              shortname: "w.BA.XX.2WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2WIN.XX.pdf",
             },
           ],
         },
         {
           group: "Eastern Blue",
-          color: "#9db9dd",
+          color: "#6799ca",
           modules: [
             {
-              name: "Wahlpflichtmodul 2",
-              credits: 3,
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
             },
           ],
         },
         {
           group: "Pacific Blue",
-          color: "#a3d7e0",
-          modules: [],
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+          ],
         },
         {
           group: "Half Baked",
           color: "#cde8e2",
-          modules: [],
+          modules: [
+            {
+              name: "Business English 1",
+              shortname: "w.BA.XX.2BusE1.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+            },
+          ],
         },
       ],
     },
@@ -500,10 +632,12 @@
 </h4>
 <h4 class="InfoTextRot mb-4">Das ist ein Warntext</h4>
 
+<!-- -------- Start Modultafel -------- -->
+
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
-      <!-- col-md-auto statt col-sm / auto, damit die Semester nicht so breit sind-->
+      <!-- col-md-auto statt col-sm-auto, damit die Semester nicht so breit sind-->
       <div class="col-md-auto">
         <Semester
           semesterNumber={semester.number}
@@ -512,17 +646,13 @@
       </div>
 
       {#each semester.semesterModules as group}
-        <!-- col-md statt col-sm -->
-        <div class="col-md" style="--groupBG: {group.color}70">
+        <div class="col-sm" style="--groupBG: {group.color}70">
           <!--70 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
-              <!-- col-xl-6 statt col-sm-6 -->
-              <div class="col-xl-6">
-
-
+              <div id="CustomizedByTimo">
                 <!-- if Elective, then other logic-->
-                {#if module.is_elective == true}
+                <!-- {#if module.is_elective}
                   <Wahlmodul
                     color={group.color}
                     name={module.name}
@@ -532,19 +662,19 @@
                     url={module.url}
                     wahlmodule = {module.wahlmodule}
                   />
-                {:else}
+                {:else} -->
                 <Modul
                   color={group.color}
                   name={module.name}
                   shortname={module.shortname}
+                  is_elective={module.is_elective}
                   gruppe={group.group}
                   badge={module.credits}
                   description={module.description}
                   url={module.url}
+                  wahlmodule={module.wahlmodule}
                 />
-                {/if}
-
-
+                <!-- {/if} -->
               </div>
             {/each}
           </div>
@@ -575,6 +705,42 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  #CustomizedByTimo {
+    display: flex;
+    justify-content: center;
+    width: calc(100% / var(--module-columns));
+  }
+
+  :root {
+    --module-columns: 1;
+  }
+
+  /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
+
+  @media (max-width: 767px) {
+    .col-md-auto {
+      padding-right: 0px !important;
+    }
+  }
+
+  @media (min-width: 700px) {
+    :root {
+      --module-columns: 2;
+    }
+  }
+
+  @media (min-width: 1105px) {
+    :root {
+      --module-columns: 3;
+    }
+  }
+
+  @media (min-width: 1840px) {
+    :root {
+      --module-columns: 4;
+    }
   }
 
   /* ------- TEST (change font-size by different screen size ) ------- */
