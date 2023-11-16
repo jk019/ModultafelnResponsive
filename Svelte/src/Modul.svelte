@@ -55,14 +55,6 @@
             >{badge} ECTS</span
           >
         </div>
-        <!-- <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button> -->
         <div class="modulShortnameRow row">
           <div class="col-auto"><b>Modulkürzel: </b></div>
           <div class="col-auto Shortname text-right">
@@ -152,7 +144,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="row modalHeaderRow justify-content-between">
+            <div class="row modalHeaderRow">
               <h5 class="modal-title col-auto" id="exampleModalLongTitle">
                 {modul.name}
               </h5>
@@ -270,6 +262,7 @@
   .modalHeaderRow {
     margin-bottom: 5px;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
   }
 

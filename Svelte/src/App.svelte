@@ -1,7 +1,6 @@
 <script>
   import Modul from "./Modul.svelte";
   import Semester from "./Semester.svelte";
-  import Wahlmodul from "./Wahlmodul.svelte";
 
   let all_oldmerge = [
     {
@@ -300,7 +299,7 @@
           color: "#1e7cb8",
           modules: [
             {
-              name: "Wahlpflicht-Modul 1",
+              name: "Wahlpflicht Modul 1",
               shortname: "shortname_WPM1",
               is_elective: true,
               description: "Not so nice",
@@ -613,8 +612,13 @@
   }
 </script>
 
-<div class="row test">
-  <div class="col">
+<div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
+  <img id="zhawSmlLogoBannerContent" src="images/zhaw_sml_byline_white.png" alt="Logo SML"/>
+</div>
+
+
+<div class="row" id="headerRow">
+  <div class="col-auto" id="headerColumn">
     <h1 class="mainTitle">
       Modultafel Bachelorstudiengang Wirtschaftsinformatik
     </h1>
@@ -622,9 +626,9 @@
       Business Information Systems, Vollzeit, ab Herbstsemester 2021
     </h4>
   </div>
-  <div class="col-2" id="zhawSML">
-    <img src="images/logoSML.jpg" alt="Logo SML" width="100%" />
-  </div>
+  <!-- <div class="col-auto" id="zhawSML"> -->
+    <img class="col-auto" id="zhawSmlLogo" src="images/logoSML.jpg" alt="Logo SML"/>
+  <!-- </div> -->
 </div>
 
 <h4 class="InfoText">
@@ -637,7 +641,6 @@
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
-      <!-- col-md-auto statt col-sm-auto, damit die Semester nicht so breit sind-->
       <div class="col-md-auto">
         <Semester
           semesterNumber={semester.number}
@@ -651,18 +654,6 @@
           <div class="row">
             {#each group.modules as module}
               <div id="CustomizedByTimo">
-                <!-- if Elective, then other logic-->
-                <!-- {#if module.is_elective}
-                  <Wahlmodul
-                    color={group.color}
-                    name={module.name}
-                    gruppe={group.group}
-                    badge={module.credits}
-                    description="jetzt ist es ein Wahlmodul"
-                    url={module.url}
-                    wahlmodule = {module.wahlmodule}
-                  />
-                {:else} -->
                 <Modul
                   color={group.color}
                   name={module.name}
@@ -674,7 +665,6 @@
                   url={module.url}
                   wahlmodule={module.wahlmodule}
                 />
-                <!-- {/if} -->
               </div>
             {/each}
           </div>
@@ -696,28 +686,37 @@
 </div>
 
 <style>
-  #zhawSML {
-    display: flex;
-    justify-content: end;
-  }
-
-  .test {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   #CustomizedByTimo {
     display: flex;
     justify-content: center;
     width: calc(100% / var(--module-columns));
   }
 
+  #headerRow {
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #zhawSmlLogoBanner {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  #zhawSmlLogoBannerContent {
+    height: 75px;
+  }
+
+
+  /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
+
   :root {
     --module-columns: 1;
   }
-
-  /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
 
   @media (max-width: 767px) {
     .col-md-auto {
@@ -745,6 +744,20 @@
 
   /* ------- TEST (change font-size by different screen size ) ------- */
 
+  @media (max-width: 727px) {
+    #headerRow {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 727px) {
+    #headerColumn, .InfoText, .InfoTextRot {
+      text-align: center;
+    }
+  }
+
+
   @media (min-width: 0px) {
     .mainTitle {
       color: #000000;
@@ -757,15 +770,96 @@
     }
   }
 
-  @media (min-width: 575px) {
+  @media (min-width: 0px) {
+    .secondTitle {
+      /* color: #000000; */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 0px) {
+    .InfoText, .InfoTextRot {
+      /* color: #000000; */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1000px) {
     .mainTitle {
       color: #000000;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 30px;
+      font-size: 25px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       margin-bottom: 0px;
     }
   }
+
+  @media (min-width: 1000px) {
+    .secondTitle, .InfoText, .InfoTextRot {
+      /* color: #000000; */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .InfoText, .InfoTextRot {
+      /* color: #000000; */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  /* Media Queries ZHAW Logo */
+
+  @media (max-width: 727px) {
+    #zhawSmlLogo {
+      display: none;
+    }
+  }
+
+  @media (min-width: 727px) {
+    #zhawSmlLogoBanner {
+      display: none;
+    }
+  }
+
+  @media (min-width: 0px) {
+    #zhawSmlLogo {
+      max-height: 50px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #zhawSmlLogo {
+      max-height: 63px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    #zhawSmlLogo {
+      max-height: 76px;
+    }
+  }
+
 </style>
