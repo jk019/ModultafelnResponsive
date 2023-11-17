@@ -8,7 +8,7 @@
   export let url;
   export let wahlmodule;
 
-  // Generate a unique ID for the modal
+  // Generate unique IDs for the modals
   let modalId = `modal-${name.replace(/[\s.]+/g, "-")}`;
   let modalId2 = `modal-${name.replace(/[\s.]+/g, "-")}-2`;
 </script>
@@ -51,7 +51,7 @@
           <h5 class="modal-title col-auto" id="exampleModalLongTitle">
             {name}
           </h5>
-          <span class="badge col-auto w-auto" style="--badgeBG: {color}"
+          <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
             >{badge} ECTS</span
           >
         </div>
@@ -99,7 +99,7 @@
             <h5 class="modal-title col-auto" id="exampleModalLongTitle">
               {name}
             </h5>
-            <span class="badge col-auto w-auto" style="--badgeBG: {color}"
+            <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
               >{badge} ECTS</span
             >
           </div>
@@ -148,7 +148,7 @@
               <h5 class="modal-title col-auto" id="exampleModalLongTitle">
                 {modul.name}
               </h5>
-              <span class="badge col-auto w-auto" style="--badgeBG: {color}"
+              <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
                 >{badge} ECTS</span
               >
             </div>
@@ -211,11 +211,9 @@
     align-items: center;
   }
 
-  /* .Modulgruppe {
-    color: var(--groupcolor);
-    font-weight: 700;
-    margin-bottom: 5px;
-  } */
+  .badgeModal {
+    padding: 5px!important;
+  }
 
   #ModulCardBody {
     padding: 5px; /* Innenabstand für die Module */
@@ -300,16 +298,24 @@
       height: 50px;
     }
     #Modulname {
-      font-size: 7px;
+      font-size: 8px;
     }
     #ModulCardBadge {
-      font-size: 7px;
+      font-size: 8px;
     }
   }
 
-  @media (min-width: 1105px) {
+  @media (min-width: 1600px) {
     #ModulCard {
       height: 50px;
+    }
+    #Modulname {
+      font-size: 11px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+      margin-bottom: 5px;
+      padding: 5px;
     }
   }
 

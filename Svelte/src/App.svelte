@@ -290,7 +290,7 @@
     },
   ];
 
-  let all = [
+  let all_old = [
     {
       number: "1",
       semesterModules: [
@@ -601,6 +601,500 @@
     },
   ];
 
+  let all = [
+    {
+      number: "1",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wp.fma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+            {
+              name: "Einführung BWL",
+              shortname: "w.BA.XX.2BWL-WIN.XX",
+              is_elective: false,
+              description: "Not so nice",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Einführung W. Informatik Studium",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+            {
+              name: "Mathematik 1",
+              shortname: "w.BA.XX.2Mathe1-WIN.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2Mathe1-WIN.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [
+            {
+              name: "Business English 1",
+              shortname: "w.BA.XX.2BusE1.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BusE1.XX.pdf",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      number: "2",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [],
+        },
+      ],
+    },
+    {
+      number: "3",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [],
+        },
+      ],
+    },
+    {
+      number: "4",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [],
+        },
+      ],
+    },
+    {
+      number: "5",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [],
+        },
+      ],
+    },
+    {
+      number: "6",
+      semesterModules: [
+        {
+          group: "San Juan",
+          color: "#1e7cb8",
+          modules: [
+            {
+              name: "Wahlpflicht-Modul 1",
+              shortname: "shortname_WPM1",
+              is_elective: true,
+              description: "Not so nice",
+              credits: 6,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2BWL-WIN.XX.pdf",
+              wahlmodule: [
+                {
+                  name: "Wahlmodul a",
+                  shortname: "wpfma",
+                  description: "description a",
+                  url: "https://www.zhaw.ch/de/studium/waehrend-des-studiums/verpflegung/",
+                },
+                {
+                  name: "Wahlmodul b",
+                  shortname: "wpfmb",
+                  description: "description b",
+                  url: "https://ethz.ch/de.html",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          group: "Eastern Blue",
+          color: "#6799ca",
+          modules: [
+            {
+              name: "BA Thesis",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 15,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+        {
+          group: "Pacific Blue",
+          color: "#9db9dd",
+          modules: [],
+        },
+        {
+          group: "Half Baked",
+          color: "#cde8e2",
+          modules: [
+            {
+              name: "Software Engineering",
+              shortname: "w.BA.XX.2SWEng.XX",
+              credits: 3,
+              url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.2SWEng.XX.pdf",
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
   function calculateTotalCredits(semester) {
     let totalCredits = 0;
     semester.semesterModules.forEach((group) => {
@@ -610,12 +1104,53 @@
     });
     return totalCredits;
   }
+
+  // Logik für die Berechnung der maximalen Anzahl an Modulen pro Gruppe
+
+  // Initialisiere ein leeres Objekt, um die Anzahl der Module pro Gruppe zu speichern
+  let moduleCountPerGroup = {};
+  // Jetzt hast du ein Objekt mit Arrays, die die Anzahl der Module pro Gruppe für jedes Semester enthalten
+  let maxModuleCountPerGroup = {};
+
+  // Iteriere über alle Semester
+  all.forEach((semester) => {
+    // Iteriere über die Modulgruppen im aktuellen Semester
+    semester.semesterModules.forEach((group) => {
+      // Wenn die Gruppe noch nicht im Objekt ist, füge sie hinzu und setze die Anzahl auf 0
+      if (!moduleCountPerGroup[group.group]) {
+        moduleCountPerGroup[group.group] = [];
+      }
+
+      // Füge die Anzahl der Module in der aktuellen Gruppe zum Array hinzu
+      moduleCountPerGroup[group.group].push(group.modules.length);
+    });
+  });
+
+  // Iteriere über das Objekt und finde die höchste Anzahl von Modulen pro Gruppe
+
+  for (let group in moduleCountPerGroup) {
+    maxModuleCountPerGroup[group] = Math.max(...moduleCountPerGroup[group]);
+  }
+
+  // Gib die höchste Anzahl pro Gruppe aus
+  console.log(maxModuleCountPerGroup);
+
+  function getMaxModuleCount(groupName) {
+    return maxModuleCountPerGroup[groupName] || 1; // Fallback auf 1, wenn die Gruppe nicht vorhanden ist
+  }
+
+  function calculateWidth(maxModuleCount) {
+    return `calc(100% / ${maxModuleCount})`;
+  }
 </script>
 
 <div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
-  <img id="zhawSmlLogoBannerContent" src="images/zhaw_sml_byline_white.png" alt="Logo SML"/>
+  <img
+    id="zhawSmlLogoBannerContent"
+    src="images/zhaw_sml_byline_white.png"
+    alt="Logo SML"
+  />
 </div>
-
 
 <div class="row" id="headerRow">
   <div class="col-auto" id="headerColumn">
@@ -627,7 +1162,12 @@
     </h4>
   </div>
   <!-- <div class="col-auto" id="zhawSML"> -->
-    <img class="col-auto" id="zhawSmlLogo" src="images/logoSML.jpg" alt="Logo SML"/>
+  <img
+    class="col-auto"
+    id="zhawSmlLogo"
+    src="images/logoSML.jpg"
+    alt="Logo SML"
+  />
   <!-- </div> -->
 </div>
 
@@ -649,7 +1189,7 @@
       </div>
 
       {#each semester.semesterModules as group}
-        <div class="col-sm" style="--groupBG: {group.color}70">
+        <div class="col-sm test" style="--groupBG: {group.color}70">
           <!--70 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
@@ -666,6 +1206,22 @@
                   wahlmodule={module.wahlmodule}
                 />
               </div>
+
+              <!-- {#if typeof getMaxModuleCount(group.group) !== "undefined"}
+                <divclass=" col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}">
+                  <Modul
+                    color={group.color}
+                    name={module.name}
+                    shortname={module.shortname}
+                    is_elective={module.is_elective}
+                    gruppe={group.group}
+                    badge={module.credits}
+                    description={module.description}
+                    url={module.url}
+                    wahlmodule={module.wahlmodule}
+                  />
+                </divclass=>
+              {/if} -->
             {/each}
           </div>
         </div>
@@ -714,7 +1270,6 @@
     height: 75px;
   }
 
-
   /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
 
   :root {
@@ -745,6 +1300,14 @@
     }
   }
 
+  /* ---- Media Queries ModulCard ---- */
+
+  @media (min-width: 1600px) {
+    #CustomizedByTimo {
+      padding-left: 10px;
+    }
+  }
+
   /* ------- TEST (change font-size by different screen size ) ------- */
 
   @media (max-width: 740px) {
@@ -755,12 +1318,13 @@
   }
 
   @media (max-width: 740px) {
-    #headerColumn, .InfoText, .InfoTextRot {
+    #headerColumn,
+    .InfoText,
+    .InfoTextRot {
       text-align: center;
     }
   }
 
-
   @media (min-width: 0px) {
     .mainTitle {
       color: #000000;
@@ -775,7 +1339,6 @@
 
   @media (min-width: 0px) {
     .secondTitle {
-      /* color: #000000; */
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 15px;
       font-style: normal;
@@ -786,8 +1349,8 @@
   }
 
   @media (min-width: 0px) {
-    .InfoText, .InfoTextRot {
-      /* color: #000000; */
+    .InfoText,
+    .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 12px;
       font-style: normal;
@@ -811,7 +1374,6 @@
 
   @media (min-width: 1000px) {
     .secondTitle {
-      /* color: #000000; */
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 15px;
       font-style: normal;
@@ -822,10 +1384,45 @@
   }
 
   @media (min-width: 1000px) {
-    .InfoText, .InfoTextRot {
-      /* color: #000000; */
+    .InfoText,
+    .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .mainTitle {
+      color: #000000;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .secondTitle {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .InfoText,
+    .InfoTextRot {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -864,5 +1461,4 @@
       max-height: 63px;
     }
   }
-
 </style>

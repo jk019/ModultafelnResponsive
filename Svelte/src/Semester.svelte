@@ -3,31 +3,82 @@
   export let semesterNumber;
 </script>
 
-<div class="card" id="semesterCard">
-  <div class="card-body" id="semesterCardBody">
+<div class="card" id="SemesterCard">
+  <div class="card-body" id="SemesterCardBody">
     <div class="row mb-1">
-      <div id="semesterName">Semester {semesterNumber}</div>
+      <div id="SemesterName">Semester {semesterNumber}</div>
     </div>
     <span id="semesterBadgeTotal">{totalCredits} ECTS</span>
   </div>
 </div>
 
 <style>
-  #semesterName {
+  #SemesterName {
     font-weight: 700;
     font-size: 14px;
     color: #0064a6;
   }
 
-  #semesterCard {
+  #SemesterCard {
     margin-bottom: 10px;
     margin-top: 10px;
     align-items: center;
   }
 
-  #semesterCardBody {
+  #SemesterCardBody {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* #semesterBadgeTotal {
+    margin-top: auto;
+  } */
+
+  @media (min-width: 700px) {
+    #SemesterCard {
+      height: 65px;
+    }
+    #SemesterName {
+      font-size: 8px;
+    }
+    #semesterBadgeTotal {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 815px) {
+    #SemesterCard {
+      height: 65px;
+    }
+    #SemesterName {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 867px) {
+    #SemesterCard {
+      height: 50px;
+    }
+    #SemesterName {
+      font-size: 9px;
+    }
+    #semesterBadgeTotal {
+      font-size: 7px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    #SemesterCard {
+      height: 75px;
+    }
+    #SemesterName {
+      font-size: 13px;
+    }
+    #semesterBadgeTotal {
+      font-size: 11px;
+    }
   }
 </style>
