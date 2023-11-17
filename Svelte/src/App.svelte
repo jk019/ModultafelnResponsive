@@ -679,7 +679,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [
             {
               name: "Business English 1",
@@ -759,7 +759,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [],
         },
       ],
@@ -832,7 +832,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [],
         },
       ],
@@ -934,7 +934,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [],
         },
       ],
@@ -1014,7 +1014,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [],
         },
       ],
@@ -1081,7 +1081,7 @@
         },
         {
           group: "Half Baked",
-          color: "#cde8e2",
+          color: "#67c0b5",
           modules: [
             {
               name: "Software Engineering",
@@ -1105,7 +1105,7 @@
     return totalCredits;
   }
 
-  // Logik für die Berechnung der maximalen Anzahl an Modulen pro Gruppe
+  // <------------------------------- Logik für die Berechnung der maximalen Anzahl an Modulen pro Gruppe ------------------------------------------------->
 
   // Initialisiere ein leeres Objekt, um die Anzahl der Module pro Gruppe zu speichern
   let moduleCountPerGroup = {};
@@ -1136,12 +1136,13 @@
   console.log(maxModuleCountPerGroup);
 
   function getMaxModuleCount(groupName) {
+    console.log(maxModuleCountPerGroup[groupName]);
     return maxModuleCountPerGroup[groupName] || 1; // Fallback auf 1, wenn die Gruppe nicht vorhanden ist
   }
 
-  function calculateWidth(maxModuleCount) {
+  /* function calculateWidth(maxModuleCount) {
     return `calc(100% / ${maxModuleCount})`;
-  }
+  } */
 </script>
 
 <div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
@@ -1161,14 +1162,12 @@
       Business Information Systems, Vollzeit, ab Herbstsemester 2021
     </h4>
   </div>
-  <!-- <div class="col-auto" id="zhawSML"> -->
   <img
     class="col-auto"
     id="zhawSmlLogo"
     src="images/logoSML.jpg"
     alt="Logo SML"
   />
-  <!-- </div> -->
 </div>
 
 <h4 class="InfoText">
@@ -1189,7 +1188,8 @@
       </div>
 
       {#each semester.semesterModules as group}
-        <div class="col-sm test" style="--groupBG: {group.color}70">
+        <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
+        <div class="col-sm" style="--groupBG: {group.color}50">
           <!--70 stands for the opacity of the background color-->
           <div class="row">
             {#each group.modules as module}
@@ -1208,20 +1208,20 @@
               </div>
 
               <!-- {#if typeof getMaxModuleCount(group.group) !== "undefined"}
-                <divclass=" col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}">
-                  <Modul
-                    color={group.color}
-                    name={module.name}
-                    shortname={module.shortname}
-                    is_elective={module.is_elective}
-                    gruppe={group.group}
-                    badge={module.credits}
-                    description={module.description}
-                    url={module.url}
-                    wahlmodule={module.wahlmodule}
-                  />
-                </divclass=>
-              {/if} -->
+                  <div class=" col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}">
+                    <Modul
+                      color={group.color}
+                      name={module.name}
+                      shortname={module.shortname}
+                      is_elective={module.is_elective}
+                      gruppe={group.group}
+                      badge={module.credits}
+                      description={module.description}
+                      url={module.url}
+                      wahlmodule={module.wahlmodule}
+                    />
+                  </div>
+                {/if} -->
             {/each}
           </div>
         </div>
