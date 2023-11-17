@@ -51,8 +51,9 @@
           <h5 class="modal-title col-auto" id="exampleModalLongTitle">
             {name}
           </h5>
-          <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
-            >{badge} ECTS</span
+          <span
+            class="badge col-auto w-auto badgeModal"
+            style="--badgeBG: {color}">{badge} ECTS</span
           >
         </div>
         <div class="modulShortnameRow row">
@@ -99,8 +100,9 @@
             <h5 class="modal-title col-auto" id="exampleModalLongTitle">
               {name}
             </h5>
-            <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
-              >{badge} ECTS</span
+            <span
+              class="badge col-auto w-auto badgeModal"
+              style="--badgeBG: {color}">{badge} ECTS</span
             >
           </div>
         </div>
@@ -148,8 +150,9 @@
               <h5 class="modal-title col-auto" id="exampleModalLongTitle">
                 {modul.name}
               </h5>
-              <span class="badge col-auto w-auto badgeModal" style="--badgeBG: {color}"
-                >{badge} ECTS</span
+              <span
+                class="badge col-auto w-auto badgeModal"
+                style="--badgeBG: {color}">{badge} ECTS</span
               >
             </div>
             <div class="modulShortnameRow row">
@@ -212,7 +215,7 @@
   }
 
   .badgeModal {
-    padding: 5px!important;
+    padding: 5px !important;
   }
 
   #ModulCardBody {
@@ -272,7 +275,19 @@
     color: #000000;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 0px) {
+    #ModulCard {
+      height: 63px;
+    }
+    #Modulname {
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+    }
+  }
+
+  /* @media (min-width: 768px) {
     #ModulCard {
       height: 65px;
     }
@@ -282,26 +297,54 @@
     #ModulCardBadge {
       font-size: 8px;
     }
-  }
+  } */
 
-  @media (min-width: 815px) {
+  @media (min-width: 768px) {
     #ModulCard {
       height: 65px;
     }
     #Modulname {
-      font-size: 8px;
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+      margin-bottom: 5px;
     }
   }
 
   @media (min-width: 867px) {
     #ModulCard {
-      height: 50px;
+      height: 55px;
+    }
+    #Modulname {
+      font-size: 9px;
+    }
+    #ModulCardBadge {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 873px) {
+    #ModulCard {
+      height: 65px;
     }
     #Modulname {
       font-size: 8px;
     }
     #ModulCardBadge {
       font-size: 8px;
+    }
+  }
+
+   @media (min-width: 1000px) {
+    #ModulCard {
+      height: 70px;
+    }
+    #Modulname {
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
     }
   }
 

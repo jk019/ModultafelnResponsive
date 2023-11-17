@@ -37,7 +37,19 @@
     margin-top: auto;
   } */
 
-  @media (min-width: 700px) {
+  @media (min-width: 0px) {
+    #SemesterCard {
+      height: 65px;
+    }
+    #SemesterName {
+      font-size: 14px;
+    }
+    #semesterBadgeTotal {
+      font-size: 11px;
+    }
+  }
+
+  @media (min-width: 768px) {
     #SemesterCard {
       height: 65px;
     }
@@ -54,6 +66,9 @@
       height: 65px;
     }
     #SemesterName {
+      font-size: 10px;
+    }
+    #semesterBadgeTotal {
       font-size: 8px;
     }
   }
@@ -63,7 +78,7 @@
       height: 50px;
     }
     #SemesterName {
-      font-size: 9px;
+      font-size: 8px;
     }
     #semesterBadgeTotal {
       font-size: 7px;

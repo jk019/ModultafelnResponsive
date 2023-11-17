@@ -1310,14 +1310,14 @@
 
   /* ------- TEST (change font-size by different screen size ) ------- */
 
-  @media (max-width: 740px) {
+  @media (max-width: 768px) {
     #headerRow {
       justify-content: center;
       text-align: center;
     }
   }
 
-  @media (max-width: 740px) {
+  @media (max-width: 768px) {
     #headerColumn,
     .InfoText,
     .InfoTextRot {
@@ -1432,13 +1432,13 @@
 
   /* Media Queries ZHAW Logo */
 
-  @media (max-width: 740px) {
+  @media (max-width: 767px) {
     #zhawSmlLogo {
       display: none;
     }
   }
 
-  @media (min-width: 741px) {
+  @media (min-width: 768px) {
     #zhawSmlLogoBanner {
       display: none;
     }
