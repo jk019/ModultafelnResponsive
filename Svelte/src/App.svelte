@@ -1230,10 +1230,10 @@
   {/each}
 </div>
 
-<div class="row mt-3 ml-2">
+<div class="row mt-3 footerRow">
   <p>* = Dieses Modul wird in englischer Sprache durchgeführt.</p>
 </div>
-<div class="row ml-2">
+<div class="row footerRow">
   <p>
     Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option
     "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften
@@ -1255,6 +1255,8 @@
     margin-bottom: 5px;
     align-items: center;
     justify-content: space-between;
+    padding-left: 5px;
+    width: 100%;
   }
 
   #zhawSmlLogoBanner {
@@ -1268,6 +1270,11 @@
 
   #zhawSmlLogoBannerContent {
     height: 75px;
+  }
+
+  .footerRow {
+    width: 100%;
+    margin-left: 8px;
   }
 
   /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */

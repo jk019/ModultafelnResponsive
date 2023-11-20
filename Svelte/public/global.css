@@ -139,6 +139,8 @@ button:focus {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  padding-left: 5px;
 }
 
 .InfoText {
@@ -148,6 +150,8 @@ button:focus {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  padding-left: 5px;
 }
 
 .col-sm, .col-md, .col-lg, .col-xl {
