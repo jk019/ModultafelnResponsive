@@ -1,223 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    ${head}
-    <style>
-            ${css},
-            html,
-      body {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
 
-      body {
-        color: #333;
-        margin: 0;
-        padding: 8px;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-      }
+<head>
+  ${head}
+  <style>
+    ${css},
+    html,
+    body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
 
-      a {
-        color: rgb(0, 100, 200);
-        text-decoration: none;
-      }
+    body {
+      color: #333;
+      margin: 0;
+      padding: 8px;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
 
-      a:hover {
-        text-decoration: underline;
-      }
+    a {
+      color: rgb(0, 100, 200);
+      text-decoration: none;
+    }
 
-      a:visited {
-        color: rgb(0, 80, 160);
-      }
+    a:hover {
+      text-decoration: underline;
+    }
 
-      label {
-        display: block;
-      }
+    a:visited {
+      color: rgb(0, 80, 160);
+    }
 
-      input,
-      button,
-      select,
-      textarea {
-        font-family: inherit;
-        font-size: inherit;
-        -webkit-padding: 0.4em 0;
-        padding: 0.4em;
-        margin: 0 0 0.5em 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 2px;
-      }
+    label {
+      display: block;
+    }
 
-      input:disabled {
-        color: #ccc;
-      }
+    input,
+    button,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+      -webkit-padding: 0.4em 0;
+      padding: 0.4em;
+      margin: 0 0 0.5em 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
 
-      button {
-        color: #333;
-        background-color: #f4f4f4;
-        outline: none;
-      }
+    input:disabled {
+      color: #ccc;
+    }
 
-      button:disabled {
-        color: #999;
-      }
+    button {
+      color: #333;
+      background-color: #f4f4f4;
+      outline: none;
+    }
 
-      button:not(:disabled):active {
-        background-color: #ddd;
-      }
+    button:disabled {
+      color: #999;
+    }
 
-      button:focus {
-        border-color: #666;
-      }
+    button:not(:disabled):active {
+      background-color: #ddd;
+    }
 
-      .card {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
+    button:focus {
+      border-color: #666;
+    }
 
-        border-radius: 8px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #fff;
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
 
-        /* 2dp — Elevation */
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-          0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
-      }
+      border-radius: 8px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
 
-      .cardM {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
+      /* 2dp — Elevation */
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+    }
 
-        border-radius: 8px;
-        background: #fff;
+    .cardM {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
 
-        /* 2dp — Elevation */
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-          0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+      border-radius: 8px;
+      background: #fff;
 
-        padding: 5%;
-      }
+      /* 2dp — Elevation */
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
 
-      .Modulgruppe {
-        color: #00a6df;
+      padding: 5%;
+    }
 
-        /* Overline / Roboto Medium */
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 16px; /* 160% */
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-      }
+    .Modulgruppe {
+      color: #00a6df;
 
-      .badge {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        border-radius: 4px;
-        background: var(--badgeBG);
-      }
+      /* Overline / Roboto Medium */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      /* 160% */
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
 
-      .badgeTotal {
-        padding: 3px 7px;
-        flex-direction: column;
-        align-items: left;
-        border-radius: 4px;
-        background: #0064a6;
-        color: whitesmoke;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: bold;
-        font-size: smaller;
-      }
+    .badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      border-radius: 4px;
+      background: var(--badgeBG);
+    }
 
-      .InfoTextRot {
-        color: #f00;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-      }
+    #semesterBadgeTotal {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #0064a6;
+      color: whitesmoke;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      font-size: 13px;
 
-      .InfoText {
-        color: #000000;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-      }
+      display: inline-block;
+      justify-content: center;
+      align-self: center;
+    }
 
-      .col-sm, .col-md, .col-lg, .col-xl {
-        background-color: var(--groupBG);
-      }
+    .InfoTextRot {
+      color: #f00;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
 
-      /* .mainTitle {
-        color: #000000;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin-bottom: 0px;
-      } */
+    .InfoText {
+      color: #000000;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
 
-      .custom-container{
-        max-width: 97%; /* Hier kannst du die gewünschte Breite in Pixeln oder einem anderen Wert festlegen */
-        margin: 0 auto; /* Dies zentriert den Container auf der Seite */
-      }
-    </style>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    .col-sm,
+    .col-md,
+    .col-lg,
+    .col-xl {
+      background-color: var(--groupBG);
+      padding-left: 0px;
+      padding-bottom: 10px;
+    }
 
-    <title>Svelte app</title>
+    .col-md-auto {
+      padding-left: 0 !important;
+    }
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/build/bundle.css" />
+    /* .mainTitle {
+  color: #000000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0px;
+} */
 
-    <script defer src="/build/bundle.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    .custom-container {
+      max-width: 97%;
+      /* Hier kannst du die gewünschte Breite in Pixeln oder einem anderen Wert festlegen */
+      margin: 0 auto;
+      /* Dies zentriert den Container auf der Seite */
+    }
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <!-- Link zum Bootstrap-CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+  <title>Svelte app</title>
 
-    <!-- Link zum Bootstrap-JavaScript (Popper und jQuery werden ebenfalls benötigt) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </head>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/global.css" />
+  <link rel="stylesheet" href="/build/bundle.css" />
 
-  <body>
-    ${html}
-    <script>
+  <script defer src="/build/bundle.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-      ${js}
+  <!-- Link zum Bootstrap-CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
-      new ${App.html}({
-      	target: document.body,
-        props: ${props},
-      	hydrate: true,
+  <!-- Link zum Bootstrap-JavaScript (Popper und jQuery werden ebenfalls benötigt) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  ${html}
+  <script>
+
+      ${ js }
+
+    new ${ App.html } ({
+      target: document.body,
+      props: ${ props },
+    hydrate: true,
       });
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
