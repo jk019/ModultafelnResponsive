@@ -1,34 +1,44 @@
 <script>
   export let name;
-  export let gruppe;
+  export let shortname;
+  export let is_elective; // Boolean
   export let badge;
   export let color;
+  export let description;
+  export let url;
+  export let wahlmodule;
+
+  // Generate unique IDs for the modals
+  let modalId = `modal-${name.replace(/[\s.]+/g, "-")}`;
+  let modalId2 = `modal-${name.replace(/[\s.]+/g, "-")}-2`;
 </script>
 
-<div class="card">
-  <!-- <img src="images/image.png" class="card-img-top" width="300" alt="" /> -->
-  <div class="card-body d-flex flex-column" id="ModulBody">
-    <div class="row">
-      <p style="--groupcolor: {color}" class="Modulgruppe">{gruppe}</p>
-    </div>
-    <div class="row">
-      <a
-        class="Modulname"
-        id="Modulname"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
+<div class="card flex-fill" id="ModulCard">
+  <div class="card-body" id="ModulCardBody">
+    {#if !is_elective}
+      <a id="Modulname" data-toggle="modal" data-target={`#${modalId}`}
         >{name}
       </a>
-    </div>
+    {:else}
+      <div class="row">
+        <a id="Modulname" data-toggle="modal" data-target={`#${modalId2}`}
+          >{name}
+        </a>
+      </div>
+    {/if}
     <!-- Jeweils eine eigene row erstellt, damit die Elemente untereinander sind -->
-    <span class="badge mt-auto" style="--badgeBG: {color}">{badge} ECTS</span>
+  </div>
+  <div class="card-footer" id="ModulCardFooter">
+    <span class="badge" id="ModulCardBadge" style="--badgeBG: {color}"
+      >{badge} ECTS</span
+    >
   </div>
 </div>
 
 <!-- Modal -->
 <div
   class="modal fade"
-  id="exampleModalCenter"
+  id={modalId}
   tabindex="-1"
   role="dialog"
   aria-labelledby="exampleModalCenterTitle"
@@ -37,54 +47,33 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="col-6 p-0">
-          <h5 class="modal-title" id="exampleModalLongTitle">{name}</h5>
+        <div class="row modalHeaderRow justify-content-between">
+          <h5 class="modal-title col-auto" id="exampleModalLongTitle">
+            {name}
+          </h5>
+          <span
+            class="badge col-auto w-auto badgeModal"
+            style="--badgeBG: {color}">{badge} ECTS</span
+          >
         </div>
-        <div class="col">
-          <span class="badge" style="--badgeBG: {color}">{badge} ECTS</span>
+        <div class="modulShortnameRow row">
+          <div class="col-auto"><b>Modulkürzel: </b></div>
+          <div class="col-auto Shortname text-right">
+            {shortname}
+          </div>
         </div>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
+
       <div class="modal-body">
         <h5>Beschreibung des Moduls:</h5>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim
-        tortor at. Nec ultrices dui sapien eget mi proin sed. Lacus vel facilisis
-        volutpat est velit egestas dui. Tristique senectus et netus et malesuada
-        fames. Egestas sed sed risus pretium quam vulputate. Semper feugiat nibh
-        sed pulvinar proin gravida hendrerit lectus a. Eros donec ac odio tempor
-        orci dapibus ultrices in iaculis. Ut sem viverra aliquet eget sit amet tellus
-        cras adipiscing. Hendrerit gravida rutrum quisque non. Ut lectus arcu bibendum
-        at varius vel pharetra vel. Elit duis tristique sollicitudin nibh. Vulputate
-        ut pharetra sit amet aliquam id diam maecenas. Nibh nisl condimentum id venenatis
-        a condimentum vitae sapien pellentesque. Integer eget aliquet nibh praesent
-        tristique magna sit amet purus. Ultrices vitae auctor eu augue ut lectus
-        arcu bibendum at. Vulputate dignissim suspendisse in est. Amet porttitor
-        eget dolor morbi non. Dui ut ornare lectus sit amet est placerat in. In pellentesque
-        massa placerat duis ultricies lacus sed turpis. Sagittis orci a scelerisque
-        purus semper eget duis at tellus. Parturient montes nascetur ridiculus mus
-        mauris vitae ultricies leo. Odio aenean sed adipiscing diam donec adipiscing.
-        Vel turpis nunc eget lorem dolor sed. Arcu cursus euismod quis viverra nibh
-        cras pulvinar. Pellentesque eu tincidunt tortor aliquam nulla facilisi. Pretium
-        nibh ipsum consequat nisl vel pretium. Quisque sagittis purus sit amet volutpat
-        consequat mauris nunc congue. Enim nunc faucibus a pellentesque sit amet.
-        Eget arcu dictum varius duis at consectetur lorem donec. Aliquam faucibus
-        purus in massa tempor nec feugiat. Eu lobortis elementum nibh tellus molestie
-        nunc non blandit. Non quam lacus suspendisse faucibus interdum. Enim nunc
-        faucibus a pellentesque sit amet porttitor eget. Mattis rhoncus urna neque
-        viverra justo nec ultrices.
+        {description}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"
-          >Download Modulbeschreibung</button
-        >
+        <form action={url} method="get" target="_blank">
+          <button type="submit" class="btn btn-primary"
+            >Download Modulbeschreibung</button
+          >
+        </form>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"
           >Schliessen</button
         >
@@ -93,43 +82,307 @@
   </div>
 </div>
 
+<!--  MODAL - if is_elective -->
+
+{#if is_elective}
+  <div
+    class="modal fade"
+    id={modalId2}
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row justify-content-between modalHeaderRow">
+            <h5 class="modal-title col-auto" id="exampleModalLongTitle">
+              {name}
+            </h5>
+            <span
+              class="badge col-auto w-auto badgeModal"
+              style="--badgeBG: {color}">{badge} ECTS</span
+            >
+          </div>
+        </div>
+        <div class="modal-body">
+          <h5>Verfügbare Module:</h5>
+          <ul>
+            {#each wahlmodule as modul}
+              <li>
+                <a
+                  id="wahlpflichtmodulLink"
+                  data-toggle="modal"
+                  data-dismiss="modal"
+                  data-target={`#${modul.shortname.replace(/\./g, "-")}`}
+                  >{modul.name}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            >Schliessen</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal in the Modal-->
+
+  {#each wahlmodule as modul}
+    <div
+      class="modal fade"
+      id={modul.shortname.replace(/\./g, "-")}
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="row modalHeaderRow">
+              <h5 class="modal-title col-auto" id="exampleModalLongTitle">
+                {modul.name}
+              </h5>
+              <span
+                class="badge col-auto w-auto badgeModal"
+                style="--badgeBG: {color}">{badge} ECTS</span
+              >
+            </div>
+            <div class="modulShortnameRow row">
+              <div class="col-auto"><b>Modulkürzel: </b></div>
+              <div class="col-auto Shortname text-right">
+                {modul.shortname}
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <h5>Beschreibung des Moduls:</h5>
+            {modul.description}
+          </div>
+          <div class="modal-footer">
+            <form action={modul.url} method="get" target="_blank">
+              <button type="submit" class="btn btn-primary"
+                >Download Modulbeschreibung</button
+              >
+            </form>
+            <button
+              data-target={`#${modalId2}`}
+              data-toggle="modal"
+              data-dismiss="modal"
+              class="btn btn-secondary"
+              >Zurück
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/each}
+{/if}
+
 <style>
+  #ModulCardFooter {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 2px 0px;
+    border: 0px;
+  }
+
+  #ModulCardBadge {
+    margin-top: auto;
+    display: inline-block;
+    align-self: center;
+    font-size: 10px;
+  }
+
   #Modulname {
     font-weight: bold;
     font-size: 10px;
     color: #000000;
-    padding-bottom: 2px;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
+    line-height: 1.1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .Modulgruppe {
-    color: var(--groupcolor);
-    font-weight: 700;
-    margin-bottom: 5px;
+  .badgeModal {
+    padding: 5px !important;
   }
 
-  #ModulBody {
-    padding: 10px; /* Innenabstand für die Module */
+  #ModulCardBody {
+    padding: 5px; /* Innenabstand für die Module */
     border: 1px solid #ccc; /* Rahmen um die Module */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0px;
   }
 
   .badge {
-    padding: 5px;
+    padding: 3px;
   }
 
-  .card {
-    min-height: 99px;
-    margin-top: 15px;
-    margin-bottom: 10px;
+  #ModulCard {
+    margin-top: 10px;
   }
-  .modal-header {
-    display: flex;
-    align-items: center;
-  }
+
+  /* ----- Modal ----- */
 
   .modal-body {
     height: 60vh;
     overflow-y: auto;
+  }
+
+  .modulShortnameRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .modalHeaderRow {
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .Shortname {
+    padding-right: 0px;
+  }
+
+  #wahlpflichtmodulLink {
+    font-size: medium;
+    color: #000000;
+  }
+
+  @media (min-width: 0px) {
+    #ModulCard {
+      height: 63px;
+    }
+    #Modulname {
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+    }
+  }
+
+  /* @media (min-width: 768px) {
+    #ModulCard {
+      height: 65px;
+    }
+    #Modulname {
+      font-size: 8px;
+    }
+    #ModulCardBadge {
+      font-size: 8px;
+    }
+  } */
+
+  @media (min-width: 768px) {
+    #ModulCard {
+      height: 65px;
+    }
+    #Modulname {
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (min-width: 867px) {
+    #ModulCard {
+      height: 55px;
+    }
+    #Modulname {
+      font-size: 9px;
+    }
+    #ModulCardBadge {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 873px) {
+    #ModulCard {
+      height: 65px;
+    }
+    #Modulname {
+      font-size: 8px;
+    }
+    #ModulCardBadge {
+      font-size: 8px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    #ModulCard {
+      height: 70px;
+    }
+    #Modulname {
+      font-size: 10px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    #ModulCard {
+      height: 50px;
+    }
+    #Modulname {
+      font-size: 11px;
+    }
+    #ModulCardBadge {
+      font-size: 10px;
+      margin-bottom: 5px;
+      padding: 5px;
+    }
+  }
+
+  /* @media (min-width: 1250px) {
+    #ModulCard {
+      height: 50px;
+    }
+  } */
+
+  @media (min-width: 1600px) {
+    #ModulCard {
+      height: 75px;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    #ModulCard {
+      height: 65px;
+    }
+  }
+
+  @media (min-width: 1840px) {
+    #ModulCard {
+      height: 75px;
+    }
   }
 </style>

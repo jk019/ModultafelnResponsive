@@ -13,11 +13,53 @@
     });
     return totalCredits;
   }
-  let Modulgruppen = [];
+
+  // <------------------------------- Logik für die Berechnung der maximalen Anzahl an Modulen pro Gruppe ------------------------------------------------->
+
+  // Initialisiere ein leeres Objekt, um die Anzahl der Module pro Gruppe zu speichern
+  let moduleCountPerGroup = {};
+  // Jetzt hast du ein Objekt mit Arrays, die die Anzahl der Module pro Gruppe für jedes Semester enthalten
+  let maxModuleCountPerGroup = {};
+
+  // Iteriere über alle Semester
+  all.forEach((semester) => {
+    // Iteriere über die Modulgruppen im aktuellen Semester
+    semester.semesterModules.forEach((group) => {
+      // Wenn die Gruppe noch nicht im Objekt ist, füge sie hinzu und setze die Anzahl auf 0
+      if (!moduleCountPerGroup[group.group]) {
+        moduleCountPerGroup[group.group] = [];
+      }
+
+      // Füge die Anzahl der Module in der aktuellen Gruppe zum Array hinzu
+      moduleCountPerGroup[group.group].push(group.modules.length);
+    });
+  });
+
+  // Iteriere über das Objekt und finde die höchste Anzahl von Modulen pro Gruppe
+
+  for (let group in moduleCountPerGroup) {
+    maxModuleCountPerGroup[group] = Math.max(...moduleCountPerGroup[group]);
+  }
+
+  // Gib die höchste Anzahl pro Gruppe aus
+  console.log(maxModuleCountPerGroup);
+
+  function getMaxModuleCount(groupName) {
+    console.log(maxModuleCountPerGroup[groupName]);
+    return maxModuleCountPerGroup[groupName] || 1; // Fallback auf 1, wenn die Gruppe nicht vorhanden ist
+  }
+
+  /* function calculateWidth(maxModuleCount) {
+    return `calc(100% / ${maxModuleCount})`;
+  } */
 </script>
 
-<div class="row test">
-  <div class="col">
+<div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
+  <img id="zhawSmlLogoBannerContent" src="images/zhaw_sml_byline_white.png" alt="Logo SML" />
+</div>
+
+<div class="row" id="headerRow">
+  <div class="col-auto" id="headerColumn">
     <h1 class="mainTitle">
       Modultafel Bachelorstudiengang Wirtschaftsinformatik
     </h1>
@@ -25,9 +67,7 @@
       Business Information Systems, Vollzeit, ab Herbstsemester 2021
     </h4>
   </div>
-  <div class="col-2" id="zhawSML">
-    <img src="images/logoSML.jpg" alt="Logo SML" width="100%" />
-  </div>
+  <img class="col-auto" id="zhawSmlLogo" src="images/logoSML.jpg" alt="Logo SML" />
 </div>
 
 <h4 class="InfoText">
@@ -35,32 +75,42 @@
 </h4>
 <h4 class="InfoTextRot mb-4">Das ist ein Warntext</h4>
 
+<!-- -------- Start Modultafel -------- -->
+
 <div class="custom-container">
   {#each all as semester}
   <div class="row">
-    <!-- col-md-auto statt col-sm / auto, damit die Semester nicht so breit sind-->
     <div class="col-md-auto">
-      <Semester
-        semesterNumber="{semester.number}"
-        totalCredits="{calculateTotalCredits(semester)}"
-      />
+      <Semester semesterNumber={semester.number} totalCredits={calculateTotalCredits(semester)} />
     </div>
 
     {#each semester.semesterModules as group}
-    <!-- col-md statt col-sm -->
-    <div class="col-md" style="--groupBG: {group.color}70">
+    <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
+    <div class="col-sm" style="--groupBG: {group.color}50">
       <!--70 stands for the opacity of the background color-->
       <div class="row">
         {#each group.modules as module}
-        <!-- col-xl-6 statt col-sm-6 -->
-        <div class="col-xl-6">
-          <Modul
-            color="{group.color}"
-            name="{module.name}"
-            gruppe="{group.group}"
-            badge="{module.credits}"
-          />
+        <div id="CustomizedByTimo">
+          <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
+            gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
+            wahlmodule={module.wahlmodule} />
         </div>
+
+        <!-- {#if typeof getMaxModuleCount(group.group) !== "undefined"}
+                  <div class=" col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}">
+                    <Modul
+                      color={group.color}
+                      name={module.name}
+                      shortname={module.shortname}
+                      is_elective={module.is_elective}
+                      gruppe={group.group}
+                      badge={module.credits}
+                      description={module.description}
+                      url={module.url}
+                      wahlmodule={module.wahlmodule}
+                    />
+                  </div>
+                {/if} -->
         {/each}
       </div>
     </div>
@@ -81,18 +131,89 @@
 </div>
 
 <style>
-  #zhawSML {
+  #CustomizedByTimo {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    width: calc(100% / var(--module-columns));
+
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
-  .test {
-    display: flex;
-    justify-content: space-between;
+  #headerRow {
+    margin-bottom: 5px;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  #zhawSmlLogoBanner {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  #zhawSmlLogoBannerContent {
+    height: 75px;
+  }
+
+  /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
+
+  :root {
+    --module-columns: 1;
+  }
+
+  @media (max-width: 767px) {
+    .col-md-auto {
+      padding-right: 0px !important;
+    }
+  }
+
+  @media (min-width: 700px) {
+    :root {
+      --module-columns: 2;
+    }
+  }
+
+  @media (min-width: 873px) {
+    :root {
+      --module-columns: 3;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    :root {
+      --module-columns: 4;
+    }
+  }
+
+  /* ---- Media Queries ModulCard ---- */
+
+  @media (min-width: 1600px) {
+    #CustomizedByTimo {
+      padding-left: 10px;
+    }
   }
 
   /* ------- TEST (change font-size by different screen size ) ------- */
+
+  @media (max-width: 768px) {
+    #headerRow {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    #headerColumn,
+    .InfoText,
+    .InfoTextRot {
+      text-align: center;
+    }
+  }
 
   @media (min-width: 0px) {
     .mainTitle {
@@ -106,7 +227,67 @@
     }
   }
 
-  @media (min-width: 575px) {
+  @media (min-width: 0px) {
+    .secondTitle {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 0px) {
+
+    .InfoText,
+    .InfoTextRot {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .mainTitle {
+      color: #000000;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .secondTitle {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+
+    .InfoText,
+    .InfoTextRot {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1600px) {
     .mainTitle {
       color: #000000;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -116,5 +297,248 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+  }
+
+  @media (min-width: 1600px) {
+    .secondTitle {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+
+    .InfoText,
+    .InfoTextRot {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 0px;
+    }
+  }
+
+  /* Media Queries ZHAW Logo */
+
+  @media (max-width: 767px) {
+    #zhawSmlLogo {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #zhawSmlLogoBanner {
+      display: none;
+    }
+  }
+
+  @media (min-width: 0px) {
+    #zhawSmlLogo {
+      max-height: 50px;
+    }
+  }
+
+  @media (min-width: 780px) {
+    #zhawSmlLogo {
+      max-height: 55px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    #zhawSmlLogo {
+      max-height: 63px;
+    }
+  }
+
+
+
+  /* ---------------------- global.css ---------------------- */
+
+  html,
+  body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    color: #333;
+    margin: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+
+  a {
+    color: rgb(0, 100, 200);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: rgb(0, 80, 160);
+  }
+
+  label {
+    display: block;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+  input:disabled {
+    color: #ccc;
+  }
+
+  button {
+    color: #333;
+    background-color: #f4f4f4;
+    outline: none;
+  }
+
+  button:disabled {
+    color: #999;
+  }
+
+  button:not(:disabled):active {
+    background-color: #ddd;
+  }
+
+  button:focus {
+    border-color: #666;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    border-radius: 8px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+
+    /* 2dp — Elevation */
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+      0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  }
+
+  .cardM {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    border-radius: 8px;
+    background: #fff;
+
+    /* 2dp — Elevation */
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+      0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+
+    padding: 5%;
+  }
+
+  .Modulgruppe {
+    color: #00a6df;
+
+    /* Overline / Roboto Medium */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    /* 160% */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(--badgeBG);
+  }
+
+  #semesterBadgeTotal {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #0064a6;
+    color: whitesmoke;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+
+    display: inline-block;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .InfoTextRot {
+    color: #f00;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .InfoText {
+    color: #000000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .col-sm,
+  .col-md,
+  .col-lg,
+  .col-xl {
+    background-color: var(--groupBG);
+    padding-left: 0px;
+    padding-bottom: 10px;
+  }
+
+  .col-md-auto {
+    padding-left: 0 !important;
+  }
+
+  /* .mainTitle {
+  color: #000000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0px;
+} */
+
+  .custom-container {
+    max-width: 97%;
+    /* Hier kannst du die gewünschte Breite in Pixeln oder einem anderen Wert festlegen */
+    margin: 0 auto;
+    /* Dies zentriert den Container auf der Seite */
   }
 </style>
