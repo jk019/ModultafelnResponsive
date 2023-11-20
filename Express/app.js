@@ -57,7 +57,6 @@ app.post("/upload", function (req, res) {
   excelFile.mv(uploadPath, async function (err) {
     if (err) return res.status(500).send(err);
 
-    // TODO: change logic to be truly variable
     const workbook = xlsx.readFile(uploadPath); // parse excel file
     const sheetNames = workbook.SheetNames;
 
@@ -67,6 +66,10 @@ app.post("/upload", function (req, res) {
 
     // Create a map for easy access to settings by Modulgruppe.
     const settingsMap = new Map(settings.map((s) => [s.Modulgruppe, s]));
+
+    const electiveModulesMap = new Map(
+      wahlmodule.map((m) => [m.Modulkuerzel, m])
+    );
 
     modules.forEach((module) => {
       // Access the settings for the module's Modulgruppe directly from the map.
@@ -85,9 +88,6 @@ app.post("/upload", function (req, res) {
       }
       semesterMap.get(currentSemester).push(module);
     });
-
-    // Now convert the semesterMap to an array, if needed
-    let semesterArray = Array.from(semesterMap.values());
 
     // Create a map for usedModulegroups to ensure uniqueness and ease of update.
     let usedModulegroupsMap = new Map();
@@ -114,33 +114,56 @@ app.post("/upload", function (req, res) {
       });
     });
 
-    // Now convert the usedModulegroupsMap to an array
-    let usedModulegroups = Array.from(usedModulegroupsMap.values());
-
     function transformModulesForSemester(
       modulesInSemester,
       usedModulegroupsMap
     ) {
-      // We will first group modules by their Modulgruppe.
+      // Initialize the groupsMap with all module groups, even if they have no modules.
       const groupsMap = new Map();
-      modulesInSemester.forEach((module) => {
-        if (!groupsMap.has(module.Modulgruppe)) {
-          groupsMap.set(module.Modulgruppe, {
-            group: module.Modulgruppe,
-            color: usedModulegroupsMap.get(module.Modulgruppe).Hintergrundfarbe,
-            modules: [],
-          });
-        }
-        groupsMap.get(module.Modulgruppe).modules.push({
-          name: module.Modulbezeichnung,
-          shortname: module.Modulkuerzel,
-          description: module.Modulbeschreibung,
-          credits: module.ECTS,
-          url: module.Link,
+      usedModulegroupsMap.forEach((group, groupName) => {
+        groupsMap.set(groupName, {
+          group: groupName,
+          color: group.Hintergrundfarbe,
+          modules: [],
         });
       });
 
-      // Now convert the map to the array format required by the frontend.
+      // Populate the groupsMap with modules
+      modulesInSemester.forEach((module) => {
+        const moduleGroupEntry = groupsMap.get(module.Modulgruppe);
+        if (moduleGroupEntry) {
+          // Set is_elective property
+          module.is_elective = !!module.Wahlpflichtmodul;
+
+          // If the module is elective, process and attach elective modules
+          let electiveModules = [];
+          if (module.is_elective) {
+            const electiveShortnames = module.Wahlpflichtmodul.split(",");
+            electiveModules = electiveShortnames.map((shortname) => {
+              const electiveModule = electiveModulesMap.get(shortname);
+              return {
+                name: electiveModule.Modulbezeichnung,
+                shortname: electiveModule.Modulkuerzel,
+                description: electiveModule.Beschreibung,
+                url: electiveModule.Link,
+              };
+            });
+          }
+
+          // Push the module into the group
+          moduleGroupEntry.modules.push({
+            name: module.Modulbezeichnung,
+            shortname: module.Modulkuerzel,
+            description: module.Modulbeschreibung,
+            credits: module.ECTS,
+            url: module.Link,
+            is_elective: module.is_elective,
+            wahlmodule: electiveModules,
+          });
+        }
+      });
+
+      // Convert the map to the array format required by the frontend
       return Array.from(groupsMap.values());
     }
 
