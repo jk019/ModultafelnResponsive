@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   ${head}
   <style>
-    ${css},
+    ${css}
+
     html,
     body {
       position: relative;
@@ -147,6 +148,8 @@
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+
+      padding-left: 5px;
     }
 
     .InfoText {
@@ -156,6 +159,8 @@
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+
+      padding-left: 5px;
     }
 
     .col-sm,
@@ -214,11 +219,11 @@
   ${html}
   <script>
 
-      ${ js }
+      ${js}
 
-    new ${ App.html } ({
+    new ${App.html} ({
       target: document.body,
-      props: ${ props },
+      props: ${props},
     hydrate: true,
       });
   </script>
