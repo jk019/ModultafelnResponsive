@@ -154,7 +154,7 @@ button:focus {
   padding-left: 5px;
 }
 
-.col-sm, .col-md, .col-lg, .col-xl {
+.col-sm, .col-sm-auto, .col-sm-1, .col-sm-7, .col-sm-2, .col-sm-3, .col-md, .col-lg, .col-xl {
   background-color: var(--groupBG);
   padding-left: 0px;
   padding-bottom: 10px;
