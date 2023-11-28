@@ -86,43 +86,43 @@
 
     {#each semester.semesterModules as group}
     <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
-    <div class="col-sm" style="--groupBG: {group.color}50">
+    {#if getMaxModuleCount(group.group) < 4} <div class="col-sm-{getMaxModuleCount(group.group)}"
+      style="--groupBG: {group.color}50">
       <!--70 stands for the opacity of the background color-->
       <div class="row">
         {#each group.modules as module}
-        <div id="CustomizedByTimo">
+        <div class="col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}" id="CustomizedByTimo">
           <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
             gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
             wahlmodule={module.wahlmodule} />
         </div>
-
-        <!-- {#if typeof getMaxModuleCount(group.group) !== "undefined"}
-                  <div class=" col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}">
-                    <Modul
-                      color={group.color}
-                      name={module.name}
-                      shortname={module.shortname}
-                      is_elective={module.is_elective}
-                      gruppe={group.group}
-                      badge={module.credits}
-                      description={module.description}
-                      url={module.url}
-                      wahlmodule={module.wahlmodule}
-                    />
-                  </div>
-                {/if} -->
         {/each}
       </div>
-    </div>
-    {/each}
   </div>
+  {:else}
+  <div class="col-sm-3" style="--groupBG: {group.color}50">
+    <!--70 stands for the opacity of the background color-->
+    <div class="row">
+      {#each group.modules as module}
+      <div class="col-md-4" id="CustomizedByTimo">
+        <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
+          gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
+          wahlmodule={module.wahlmodule} />
+      </div>
+      {/each}
+    </div>
+  </div>
+  {/if}
+
   {/each}
 </div>
+{/each}
+</div>
 
-<div class="row mt-3 ml-2">
+<div class="row mt-3 footerRow">
   <p>* = Dieses Modul wird in englischer Sprache durchgeführt.</p>
 </div>
-<div class="row ml-2">
+<div class="row footerRow">
   <p>
     Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option
     "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften
@@ -144,6 +144,8 @@
     margin-bottom: 5px;
     align-items: center;
     justify-content: space-between;
+    padding-left: 5px;
+    width: 100%;
   }
 
   #zhawSmlLogoBanner {
@@ -157,6 +159,11 @@
 
   #zhawSmlLogoBannerContent {
     height: 75px;
+  }
+
+  .footerRow {
+    width: 100%;
+    margin-left: 8px;
   }
 
   /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
@@ -194,6 +201,7 @@
   @media (min-width: 1600px) {
     #CustomizedByTimo {
       padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
