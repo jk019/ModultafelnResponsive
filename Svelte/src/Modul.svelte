@@ -9,8 +9,8 @@
   export let wahlmodule;
 
   // Generate unique IDs for the modals
-  let modalId = `modal-${shortname.replace(/[\s.]+/g, "-")}`;
-  let modalId2 = `modal-${shortname.replace(/[\s.]+/g, "-")}-2`;
+  let modalId = `modal-${name.replace(/[\s.]+/g, "-")}`;
+  let modalId2 = `modal-${name.replace(/[\s.]+/g, "-")}-2`;
 </script>
 
 <div class="card flex-fill" id="ModulCard">
