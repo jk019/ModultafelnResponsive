@@ -144,8 +144,7 @@ button:focus {
 
 .custom-container{
   max-width: 97%;
-  margin-left: 15px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 
 .row {
