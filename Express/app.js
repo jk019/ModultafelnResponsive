@@ -182,8 +182,6 @@ app.post("/upload", function (req, res) {
         };
       });
 
-    console.log(all);
-
     //const returnFile = __dirname + '/tmp/' + Date.now() + "_" + 'Modultafel.html'
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
     res.render(
