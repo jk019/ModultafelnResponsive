@@ -41,174 +41,148 @@ app.engine(
 app.set("view engine", type);
 app.set("views", dir);
 
-app.post("/upload", function (req, res) {
-  let excelFile;
-  let uploadPath;
-
+app.post("/upload", async function (req, res) {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send("No files were uploaded.");
   }
 
-  excelFile = req.files.excelFile;
-  //uploadPath = __dirname + '/tmp/' + Date.now() + "_" + excelFile.name;
-  uploadPath = TEMP_DIR + Date.now() + "_" + excelFile.name;
+  const excelFile = req.files.excelFile;
+  const uploadPath = TEMP_DIR + Date.now() + "_" + excelFile.name;
 
-  // move the file to temp path
-  excelFile.mv(uploadPath, async function (err) {
-    if (err) return res.status(500).send(err);
-
+  try {
+    await excelFile.mv(uploadPath);
     const workbook = xlsx.readFile(uploadPath); // parse excel file
-    const sheetNames = workbook.SheetNames;
+    const [settings, modules, wahlmodule] = workbook.SheetNames.map((name) =>
+      xlsx.utils.sheet_to_json(workbook.Sheets[name])
+    );
 
-    const settings = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames[0]]);
-    const modules = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames[1]]);
-    const wahlmodule = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames[2]]);
-
-    // Create a map for easy access to settings by Modulgruppe.
     const settingsMap = new Map(settings.map((s) => [s.Modulgruppe, s]));
-
     const electiveModulesMap = new Map(
       wahlmodule.map((m) => [m.Modulkuerzel, m])
     );
-
-    modules.forEach((module) => {
-      // Access the settings for the module's Modulgruppe directly from the map.
-      const setting = settingsMap.get(module.Modulgruppe);
-      module.FarbeModulkaestchen = setting.FarbeModulkaestchen;
-      module.Hintergrundfarbe = setting.Hintergrundfarbe;
-      module.Schriftfarbe = setting.Schriftfarbe;
-    });
-
-    // Create a map to track semesters and modules.
     const semesterMap = new Map();
+
+    const information = settings.map((row) => ({
+      title: row.Titel,
+      infoHead: row.InfoTextOben,
+      warningFoot: row.WarningTextOben,
+      infoFoot: row.InfoTextUnten,
+    }))[0]; // Take the first object from the array
+
     modules.forEach((module) => {
-      const currentSemester = module.Semester;
-      if (!semesterMap.has(currentSemester)) {
-        semesterMap.set(currentSemester, []);
-      }
-      semesterMap.get(currentSemester).push(module);
-    });
-
-    // Create a map for usedModulegroups to ensure uniqueness and ease of update.
-    let usedModulegroupsMap = new Map();
-    modules.forEach((module) => {
-      const groupName = module.Modulgruppe;
-      if (!usedModulegroupsMap.has(groupName)) {
-        const setting = settingsMap.get(groupName);
-        usedModulegroupsMap.set(groupName, {
-          name: groupName,
-          count: 0,
-          FarbeModulkaestchen: setting.FarbeModulkaestchen,
-          Hintergrundfarbe: setting.Hintergrundfarbe,
-          Schriftfarbe: setting.Schriftfarbe,
-          Reihenfolge: setting.Reihenfolge,
-        });
-      }
-    });
-
-    // Count the modules in each module group within each semester.
-    semesterMap.forEach((modulesInSemester) => {
-      modulesInSemester.forEach((module) => {
-        const modulgruppe = usedModulegroupsMap.get(module.Modulgruppe);
-        modulgruppe.count++;
-      });
-    });
-
-    function transformModulesForSemester(
-      modulesInSemester,
-      usedModulegroupsMap
-    ) {
-      // Initialize the groupsMap with all module groups, even if they have no modules.
-      const groupsMap = new Map();
-      usedModulegroupsMap.forEach((group, groupName) => {
-        groupsMap.set(groupName, {
-          group: groupName,
-          color: group.Hintergrundfarbe,
-          modules: [],
-        });
+      const setting = settingsMap.get(module.Modulgruppe);
+      Object.assign(module, {
+        FarbeModulkaestchen: setting.FarbeModulkaestchen,
+        Hintergrundfarbe: setting.Hintergrundfarbe,
+        Schriftfarbe: setting.Schriftfarbe,
+        is_elective: !!module.Wahlpflichtmodul,
       });
 
-      // Populate the groupsMap with modules
-      modulesInSemester.forEach((module) => {
-        const moduleGroupEntry = groupsMap.get(module.Modulgruppe);
-        if (moduleGroupEntry) {
-          // Set is_elective property
-          module.is_elective = !!module.Wahlpflichtmodul;
+      const semester = semesterMap.get(module.Semester) || [];
+      semester.push(module);
+      semesterMap.set(module.Semester, semester);
+    });
 
-          // If the module is elective, process and attach elective modules
-          let electiveModules = [];
-          if (module.is_elective) {
-            const electiveShortnames = module.Wahlpflichtmodul.split(",");
-            electiveModules = electiveShortnames.map((shortname) => {
-              const electiveModule = electiveModulesMap.get(shortname);
-              return {
-                name: electiveModule.Modulbezeichnung,
-                shortname: electiveModule.Modulkuerzel,
-                description: electiveModule.Beschreibung,
-                url: electiveModule.Link,
-              };
-            });
-          }
-
-          // Push the module into the group
-          moduleGroupEntry.modules.push({
-            name: module.Modulbezeichnung,
-            shortname: module.Modulkuerzel,
-            description: module.Modulbeschreibung,
-            credits: module.ECTS,
-            url: module.Link,
-            is_elective: module.is_elective,
-            wahlmodule: electiveModules,
-          });
-        }
-      });
-
-      // Convert the map to the array format required by the frontend
-      return Array.from(groupsMap.values());
-    }
-
-    // Finally, we will map over the semesters to structure the whole array.
-    let all = Array.from(semesterMap.keys())
+    const all = Array.from(semesterMap.keys())
       .sort()
-      .map((semesterNumber) => {
-        const modulesInSemester = semesterMap.get(semesterNumber);
-        const semesterModules = transformModulesForSemester(
-          modulesInSemester,
-          usedModulegroupsMap
-        );
-        return {
-          number: semesterNumber.split(".")[0], // Assuming the semester number is always the first part before a dot.
-          semesterModules: semesterModules,
-        };
-      });
+      .map((semesterNumber) => ({
+        number: semesterNumber.split(".")[0],
+        semesterModules: transformModulesForSemester(
+          semesterMap.get(semesterNumber),
+          electiveModulesMap,
+          settingsMap
+        ),
+      }));
 
-    console.log(all);
-
-    //const returnFile = __dirname + '/tmp/' + Date.now() + "_" + 'Modultafel.html'
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
+
     res.render(
-      "App",
-      {
-        all: all,
-        // wahlmodule: wahlmodule,
-        // settings: settings[0],
-      },
+      "App.html",
+      { all: all, information: information },
       (err, html) => {
         if (err) {
+          console.error("Render error:", err);
           return res
             .status(500)
             .send(err.message || "Error rendering the view");
         }
-        console.log(html); // Add this line
+        if (!html) {
+          return res.status(500).send("Rendered HTML is undefined");
+        }
+
+        console.log("Rendered HTML:", html); // Debug: Inspect the rendered HTML
+
         fs.writeFile(returnFile, html, (err) => {
           if (err) {
+            console.error("File write error:", err);
             return res.status(500).send(err.message || "Error writing to file");
           }
           res.download(returnFile);
         });
       }
     );
-  });
+  } catch (err) {
+    console.error("Server error:", err);
+    return res.status(500).send(err);
+  }
 });
+
+function transformModulesForSemester(
+  modulesInSemester,
+  electiveModulesMap,
+  settingsMap
+) {
+  // Initialize groupModulesMap with all valid groups from settingsMap
+  const groupModulesMap = new Map();
+  settingsMap.forEach((setting, groupName) => {
+    if (groupName) {
+      // Check if groupName is defined
+      groupModulesMap.set(groupName, {
+        group: groupName,
+        color: setting.Hintergrundfarbe,
+        modules: [],
+      });
+    }
+  });
+
+  // Populate the groupModulesMap with modules
+  modulesInSemester.forEach((module) => {
+    if (groupModulesMap.has(module.Modulgruppe)) {
+      const group = groupModulesMap.get(module.Modulgruppe);
+      group.modules.push(createModuleObject(module, electiveModulesMap));
+    }
+  });
+
+  return Array.from(groupModulesMap.values());
+}
+
+function createModuleObject(module, electiveModulesMap) {
+  let electiveModules = [];
+  if (module.is_elective && module.Wahlpflichtmodul) {
+    electiveModules = module.Wahlpflichtmodul.split(",")
+      .map((shortname) => {
+        const electiveModule = electiveModulesMap.get(shortname.trim());
+        return electiveModule
+          ? {
+              name: electiveModule.Modulbezeichnung,
+              shortname: electiveModule.Modulkuerzel,
+              description: electiveModule.Beschreibung,
+              url: electiveModule.Link,
+            }
+          : null;
+      })
+      .filter((e) => e !== null); // Ensure to filter out any null entries
+  }
+
+  return {
+    name: module.Modulbezeichnung,
+    shortname: module.Modulkuerzel,
+    description: module.Modulbeschreibung,
+    credits: module.ECTS,
+    url: module.Link,
+    is_elective: module.is_elective,
+    wahlmodule: electiveModules,
+  };
+}
 
 app.listen(PORT, () => console.log("Server running on port " + PORT));

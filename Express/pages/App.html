@@ -3,6 +3,7 @@
   import Semester from "./Semester.svelte";
 
   export let all;
+  export let information;
 
   function calculateTotalCredits(semester) {
     let totalCredits = 0;
@@ -61,7 +62,7 @@
 <div class="row" id="headerRow">
   <div class="col-auto" id="headerColumn">
     <h1 class="mainTitle">
-      Modultafel Bachelorstudiengang Wirtschaftsinformatik
+      {information.title}
     </h1>
     <h4 class="mb-3 secondTitle">
       Business Information Systems, Vollzeit, ab Herbstsemester 2021
@@ -71,7 +72,7 @@
 </div>
 
 <h4 class="InfoText">
-  Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.
+  {information.infoHead}
 </h4>
 <h4 class="InfoTextRot mb-4">Das ist ein Warntext</h4>
 
@@ -120,7 +121,7 @@
 </div>
 
 <div class="row mt-3 footerRow">
-  <p>* = Dieses Modul wird in englischer Sprache durchgeführt.</p>
+  <p>{information.infoFoot}</p>
 </div>
 <div class="row footerRow">
   <p>
