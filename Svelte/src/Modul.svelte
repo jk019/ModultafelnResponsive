@@ -8,9 +8,16 @@
   export let url;
   export let wahlmodule;
 
+  function sanitizeName(name) {
+    return name
+      .replace(/[*&\s]+/g, "-") // Replace *, &, and spaces with -
+      .replace(/[\s.]+/g, "-"); // Replace spaces and periods with -
+    // Add more replacements as needed
+  }
+
   // Generate unique IDs for the modals
-  let modalId = `modal-${name.replace(/[\s.]+/g, "-")}`;
-  let modalId2 = `modal-${name.replace(/[\s.]+/g, "-")}-2`;
+  let modalId = `modal-${sanitizeName(name)}`;
+  let modalId2 = `modal-${sanitizeName(name)}-2`;
 </script>
 
 <div class="card flex-fill" id="ModulCard" style="--moduleBG: {color}">
@@ -208,7 +215,7 @@
     color: #000000;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
     line-height: 1.1;
-    padding: 0px!important;
+    padding: 0px !important;
 
     /* display: flex;
     justify-content: center;
@@ -231,7 +238,7 @@
 
   .modulCardECTS {
     font-size: 13px;
-    padding: 0px!important;
+    padding: 0px !important;
   }
 
   .badgeModal {
@@ -252,7 +259,7 @@
   }
 
   .modulkuerzelCol {
-    padding-left: 0px!important;
+    padding-left: 0px !important;
   }
 
   /* ----- Modal ----- */
@@ -339,7 +346,7 @@
     }
   }
 
-   @media (min-width: 1103px) {
+  @media (min-width: 1103px) {
     #ModulCard {
       height: 70px;
     }

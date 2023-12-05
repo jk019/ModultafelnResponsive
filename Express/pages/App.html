@@ -50,10 +50,26 @@
     return maxModuleCountPerGroup[groupName] || 1; // Fallback auf 1, wenn die Gruppe nicht vorhanden ist
   }
 
-  /* function calculateWidth(maxModuleCount) {
-    return `calc(100% / ${maxModuleCount})`;
-  } */
+  // <------------------------------- Berechnung für Legende ------------------------------------------------->
+
+  const uniqueGroups = {};
+
+  all.forEach((semester) => {
+    semester.semesterModules.forEach((module) => {
+      const group = module.group;
+      const color = module.color;
+
+      if (!uniqueGroups[group]) {
+        uniqueGroups[group] = { group, color };
+      }
+    });
+  });
+
+  const groupsArray = Object.values(uniqueGroups);
+  console.log(groupsArray);
 </script>
+
+<!-- <------------------------------- Header ----------------------------------------------- -->
 
 <div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
   <img id="zhawSmlLogoBannerContent" src="images/zhaw_sml_byline_white.png" alt="Logo SML" />
@@ -65,18 +81,18 @@
       {information.title}
     </h1>
     <h4 class="mb-3 secondTitle">
-      Business Information Systems, Vollzeit, ab Herbstsemester 2021
+      {information.infoHead}
     </h4>
   </div>
   <img class="col-auto" id="zhawSmlLogo" src="images/logoSML.jpg" alt="Logo SML" />
 </div>
 
 <h4 class="InfoText">
-  {information.infoHead}
+  Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.
 </h4>
-<h4 class="InfoTextRot mb-4">Das ist ein Warntext</h4>
+<h4 class="InfoTextRot mb-4">{information.warningFoot}</h4>
 
-<!-- -------- Start Modultafel -------- -->
+<!-- ------------------------------- Start Modultafel ---------------------------------- -->
 
 <div class="custom-container">
   {#each all as semester}
@@ -87,12 +103,12 @@
 
     {#each semester.semesterModules as group}
     <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
-    {#if getMaxModuleCount(group.group) < 4} <div class="col-sm-{getMaxModuleCount(group.group)}"
-      style="--groupBG: {group.color}50">
-      <!--70 stands for the opacity of the background color-->
+    {#if getMaxModuleCount(group.group) < 4} <div class="col-sm-{getMaxModuleCount(group.group)}">
       <div class="row">
         {#each group.modules as module}
-        <div class="col-md-{Math.ceil(12 / getMaxModuleCount(group.group))}" id="CustomizedByTimo">
+        <div class="col-md-{Math.ceil(
+                    12 / getMaxModuleCount(group.group)
+                  )}" id="CustomizedByTimo">
           <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
             gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
             wahlmodule={module.wahlmodule} />
@@ -101,8 +117,7 @@
       </div>
   </div>
   {:else}
-  <div class="col-sm-3" style="--groupBG: {group.color}50">
-    <!--70 stands for the opacity of the background color-->
+  <div class="col-sm-3">
     <div class="row">
       {#each group.modules as module}
       <div class="col-md-4" id="CustomizedByTimo">
@@ -114,11 +129,31 @@
     </div>
   </div>
   {/if}
-
   {/each}
 </div>
 {/each}
 </div>
+
+<!-- <------------------------------- Legende ----------------------------------------------- -->
+
+<div id="legendeModulgruppen">
+  <h6 id="legendeTitle">Legende:</h6>
+  <div class="col-6 p-0">
+    <div class="row">
+      {#each groupsArray as group}
+      <div class="col-md" id="legendeCol">
+        <div class="card" id="legendeCard" style="background-color: {group.color}">
+          <div class="card-body" id="legendeCardBody">
+            <p class="card-text">{group.group}</p>
+          </div>
+        </div>
+      </div>
+      {/each}
+    </div>
+  </div>
+</div>
+
+<!-- <------------------------------- Footer ----------------------------------------------- -->
 
 <div class="row mt-3 footerRow">
   <p>{information.infoFoot}</p>
@@ -137,8 +172,8 @@
     justify-content: center;
     width: calc(100% / var(--module-columns));
 
-    padding-left: 5px;
-    padding-right: 5px;
+    /* padding-left: 5px;
+    padding-right: 5px; */
   }
 
   #headerRow {
@@ -147,6 +182,7 @@
     justify-content: space-between;
     padding-left: 5px;
     width: 100%;
+    padding-left: 0px !important;
   }
 
   #zhawSmlLogoBanner {
@@ -164,7 +200,33 @@
 
   .footerRow {
     width: 100%;
+    padding-left: 5px !important;
+  }
+
+  #legendeTitle {
+    padding-left: 5px !important;
+  }
+
+  #legendeModulgruppen {
+    width: 100%;
     margin-left: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  #legendeCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #legendeCardBody {
+    padding: 0px;
+  }
+
+  #legendeCol {
+    padding-left: 5px !important;
+    padding-right: 0px !important;
   }
 
   /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
@@ -197,12 +259,28 @@
     }
   }
 
+  /* ---- Media Queries Legende ---- */
+
+  @media (max-width: 768px) {
+    #legendeCard {
+      margin-bottom: 5px;
+    }
+
+    #legendeCol {
+      padding-left: 0px !important;
+    }
+
+    #legendeTitle {
+      padding-left: 0px;
+    }
+  }
+
   /* ---- Media Queries ModulCard ---- */
 
   @media (min-width: 1600px) {
     #CustomizedByTimo {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 5px;
+      /* padding-right: 5px; */
     }
   }
 

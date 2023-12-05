@@ -1,3 +1,12 @@
+/**
+ * @fileoverview This file contains the implementation of an Express server that handles file uploads and renders Svelte templates.
+ * @module app
+ * @requires express
+ * @requires express-fileupload
+ * @requires xlsx
+ * @requires fs
+ * @requires svelte-view-engine
+ */
 // Imports
 const express = require("express");
 const fileUpload = require("express-fileupload");
@@ -156,6 +165,12 @@ function transformModulesForSemester(
   return Array.from(groupModulesMap.values());
 }
 
+/**
+ * Creates a module object based on the provided module data and elective modules map.
+ * @param {Object} module - The module data.
+ * @param {Map} electiveModulesMap - The map of elective modules.
+ * @returns {Object} - The created module object.
+ */
 function createModuleObject(module, electiveModulesMap) {
   let electiveModules = [];
   if (module.is_elective && module.Wahlpflichtmodul) {
