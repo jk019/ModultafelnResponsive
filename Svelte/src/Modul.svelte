@@ -13,26 +13,26 @@
   let modalId2 = `modal-${name.replace(/[\s.]+/g, "-")}-2`;
 </script>
 
-<div class="card flex-fill" id="ModulCard">
+<div class="card flex-fill" id="ModulCard" style="--moduleBG: {color}">
   <div class="card-body" id="ModulCardBody">
     {#if !is_elective}
       <a id="Modulname" data-toggle="modal" data-target={`#${modalId}`}
         >{name}
       </a>
+      <p class="modulCardECTS">{badge} ECTS-Credits</p>
     {:else}
       <div class="row">
         <a id="Modulname" data-toggle="modal" data-target={`#${modalId2}`}
           >{name}
         </a>
+        <p class="modulCardECTS">{badge} ECTS-Credits</p>
       </div>
     {/if}
     <!-- Jeweils eine eigene row erstellt, damit die Elemente untereinander sind -->
   </div>
-  <div class="card-footer" id="ModulCardFooter">
-    <span class="badge" id="ModulCardBadge" style="--badgeBG: {color}"
-      >{badge} ECTS</span
-    >
-  </div>
+  <!-- <div class="card-footer" id="ModulCardFooter" style="--moduleBG: {color}">
+    {badge} ECTS
+  </div> -->
 </div>
 
 <!-- Modal -->
@@ -155,7 +155,7 @@
                 style="--badgeBG: {color}">{badge} ECTS</span
               >
             </div>
-            <div class="modulShortnameRow row">
+            <div class="modalShortnameRow row">
               <div class="col-auto"><b>Modulkürzel: </b></div>
               <div class="col-auto Shortname text-right">
                 {modul.shortname}
@@ -187,20 +187,20 @@
 {/if}
 
 <style>
-  #ModulCardFooter {
-    background-color: #ffffff;
+  /* #ModulCardFooter {
     display: flex;
     justify-content: center;
     padding: 0px 0px 2px 0px;
     border: 0px;
-  }
+    background: var(--moduleBG);
+  } */
 
-  #ModulCardBadge {
+  /* #ModulCardBadge {
     margin-top: auto;
     display: inline-block;
     align-self: center;
     font-size: 10px;
-  }
+  } */
 
   #Modulname {
     font-weight: bold;
@@ -208,33 +208,44 @@
     color: #000000;
     hyphens: auto; /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
     line-height: 1.1;
+    padding: 0px!important;
 
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+  }
+
+  #ModulCardBody {
+    padding: 5px; /* Innenabstand für die Module */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    border: 0px;
+  }
+
+  #ModulCard {
+    margin-top: 5px;
+    background: var(--moduleBG);
+  }
+
+  .modulCardECTS {
+    font-size: 13px;
+    padding: 0px!important;
   }
 
   .badgeModal {
     padding: 5px !important;
   }
 
-  #ModulCardBody {
-    padding: 5px; /* Innenabstand für die Module */
-    border: 1px solid #ccc; /* Rahmen um die Module */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 0px;
-  }
-
   .badge {
     padding: 3px;
   }
 
-  #ModulCard {
-    margin-top: 10px;
-  }
+  #wahlpflichtmodulLink {
+    font-size: medium;
+    color: #000000;
+  }  
 
   /* ----- Modal ----- */
 
@@ -243,7 +254,7 @@
     overflow-y: auto;
   }
 
-  .modulShortnameRow {
+  .modalShortnameRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -270,81 +281,59 @@
     padding-right: 0px;
   }
 
-  #wahlpflichtmodulLink {
-    font-size: medium;
-    color: #000000;
-  }
+  /* ----- Media Queries ----- */
 
   @media (min-width: 0px) {
     #ModulCard {
-      height: 63px;
+      height: 80px;
     }
     #Modulname {
       font-size: 10px;
     }
-    #ModulCardBadge {
+    .modulCardECTS {
       font-size: 10px;
     }
   }
-
-  /* @media (min-width: 768px) {
-    #ModulCard {
-      height: 65px;
-    }
-    #Modulname {
-      font-size: 8px;
-    }
-    #ModulCardBadge {
-      font-size: 8px;
-    }
-  } */
 
   @media (min-width: 768px) {
     #ModulCard {
       height: 65px;
     }
     #Modulname {
-      font-size: 10px;
+      font-size: 9px;
     }
-    #ModulCardBadge {
-      font-size: 10px;
-      margin-bottom: 5px;
+    .modulCardECTS {
+      font-size: 9px;
     }
   }
 
   @media (min-width: 867px) {
     #ModulCard {
-      height: 55px;
-    }
-    #Modulname {
-      font-size: 9px;
-    }
-    #ModulCardBadge {
-      font-size: 8px;
-    }
-  }
-
-  @media (min-width: 873px) {
-    #ModulCard {
-      height: 65px;
-    }
-    #Modulname {
-      font-size: 8px;
-    }
-    #ModulCardBadge {
-      font-size: 8px;
-    }
-  }
-
-   @media (min-width: 1000px) {
-    #ModulCard {
       height: 70px;
     }
     #Modulname {
+      font-size: 9.5px;
+    }
+    .modulCardECTS {
+      font-size: 9.5px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    #ModulCard {
+      height: 75px;
+    }
+    #Modulname {
       font-size: 10px;
     }
-    #ModulCardBadge {
+    .modulCardECTS {
       font-size: 10px;
+    }
+  }
+
+   @media (min-width: 1103px) {
+    #ModulCard {
+      height: 70px;
     }
   }
 
@@ -353,24 +342,10 @@
       height: 50px;
     }
     #Modulname {
-      font-size: 11px;
+      font-size: 13px;
     }
-    #ModulCardBadge {
-      font-size: 10px;
-      margin-bottom: 5px;
-      padding: 5px;
-    }
-  }
-
-  /* @media (min-width: 1250px) {
-    #ModulCard {
-      height: 50px;
-    }
-  } */
-
-  @media (min-width: 1600px) {
-    #ModulCard {
-      height: 75px;
+    .modulCardECTS {
+      font-size: 13px;
     }
   }
 
