@@ -62,6 +62,13 @@ app.post("/upload", async function (req, res) {
     );
     const semesterMap = new Map();
 
+    const information = settings.map((row) => ({
+      title: row.Titel,
+      infoHead: row.InfoTextOben,
+      warningFoot: row.WarningTextOben,
+      infoFoot: row.InfoTextUnten,
+    }))[0]; // Take the first object from the array
+
     modules.forEach((module) => {
       const setting = settingsMap.get(module.Modulgruppe);
       Object.assign(module, {
@@ -89,25 +96,31 @@ app.post("/upload", async function (req, res) {
 
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
 
-    res.render("App.html", { all: all }, (err, html) => {
-      if (err) {
-        console.error("Render error:", err);
-        return res.status(500).send(err.message || "Error rendering the view");
-      }
-      if (!html) {
-        return res.status(500).send("Rendered HTML is undefined");
-      }
-
-      console.log("Rendered HTML:", html); // Debug: Inspect the rendered HTML
-
-      fs.writeFile(returnFile, html, (err) => {
+    res.render(
+      "App.html",
+      { all: all, information: information },
+      (err, html) => {
         if (err) {
-          console.error("File write error:", err);
-          return res.status(500).send(err.message || "Error writing to file");
+          console.error("Render error:", err);
+          return res
+            .status(500)
+            .send(err.message || "Error rendering the view");
         }
-        res.download(returnFile);
-      });
-    });
+        if (!html) {
+          return res.status(500).send("Rendered HTML is undefined");
+        }
+
+        console.log("Rendered HTML:", html); // Debug: Inspect the rendered HTML
+
+        fs.writeFile(returnFile, html, (err) => {
+          if (err) {
+            console.error("File write error:", err);
+            return res.status(500).send(err.message || "Error writing to file");
+          }
+          res.download(returnFile);
+        });
+      }
+    );
   } catch (err) {
     console.error("Server error:", err);
     return res.status(500).send(err);
