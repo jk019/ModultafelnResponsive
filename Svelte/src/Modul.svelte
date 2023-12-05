@@ -56,8 +56,8 @@
             style="--badgeBG: {color}">{badge} ECTS</span
           >
         </div>
-        <div class="modulShortnameRow row">
-          <div class="col-auto"><b>Modulkürzel: </b></div>
+        <div class="modalShortnameRow row">
+          <div class="col-auto modulkuerzelCol"><b>Modulkürzel: </b></div>
           <div class="col-auto Shortname text-right">
             {shortname}
           </div>
@@ -156,7 +156,7 @@
               >
             </div>
             <div class="modalShortnameRow row">
-              <div class="col-auto"><b>Modulkürzel: </b></div>
+              <div class="col-auto modulkuerzelCol"><b>Modulkürzel: </b></div>
               <div class="col-auto Shortname text-right">
                 {modul.shortname}
               </div>
@@ -245,7 +245,15 @@
   #wahlpflichtmodulLink {
     font-size: medium;
     color: #000000;
-  }  
+  }
+
+  #exampleModalLongTitle {
+    padding-left: 0px;
+  }
+
+  .modulkuerzelCol {
+    padding-left: 0px!important;
+  }
 
   /* ----- Modal ----- */
 
