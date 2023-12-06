@@ -52,6 +52,48 @@
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border: 10px solid {color};">
+      <div style="text-align: right;">
+        <button
+          type="button"
+          class="btn-close custom-close"
+          aria-label="Close"
+          data-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="title">
+        <h3 class="modal-title col-auto" id="exampleModalLongTitle">
+          {name}
+        </h3></div>
+        <div>
+          <p>/<span class="tab"></span>ECTS: {badge}</p>
+          <p>
+            /<span class="tab"></span><a href={url} method="get" target="_blank"
+              >Details zu diesem Modul</a
+            >
+          </p>
+        </div>
+
+        {#if description && description.trim() !== ""}
+          {description}
+        {:else}
+          <h5>Keine Modulbeschreibung vorhanden.</h5>
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+  class="modal fade"
+  id={modalId}
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <div class="row modalHeaderRow justify-content-between">
@@ -94,7 +136,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!--  MODAL - if is_elective -->
 
@@ -346,4 +388,25 @@
       font-size: 12px;
     }
   }
+
+  .tab {
+    display: inline-block;
+    margin-left: 40px;
+  }
+  .title{
+    padding-bottom: 15px;
+  }
+
+  .custom-close {
+    background-color: grey; /* Hintergrundfarbe des Buttons */
+    border-radius: 50%; /* Macht den Hintergrund komplett rund */
+    padding: 0.5rem; /* Polsterung, um die Größe des Buttons zu erhöhen */
+
+    /* Überschreibt das Standard-SVG-Bild von Bootstrap für den Schließknopf */
+    background-image: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%230064a6">\
+        <path stroke="%230064a6" stroke-width="3" d="M.9 1.1c-.3.3-.3.7 0 1l6 6-6 6c-.3.3-.3.7 0 1s.7.3 1 0l6-6 6 6c.3.3.7.3 1 0s.3-.7 0-1l-6-6 6-6c-.3-.3.3-.7 0-1s-.7-.3-1 0L8 7.1 2.1 1.1c-.3-.3-.7-.3-1 0z"/>\
+      </svg>');
+  }
+
 </style>
