@@ -116,7 +116,7 @@ button:focus {
 /* Reset padding for all columns */
 .row > .col,
 .row > [class*="col-"] {
-  background-color: var(--groupBG);
+  /* background-color: var(--groupBG); */
   padding-right: 2.5px; /* Adjust the padding value as needed */
   padding-left: 2.5px; /* Adjust the padding value as needed */
 }

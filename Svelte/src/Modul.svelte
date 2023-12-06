@@ -71,10 +71,17 @@
         </div>
       </div>
 
-      <div class="modal-body">
-        <h5>Beschreibung des Moduls:</h5>
-        {description}
-      </div>
+      {#if description && description.trim() !== ""}
+        <div class="modal-body">
+          <h5>Beschreibung des Moduls:</h5>
+          {description}
+        </div>
+      {:else}
+        <div class="modal-body">
+          <h5>Keine Modulbeschreibung vorhanden.</h5>
+        </div>
+      {/if}
+
       <div class="modal-footer">
         <form action={url} method="get" target="_blank">
           <button type="submit" class="btn btn-primary"
@@ -169,10 +176,16 @@
               </div>
             </div>
           </div>
-          <div class="modal-body">
-            <h5>Beschreibung des Moduls:</h5>
-            {modul.description}
-          </div>
+          {#if description && description.trim() !== ""}
+            <div class="modal-body">
+              <h5>Beschreibung des Moduls:</h5>
+              {description}
+            </div>
+          {:else}
+            <div class="modal-body">
+              <h5>Keine Modulbeschreibung vorhanden.</h5>
+            </div>
+          {/if}
           <div class="modal-footer">
             <form action={modul.url} method="get" target="_blank">
               <button type="submit" class="btn btn-primary"

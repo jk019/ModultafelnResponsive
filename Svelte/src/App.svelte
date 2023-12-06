@@ -13,8 +13,6 @@
             {
               name: "Einführung BWL",
               shortname: "w.BA.XX.3BWL-WIN.XX",
-              description:
-                "Im Modul Einführung BWL wird den Studierenden ein vertieftes Verständnis\r\nzentralerwirtschaftlicher Gesamtzusammenhänge und die Fähigkeit zum\r\nganzheitlichen,vernetzten Denken vermittelt. Anhand des St. Galler Management\r\nModells werden dievielfältigen Problemstellungen, mit welchen sich die\r\nBetriebswirtschaftslehre beschäftigt,erläutert. Ein Schwerpunkt des Moduls liegt in der\r\nVermittlung und Anwendung derwichtigsten Instrumente, Modelle und Konzepte der\r\nprozess- und mitarbeiterorientierten Unternehmensführung. Weitere Schwerpunkte sind\r\ndie Themenbereiche Strategie, Corporate Social Responsibility und systemisches\r\nManagement.",
               credits: 3,
               url: "https://modulmanagement.sml.zhaw.ch/StaticModDescAblage/Modulbeschreibung_w.BA.XX.3BWL-WIN.XX.pdf",
               is_elective: false,
