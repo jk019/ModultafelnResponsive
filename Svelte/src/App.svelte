@@ -1204,10 +1204,10 @@
 
 <div id="legendeModulgruppen">
   <h6 id="legendeTitle">Legende:</h6>
-  <div class="col-4 p-0">
+  <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 p-0">
     <div class="row">
       {#each groupsArray as group}
-        <div class="col-md" id="legendeCol">
+        <div class="col-xl-2 col-lg-3 col-sm-3 col-md-3 col-4" id="legendeCol">
           <div
             class="card"
             id="legendeCard"
@@ -1281,12 +1281,12 @@
 
   #legendeCard {
     min-height: 70px;
-    max-width: 168px;
+    max-width: 200px;
     padding-right: 5px;
   }
 
   #legendeCardBody {
-    padding: 0px;
+    padding: 5px;
     display: flex;
     justify-content: center;
   }
