@@ -1054,8 +1054,8 @@
   ];
 
   let information = {
-    title:
-      "Modultafel Bachelorstudiengang Wirtschaftsinformatik Vollzeit, ab Herbstsemester 2014 Test",
+    title: "Modultafel Bachelorstudiengang Wirtschaftsinformatik",
+    subtitle: "Business Information Systems, Vollzeit, ab Herbstsemester 2021",
     infoHead: "Dies ist ein Informations-Text Beispiel",
     warningFoot: "Dies ist ein Warnungs-text Beispiel",
     infoFoot: "* = Dieses Modul wird in englischer Sprache durchgeführt",
@@ -1111,21 +1111,21 @@
   const uniqueGroups = {};
 
   all.forEach((semester) => {
-  semester.semesterModules.forEach((module) => {
-    const group = module.group;
-    const color = module.color;
+    semester.semesterModules.forEach((module) => {
+      const group = module.group;
+      const color = module.color;
 
-    if (!uniqueGroups[group]) {
-      uniqueGroups[group] = { group, color };
-    }
+      if (!uniqueGroups[group]) {
+        uniqueGroups[group] = { group, color };
+      }
+    });
   });
-});
 
-const groupsArray = Object.values(uniqueGroups);
-console.log(groupsArray);
+  const groupsArray = Object.values(uniqueGroups);
+  console.log(groupsArray);
 </script>
 
-<!-- <------------------------------- Header ----------------------------------------------- --> 
+<!-- <------------------------------- Header ----------------------------------------------- -->
 
 <div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
   <img
@@ -1141,7 +1141,7 @@ console.log(groupsArray);
       {information.title}
     </h1>
     <h4 class="mb-3 secondTitle">
-      {information.infoHead}
+      {information.subtitle}
     </h4>
   </div>
   <img
@@ -1151,36 +1151,36 @@ console.log(groupsArray);
     alt="Logo SML"
   />
 </div>
-
-<h4 class="InfoText">
-  Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen anzusehen.
-</h4>
-<h4 class="InfoTextRot mb-4">{information.warningFoot}</h4>
+<div class="row" id="headerRow">
+  <div class="col-auto" id="headerColumn">
+    <div class="row p-0" id="headerColumn">
+      <h4 class="InfoText">
+        Klicken Sie auf die farbigen Kästchen um die Modulbeschreibungen
+        anzusehen.
+      </h4>
+      <h4 class="InfoTextRot mb-4">{information.warningFoot}</h4>
+    </div>
+  </div>
+</div>
 
 <!-- ------------------------------- Start Modultafel ---------------------------------- -->
 
 <div class="custom-container">
   {#each all as semester}
     <div class="row">
-      <div class="col-md-auto">
+      <div class="col-12 col-lg-1">
         <Semester
           semesterNumber={semester.number}
           totalCredits={calculateTotalCredits(semester)}
         />
       </div>
 
-      {#each semester.semesterModules as group}
-        <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
-        {#if getMaxModuleCount(group.group) < 4}
-          <div class="col-sm-{getMaxModuleCount(group.group)}">
-            <div class="row">
+      <div class="col-lg-11">
+        <div class="container-lg" id="modulContainer">
+          <div class="row">
+            {#each semester.semesterModules as group}
               {#each group.modules as module}
-                <div
-                  class="col-md-{Math.ceil(
-                    12 / getMaxModuleCount(group.group)
-                  )}"
-                  id="CustomizedByTimo"
-                >
+                <div class="col-xl-2 col-sm-4 col-md-3 col-6">
                   <Modul
                     color={group.color}
                     name={module.name}
@@ -1194,45 +1194,29 @@ console.log(groupsArray);
                   />
                 </div>
               {/each}
-            </div>
+            {/each}
           </div>
-        {:else}
-          <div class="col-sm-3">
-            <div class="row">
-              {#each group.modules as module}
-                <div class="col-md-4" id="CustomizedByTimo">
-                  <Modul
-                    color={group.color}
-                    name={module.name}
-                    shortname={module.shortname}
-                    is_elective={module.is_elective}
-                    gruppe={group.group}
-                    badge={module.credits}
-                    description={module.description}
-                    url={module.url}
-                    wahlmodule={module.wahlmodule}
-                  />
-                </div>
-              {/each}
-            </div>
-          </div>
-        {/if}
-      {/each}
+        </div>
+      </div>
     </div>
   {/each}
 </div>
 
-<!-- <------------------------------- Legende ----------------------------------------------- --> 
+<!-- <------------------------------- Legende ----------------------------------------------- -->
 
 <div id="legendeModulgruppen">
   <h6 id="legendeTitle">Legende:</h6>
-  <div class="col-6 p-0">
+  <div class="col-4 p-0">
     <div class="row">
       {#each groupsArray as group}
         <div class="col-md" id="legendeCol">
-          <div class="card" id="legendeCard" style="background-color: {group.color}">
+          <div
+            class="card"
+            id="legendeCard"
+            style="background-color: {group.color}"
+          >
             <div class="card-body" id="legendeCardBody">
-              <p class="card-text">{group.group}</p>
+              <p class="card-text" id="legendeCardText">{group.group}</p>
             </div>
           </div>
         </div>
@@ -1241,34 +1225,28 @@ console.log(groupsArray);
   </div>
 </div>
 
-<!-- <------------------------------- Footer ----------------------------------------------- --> 
+<!-- <------------------------------- Footer ----------------------------------------------- -->
 
 <div class="row mt-3 footerRow">
-  <p>{information.infoFoot}</p>
+  {information.infoFoot}
 </div>
 <div class="row footerRow">
-  <p>
-    Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option
-    "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften
-    auf 0 gesetzt sind.
-  </p>
+  Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option
+  "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf
+  0 gesetzt sind.
 </div>
 
 <style>
-  #CustomizedByTimo {
-    display: flex;
-    justify-content: center;
-    width: calc(100% / var(--module-columns));
-
-    /* padding-left: 5px;
-    padding-right: 5px; */
+  #modulContainer {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
   }
 
   #headerRow {
     margin-bottom: 5px;
     align-items: center;
     justify-content: space-between;
-    padding-left: 5px;
     width: 100%;
     padding-left: 0px !important;
   }
@@ -1288,63 +1266,40 @@ console.log(groupsArray);
 
   .footerRow {
     width: 100%;
-    padding-left: 5px!important;
+    padding-left: 5px !important;
   }
 
   #legendeTitle {
-    padding-left: 5px!important;
+    padding-left: 2.5px !important;
+    font-weight: bold;
   }
 
   #legendeModulgruppen {
     width: 100%;
-    margin-left: 8px;
+    margin-left: 0px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
   #legendeCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 70px;
+    max-width: 168px;
+    padding-right: 5px;
   }
 
   #legendeCardBody {
     padding: 0px;
+    display: flex;
+    justify-content: center;
   }
 
   #legendeCol {
-    padding-left: 5px!important;
-    padding-right: 0px!important;
+    padding-left: 2.5px !important;
   }
 
-  /* Media Query: Ändert die Anzahl der Spalten für unterschiedliche Bildschirmbreiten */
-
-  :root {
-    --module-columns: 1;
-  }
-
-  @media (max-width: 767px) {
-    .col-md-auto {
-      padding-right: 0px !important;
-    }
-  }
-
-  @media (min-width: 700px) {
-    :root {
-      --module-columns: 2;
-    }
-  }
-
-  @media (min-width: 873px) {
-    :root {
-      --module-columns: 3;
-    }
-  }
-
-  @media (min-width: 1300px) {
-    :root {
-      --module-columns: 4;
-    }
+  #legendeCardText {
+    display: flex;
+    align-items: center;
   }
 
   /* ---- Media Queries Legende ---- */
@@ -1354,19 +1309,10 @@ console.log(groupsArray);
       margin-bottom: 5px;
     }
     #legendeCol {
-      padding-left: 0px!important;
+      padding-left: 0px !important;
     }
     #legendeTitle {
       padding-left: 0px;
-    }
-  }
-
-  /* ---- Media Queries ModulCard ---- */
-
-  @media (min-width: 1600px) {
-    #CustomizedByTimo {
-      padding-left: 5px;
-      /* padding-right: 5px; */
     }
   }
 

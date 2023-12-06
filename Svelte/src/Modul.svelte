@@ -303,76 +303,34 @@
       height: 80px;
     }
     #Modulname {
-      font-size: 10px;
+      font-size: 14px;
     }
     .modulCardECTS {
-      font-size: 10px;
+      font-size: 13px;
     }
   }
 
   @media (min-width: 768px) {
     #ModulCard {
-      height: 65px;
+      height: 80px;
     }
     #Modulname {
-      font-size: 9px;
-    }
-    .modulCardECTS {
-      font-size: 9px;
-    }
-  }
-
-  @media (min-width: 867px) {
-    #ModulCard {
-      height: 70px;
-    }
-    #Modulname {
-      font-size: 9.5px;
-    }
-    .modulCardECTS {
-      font-size: 9.5px;
-    }
-  }
-
-  @media (min-width: 1000px) {
-    #ModulCard {
-      height: 75px;
-    }
-    #Modulname {
-      font-size: 10px;
-    }
-    .modulCardECTS {
-      font-size: 10px;
-    }
-  }
-
-  @media (min-width: 1103px) {
-    #ModulCard {
-      height: 70px;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    #ModulCard {
-      height: 50px;
-    }
-    #Modulname {
-      font-size: 13px;
+      font-size: 14px;
     }
     .modulCardECTS {
       font-size: 13px;
     }
   }
 
-  @media (min-width: 1700px) {
+  @media (min-width: 992px) {
     #ModulCard {
-      height: 65px;
+      height: 80px;
     }
-  }
-
-  @media (min-width: 1840px) {
-    #ModulCard {
-      height: 75px;
+    #Modulname {
+      font-size: 13px;
+    }
+    .modulCardECTS {
+      font-size: 12px;
     }
   }
 </style>

@@ -63,64 +63,22 @@
       height: 65px;
     }
     .SemesterName {
-      font-size: 9px;
+      font-size: 14px;
     }
     #semesterBadgeTotal {
-      font-size: 9px;
+      font-size: 14px;
     }
   }
 
-  @media (min-width: 867px) {
+  @media (min-width: 992px) {
     #SemesterCard {
-      height: 70px;
+      height: 80px;
     }
     .SemesterName {
-      font-size: 9.5px;
+      font-size: 11px;
     }
     #semesterBadgeTotal {
-      font-size: 9.5px;
-    }
-  }
-
-  @media (min-width: 1000px) {
-    #SemesterCard {
-      height: 75px;
-    }
-    .SemesterName {
-      font-size: 10px;
-    }
-    #semesterBadgeTotal {
-      font-size: 10px;
-    }
-  }
-
-  @media (min-width: 1103px) {
-    #SemesterCard {
-      height: 70px;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    #SemesterCard {
-      height: 50px;
-    }
-    .SemesterName {
-      font-size: 13px;
-    }
-    #semesterBadgeTotal {
-      font-size: 13px;
-    }
-  }
-
-  @media (min-width: 1700px) {
-    #SemesterCard {
-      height: 65px;
-    }
-  }
-
-  @media (min-width: 1840px) {
-    #SemesterCard {
-      height: 75px;
+      font-size: 11px;
     }
   }
 </style>

@@ -73,6 +73,7 @@ app.post("/upload", async function (req, res) {
 
     const information = settings.map((row) => ({
       title: row.Titel,
+      subtitle: row.Subtitel,
       infoHead: row.InfoTextOben,
       warningFoot: row.WarningTextOben,
       infoFoot: row.InfoTextUnten,
