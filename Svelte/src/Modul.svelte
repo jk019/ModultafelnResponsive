@@ -23,13 +23,13 @@
 <div class="card flex-fill" id="ModulCard" style="--moduleBG: {color}">
   <div class="card-body" id="ModulCardBody">
     {#if !is_elective}
-      <a id="Modulname" data-toggle="modal" data-target={`#${modalId}`}
+      <a id="Modulname" data-bs-toggle="modal" data-bs-target={`#${modalId}`}
         >{name}
       </a>
       <p class="modulCardECTS">{badge} ECTS-Credits</p>
     {:else}
       <div class="row">
-        <a id="Modulname" data-toggle="modal" data-target={`#${modalId2}`}
+        <a id="Modulname" data-bs-toggle="modal" data-bs-target={`#${modalId2}`}
           >{name}
         </a>
         <p class="modulCardECTS">{badge} ECTS-Credits</p>
@@ -56,18 +56,20 @@
       <div style="text-align: right;">
         <button
           type="button"
-          class="btn-close custom-close"
+          class="btn-close custom-close m-1"
           aria-label="Close"
-          data-dismiss="modal"
+          data-bs-dismiss="modal"
         ></button>
       </div>
       <div class="modal-body">
         <div class="title">
-        <h3 class="modal-title col-auto" id="exampleModalLongTitle">
-          {name}
-        </h3></div>
+          <h3 class="modal-title col-auto" id="exampleModalLongTitle">
+            {name}
+          </h3>
+        </div>
         <div>
-          <p>/<span class="tab"></span>ECTS: {badge}</p>
+          <p>/<span class="tab"></span>ECTS-Credits: {badge}</p>
+          <p>/<span class="tab"></span>{shortname}</p>
           <p>
             /<span class="tab"></span><a href={url} method="get" target="_blank"
               >Details zu diesem Modul</a
@@ -138,10 +140,131 @@
   </div>
 </div> -->
 
-<!--  MODAL - if is_elective -->
-
 {#if is_elective}
   <div
+    class="modal fade"
+    id={modalId2}
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="border: 10px solid {color};">
+        <div style="text-align: right;">
+          <button
+            type="button"
+            class="btn m-1"
+            aria-label="Close"
+            data-bs-dismiss="modal"
+            ><i
+              class="bi bi-x-circle-fill"
+              style="font-size: 2rem; color: {color};"
+            ></i></button
+          >
+        </div>
+        <div class="modal-body">
+          <div class="title">
+            <h3 class="modal-title col-auto" id="exampleModalLongTitle">
+              {name}
+            </h3>
+          </div>
+          <div>
+            <p>/<span class="tab"></span>ECTS-Credits: {badge}</p>
+          </div>
+          <p>/<span class="tab"></span>Verfügbare Module:</p>
+          <ul>
+            {#each wahlmodule as modul}
+              <li>
+                <a
+                  id="wahlpflichtmodulLink"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                  data-bs-target={`#${modul.shortname.replace(/\./g, "-")}`}
+                  >{modul.name}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal in the Modal-->
+
+  {#each wahlmodule as modul}
+    <div
+      class="modal fade"
+      id={modul.shortname.replace(/\./g, "-")}
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: 10px solid {color};">
+          <div class="row">
+            <div class="col" style="text-align: left;">
+              <button
+                type="button"
+                class="btn m-1"
+                data-bs-target={`#${modalId2}`}
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal"
+                style="color: {color}"
+                ><i
+                  class="bi bi-arrow-left-circle-fill"
+                  style="font-size: 2rem; color: {color};"
+                ></i></button
+              >
+            </div>
+            <div class="col" style="text-align: right;">
+              <button
+                type="button"
+                class="btn m-1"
+                aria-label="Close"
+                data-bs-dismiss="modal"
+                ><i
+                  class="bi bi-x-circle-fill"
+                  style="font-size: 2rem; color: {color};"
+                ></i></button
+              >
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="title">
+              <h3 class="modal-title col-auto" id="exampleModalLongTitle">
+                {modul.name}
+              </h3>
+            </div>
+            <div>
+              <p>/<span class="tab"></span>ECTS-Credits: {badge}</p>
+              <p>/<span class="tab"></span>{modul.shortname}</p>
+              <p>
+                /<span class="tab"></span><a
+                  href={modul.url}
+                  method="get"
+                  target="_blank">Details zu diesem Modul</a
+                >
+              </p>
+            </div>
+
+            {#if modul.description && modul.description.trim() !== ""}
+              {modul.description}
+            {:else}
+              <h5>Keine Modulbeschreibung vorhanden.</h5>
+            {/if}
+          </div>
+        </div>
+      </div>
+    </div>
+  {/each}
+{/if}
+
+<!--  MODAL - if is_elective -->
+
+<!-- <div
     class="modal fade"
     id={modalId2}
     tabindex="-1"
@@ -169,9 +292,9 @@
               <li>
                 <a
                   id="wahlpflichtmodulLink"
-                  data-toggle="modal"
-                  data-dismiss="modal"
-                  data-target={`#${modul.shortname.replace(/\./g, "-")}`}
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                  data-bs-target={`#${modul.shortname.replace(/\./g, "-")}`}
                   >{modul.name}
                 </a>
               </li>
@@ -180,17 +303,19 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal"
-            >Schliessen</button
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">Schliessen</button
           >
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <!--Modal in the Modal-->
+<!--Modal in the Modal-->
 
-  {#each wahlmodule as modul}
+<!--  {#each wahlmodule as modul}
     <div
       class="modal fade"
       id={modul.shortname.replace(/\./g, "-")}
@@ -235,9 +360,9 @@
               >
             </form>
             <button
-              data-target={`#${modalId2}`}
-              data-toggle="modal"
-              data-dismiss="modal"
+              data-bs-target={`#${modalId2}`}
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal"
               class="btn btn-secondary"
               >Zurück
             </button>
@@ -245,8 +370,7 @@
         </div>
       </div>
     </div>
-  {/each}
-{/if}
+  {/each} -->
 
 <style>
   /* #ModulCardFooter {
@@ -278,7 +402,7 @@
   }
 
   #ModulCardBody {
-    padding: 5px; /* Innenabstand für die Module */
+    padding: 8px; /* Innenabstand für die Module */
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -296,13 +420,13 @@
     padding: 0px !important;
   }
 
-  .badgeModal {
+  /* .badgeModal {
     padding: 5px !important;
   }
 
   .badge {
     padding: 3px;
-  }
+  } */
 
   #wahlpflichtmodulLink {
     font-size: medium;
@@ -313,9 +437,9 @@
     padding-left: 0px;
   }
 
-  .modulkuerzelCol {
+  /* .modulkuerzelCol {
     padding-left: 0px !important;
-  }
+  } */
 
   /* ----- Modal ----- */
 
@@ -324,7 +448,7 @@
     overflow-y: auto;
   }
 
-  .modalShortnameRow {
+  /* .modalShortnameRow {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -349,7 +473,7 @@
 
   .Shortname {
     padding-right: 0px;
-  }
+  } */
 
   /* ----- Media Queries ----- */
 
@@ -382,10 +506,10 @@
       height: 80px;
     }
     #Modulname {
-      font-size: 13px;
+      font-size: 15px;
     }
     .modulCardECTS {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 
@@ -393,20 +517,7 @@
     display: inline-block;
     margin-left: 40px;
   }
-  .title{
+  .title {
     padding-bottom: 15px;
   }
-
-  .custom-close {
-    background-color: grey; /* Hintergrundfarbe des Buttons */
-    border-radius: 50%; /* Macht den Hintergrund komplett rund */
-    padding: 0.5rem; /* Polsterung, um die Größe des Buttons zu erhöhen */
-
-    /* Überschreibt das Standard-SVG-Bild von Bootstrap für den Schließknopf */
-    background-image: url('data:image/svg+xml,\
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%230064a6">\
-        <path stroke="%230064a6" stroke-width="3" d="M.9 1.1c-.3.3-.3.7 0 1l6 6-6 6c-.3.3-.3.7 0 1s.7.3 1 0l6-6 6 6c.3.3.7.3 1 0s.3-.7 0-1l-6-6 6-6c-.3-.3.3-.7 0-1s-.7-.3-1 0L8 7.1 2.1 1.1c-.3-.3-.7-.3-1 0z"/>\
-      </svg>');
-  }
-
 </style>

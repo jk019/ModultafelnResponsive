@@ -11,11 +11,6 @@
 </div>
 
 <style>
-  .card-body {
-    display: flex;
-    align-items: left!important;
-  }
-
   .SemesterName {
     font-weight: 700;
     font-size: 14px;
@@ -40,8 +35,7 @@
   }
 
   #semesterBadgeTotal {
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: normal;
   }
 
   /* ----- Media Queries ----- */
@@ -75,10 +69,10 @@
       height: 80px;
     }
     .SemesterName {
-      font-size: 11px;
+      font-size: 15px;
     }
     #semesterBadgeTotal {
-      font-size: 11px;
+      font-size: 14px;
     }
   }
 </style>

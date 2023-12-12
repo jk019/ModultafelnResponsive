@@ -1228,7 +1228,7 @@
 <div class="row mt-3 footerRow">
   {information.infoFoot}
 </div>
-<div class="row footerRow">
+<div class="row footerRow2">
   Drucktipps: Stellen Sie in der Druckansicht sicher, dass die Option
   "Querformat" aktiviert ist und die Seitenränder in den Seiteneigenschaften auf
   0 gesetzt sind.
@@ -1265,6 +1265,12 @@
   .footerRow {
     width: 100%;
     padding-left: 5px !important;
+  }
+
+  .footerRow2 {
+    width: 100%;
+    padding-left: 5px !important;
+    padding-bottom: 20px!important;
   }
 
   #legendeTitle {
@@ -1335,30 +1341,24 @@
     .mainTitle {
       color: #000000;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 20px;
+      font-size: 22px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 0px) {
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 0px) {
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -1366,34 +1366,28 @@
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 992px) {
     .mainTitle {
       color: #000000;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 20px;
+      font-size: 25px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 1000px) {
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 15px;
+      font-size: 20px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 1000px) {
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 12px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -1411,24 +1405,18 @@
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 1600px) {
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 20px;
+      font-size: 23px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
       margin-bottom: 0px;
     }
-  }
-
-  @media (min-width: 1600px) {
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 16px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
