@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const xlsx = require("xlsx");
 const fs = require("fs");
-const svelteViewEngine = require("svelte-view-engine-lipkoadr");
+const svelteViewEngine = require("svelte-view-engine");
 
 //const {add} = require("nodemon/lib/rules");
 
@@ -107,7 +107,7 @@ app.post("/upload", async function (req, res) {
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
 
     res.render(
-      "App.svelte",
+      "App.html",
       { all: all, information: information },
       (err, html) => {
         if (err) {
