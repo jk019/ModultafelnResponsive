@@ -56,10 +56,13 @@
       <div style="text-align: right;">
         <button
           type="button"
-          class="btn-close custom-close m-1"
+          class="btn custom-close m-1"
           aria-label="Close"
           data-bs-dismiss="modal"
-        ></button>
+        ><i
+        class="bi bi-x-circle-fill"
+        style="font-size: 2rem; color: {color};"
+      ></i></button>
       </div>
       <div class="modal-body">
         <div class="title">
