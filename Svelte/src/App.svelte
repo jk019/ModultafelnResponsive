@@ -1163,7 +1163,7 @@
 
 <!-- ------------------------------- Start Modultafel ---------------------------------- -->
 
-<div class="custom-container">
+<!-- <div class="custom-container">
   {#each all as semester}
     <div class="row">
       <div class="col-12 col-lg-1">
@@ -1196,6 +1196,69 @@
           </div>
         </div>
       </div>
+    </div>
+  {/each}
+</div> -->
+
+<div class="custom-container">
+  {#each all as semester}
+    <div class="row">
+      <div class="col-md-auto">
+        <Semester
+          semesterNumber={semester.number}
+          totalCredits={calculateTotalCredits(semester)}
+        />
+      </div>
+
+      {#each semester.semesterModules as group}
+        <!-- <div class="col-{getMaxModuleCount(group.group)} test" style="--groupBG: {group.color}70"> -->
+        {#if getMaxModuleCount(group.group) < 4}
+          <div class="col-sm-{getMaxModuleCount(group.group)}">
+            <div class="row">
+              {#each group.modules as module}
+                <div
+                  class="col-md-{Math.ceil(
+                    12 / getMaxModuleCount(group.group)
+                  )}"
+                  id="CustomizedByTimo"
+                >
+                  <Modul
+                    color={group.color}
+                    name={module.name}
+                    shortname={module.shortname}
+                    is_elective={module.is_elective}
+                    gruppe={group.group}
+                    badge={module.credits}
+                    description={module.description}
+                    url={module.url}
+                    wahlmodule={module.wahlmodule}
+                  />
+                </div>
+              {/each}
+            </div>
+          </div>
+        {:else}
+          <div class="col-sm-3">
+            <div class="row">
+              {#each group.modules as module}
+                <div class="col-md-4" id="CustomizedByTimo">
+                  <Modul
+                    color={group.color}
+                    name={module.name}
+                    shortname={module.shortname}
+                    is_elective={module.is_elective}
+                    gruppe={group.group}
+                    badge={module.credits}
+                    description={module.description}
+                    url={module.url}
+                    wahlmodule={module.wahlmodule}
+                  />
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/if}
+      {/each}
     </div>
   {/each}
 </div>

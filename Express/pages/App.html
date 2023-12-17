@@ -72,11 +72,8 @@
 <!-- <------------------------------- Header ----------------------------------------------- -->
 
 <div class="navbar" style="background-color: #0064a6;" id="zhawSmlLogoBanner">
-  <img
-    id="zhawSmlLogoBannerContent"
-    src="https://career.sml.zhaw.ch/media/1333/zhaw_sml_byline_white.png"
-    alt="Logo SML"
-  />
+  <img id="zhawSmlLogoBannerContent" src="https://career.sml.zhaw.ch/media/1333/zhaw_sml_byline_white.png"
+    alt="Logo SML" />
 </div>
 
 <div class="row" id="headerRow">
@@ -88,12 +85,7 @@
       {information.subtitle}
     </h4>
   </div>
-  <img
-    class="col-auto"
-    id="zhawSmlLogo"
-    src="https://career.sml.zhaw.ch/media/1355/logonewnav.jpg"
-    alt="Logo SML"
-  />
+  <img class="col-auto" id="zhawSmlLogo" src="https://career.sml.zhaw.ch/media/1355/logonewnav.jpg" alt="Logo SML" />
 </div>
 <div class="row" id="headerRow">
   <div class="col-auto" id="headerColumn">
@@ -146,6 +138,45 @@
   {/each}
 </div>
 
+<!-- <div class="custom-container">
+  {#each all as semester}
+  <div class="row">
+    <div class="col-md-auto">
+      <Semester semesterNumber={semester.number} totalCredits={calculateTotalCredits(semester)} />
+    </div>
+
+    {#each semester.semesterModules as group}
+    {#if getMaxModuleCount(group.group) < 4} <div class="col-sm-{getMaxModuleCount(group.group)}">
+      <div class="row">
+        {#each group.modules as module}
+        <div class="col-md-{Math.ceil(
+                    12 / getMaxModuleCount(group.group)
+                  )}" id="CustomizedByTimo">
+          <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
+            gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
+            wahlmodule={module.wahlmodule} />
+        </div>
+        {/each}
+      </div>
+  </div>
+  {:else}
+  <div class="col-sm-3">
+    <div class="row">
+      {#each group.modules as module}
+      <div class="col-md-4" id="CustomizedByTimo">
+        <Modul color={group.color} name={module.name} shortname={module.shortname} is_elective={module.is_elective}
+          gruppe={group.group} badge={module.credits} description={module.description} url={module.url}
+          wahlmodule={module.wahlmodule} />
+      </div>
+      {/each}
+    </div>
+  </div>
+  {/if}
+  {/each}
+</div>
+{/each}
+</div> -->
+
 <!-- <------------------------------- Legende ----------------------------------------------- -->
 
 <div id="legendeModulgruppen">
@@ -153,17 +184,13 @@
   <div class="col-xxl-6 col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 p-0">
     <div class="row">
       {#each groupsArray as group}
-        <div class="col-xl-2 col-lg-3 col-sm-3 col-md-3 col-4" id="legendeCol">
-          <div
-            class="card"
-            id="legendeCard"
-            style="background-color: {group.color}"
-          >
-            <div class="card-body" id="legendeCardBody">
-              <p class="card-text" id="legendeCardText">{group.group}</p>
-            </div>
+      <div class="col-xl-2 col-lg-3 col-sm-3 col-md-3 col-4" id="legendeCol">
+        <div class="card" id="legendeCard" style="background-color: {group.color}">
+          <div class="card-body" id="legendeCardBody">
+            <p class="card-text" id="legendeCardText">{group.group}</p>
           </div>
         </div>
+      </div>
       {/each}
     </div>
   </div>
@@ -216,7 +243,7 @@
   .footerRow2 {
     width: 100%;
     padding-left: 5px !important;
-    padding-bottom: 20px!important;
+    padding-bottom: 20px !important;
   }
 
   #legendeTitle {
@@ -258,9 +285,11 @@
     #legendeCard {
       margin-bottom: 5px;
     }
+
     #legendeCol {
       padding-left: 0px !important;
     }
+
     #legendeTitle {
       padding-left: 0px;
     }
@@ -276,6 +305,7 @@
   }
 
   @media (max-width: 768px) {
+
     #headerColumn,
     .InfoText,
     .InfoTextRot {
@@ -293,6 +323,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 16px;
@@ -301,6 +332,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -322,6 +354,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 20px;
@@ -330,6 +363,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -351,6 +385,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .secondTitle {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 23px;
@@ -359,6 +394,7 @@
       line-height: normal;
       margin-bottom: 0px;
     }
+
     .InfoText,
     .InfoTextRot {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
