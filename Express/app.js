@@ -114,9 +114,10 @@ app.post("/upload", async function (req, res) {
       semester.semesterModules.forEach((module) => {
         const group = module.group;
         const color = module.color;
+        const font = module.font; 
 
         if (!uniqueGroups[group]) {
-          uniqueGroups[group] = { group, color };
+          uniqueGroups[group] = { group, color, font };
         }
       });
     });

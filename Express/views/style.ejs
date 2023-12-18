@@ -1,137 +1,315 @@
-@charset "UTF-8";
 html,
 body {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-  color: #333;
-  margin: 0;
-  padding: 8px;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
-    sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+        sans-serif;
 }
 
 a {
-  color: rgb(0, 100, 200);
-  text-decoration: none;
-  cursor: pointer;
+    color: rgb(0, 100, 200);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 a:visited {
-  color: rgb(0, 80, 160);
+    color: rgb(0, 80, 160);
 }
 
 h4 {
-  padding: 2.5px!important;
+    padding: 2.5px !important;
 }
 
 label {
-  display: block;
+    display: block;
 }
 
 input,
 button,
 select,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
-  -webkit-padding: 0.4em 0;
-  padding: 0.4em;
-  margin: 0 0 0.5em 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 2px;
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
 input:disabled {
-  color: #ccc;
+    color: #ccc;
 }
 
 button {
-  color: #333;
-  background-color: #f4f4f4;
-  outline: none;
+    color: #333;
+    background-color: #f4f4f4;
+    outline: none;
 }
 
 button:disabled {
-  color: #999;
+    color: #999;
 }
 
 button:not(:disabled):active {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 button:focus {
-  border-color: #666;
+    border-color: #666;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 
-  border-radius: 0px !important;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
+    border-radius: 0px !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
 }
 
 .badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  border-radius: 4px;
-  background: var(--badgeBG);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(--badgeBG);
 }
 
 .InfoTextRot {
-  color: #f00;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+    color: #f00;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .InfoText {
-  color: #000000;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+    color: #000000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 /* Reset padding for all columns */
 .row > .col,
 .row > [class*="col-"] {
-  padding-right: 2.5px; /* Adjust the padding value as needed */
-  padding-left: 2.5px; /* Adjust the padding value as needed */
+    padding-right: 2.5px;
+    /* Adjust the padding value as needed */
+    padding-left: 2.5px;
+    /* Adjust the padding value as needed */
 }
 
 .col-lg-11 {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .col-md-auto {
-  padding-left: 0 !important;
-  padding-right: 0px !important;
+    padding-left: 0 !important;
+    padding-right: 0px !important;
 }
 
 .custom-container {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .row {
-  margin: 0px !important;
+    margin: 0px !important;
 }
 
+#Modulname {
+    font-weight: bold;
+    font-size: 10px;
+    color: #000000;
+    hyphens: auto;
+    /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
+    line-height: 1.1;
+    padding: 0px !important;
+}
+
+#Modulname:hover {
+    text-decoration: underline;
+}
+
+#ModulCardBody {
+    padding: 8px;
+    /* Innenabstand für die Module */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border: 0px;
+}
+
+#ModulCard {
+    margin-top: 5px;
+    background: var(--moduleBG);
+}
+
+.modulCardECTS {
+    font-size: 13px;
+    padding: 0px !important;
+}
+
+#wahlpflichtmodulLink {
+    font-size: medium;
+    color: #000000;
+}
+
+#wahlpflichtmodulLink:hover {
+    text-decoration: underline;
+}
+
+#exampleModalLongTitle {
+    padding-left: 0px;
+}
+
+/* ----- Modal ----- */
+
+.modal-body {
+    height: 60vh;
+    overflow-y: auto;
+}
+
+/* ----- Media Queries ----- */
+
+@media (min-width: 0px) {
+    #ModulCard {
+        height: 80px;
+    }
+
+    #Modulname {
+        font-size: 14px;
+    }
+
+    .modulCardECTS {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    #ModulCard {
+        height: 80px;
+    }
+
+    #Modulname {
+        font-size: 14px;
+    }
+
+    .modulCardECTS {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 992px) {
+    #ModulCard {
+        height: 80px;
+    }
+
+    #Modulname {
+        font-size: 15px;
+    }
+
+    .modulCardECTS {
+        font-size: 14px;
+    }
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.title {
+    padding-bottom: 15px;
+}
+
+.SemesterName {
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    text-align: left !important;
+    margin-bottom: 0px !important;
+}
+
+#SemesterCard {
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    background: #0064a6;
+}
+
+#SemesterCardBody {
+    padding: 5px;
+    /* Innenabstand für die Module */
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border: 0px;
+}
+
+#semesterBadgeTotal {
+    font-weight: normal;
+}
+
+/* ----- Media Queries ----- */
+
+@media (min-width: 0px) {
+    #SemesterCard {
+        height: 63px;
+    }
+
+    .SemesterName {
+        font-size: 14px;
+    }
+
+    #semesterBadgeTotal {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    #SemesterCard {
+        height: 65px;
+    }
+
+    .SemesterName {
+        font-size: 14px;
+    }
+
+    #semesterBadgeTotal {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    #SemesterCard {
+        height: 80px;
+    }
+
+    .SemesterName {
+        font-size: 15px;
+    }
+
+    #semesterBadgeTotal {
+        font-size: 14px;
+    }
+}
