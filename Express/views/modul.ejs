@@ -1,26 +1,201 @@
-<!-- **************** Modul **************** -->
-<div class="col my-2">
-    <div class="card"
-         style="background-color: <%= module.hasOwnProperty('Modulbezeichnung') ? module.FarbeModulkaestchen + '; cursor: pointer;' : colorModuleGroup %>"
-    <% if(module.hasOwnProperty('Link')) { %>
-         onclick="window.open('<%= module.Link %>')"
-            <% } %>
-    <% if(module.hasOwnProperty('Wahlpflichtmodul')) { %>
-        <% var modalId = module.Modulbezeichnung.toString().replace(' ', '_') %>
-                <% var isWahlpflichtmodul = true %>
-         data-bs-toggle="modal" data-bs-target="#modal<%= modalId %>"
-            <% } %>
-    >
-        <% if(isWahlpflichtmodul) { %>
-            <%- include('modal', {modalId: modalId, module: module, wahlmodule: wahlmodule}) %>
-        <% } %>
-        <div class="card-body">
-            <h6 class="card-title" lang="de"
-                style="color:<%= module.Schriftfarbe %>;"><%= module.Modulbezeichnung %></h6>
-        </div>
-        <% if (module.hasOwnProperty('ECTS')){ %>
-            <p class="card-text bg-black text-white" id="ects"><%= module.ECTS %> ECTS
+<scipt>
+    <% let modalId = `modal-${name.replace(/[*&\s.]+/g, "-")}`; %>
+    <% let modalId2 = `modal-${name.replace(/[*&\s.]+/g, "-")}-2`; %>
+</scipt>
+
+
+<div class="card flex-fill" id="ModulCard" style="--moduleBG: <%= color %>;">
+    <div class="card-body" id="ModulCardBody">
+        <% if (!is_elective) { %>
+            <a id="Modulname" data-bs-toggle="modal" data-bs-target="#<%= modalId %>">
+                <%= name %>
+            </a>
+            <p class="modulCardECTS">
+                <%= badge %> ECTS-Credits
             </p>
-        <% } %>
+            <% } else { %>
+                <div class="row">
+                    <a id="Modulname" data-bs-toggle="modal" data-bs-target="#<%= modalId2 %>">
+                        <%= name %>
+                    </a>
+                    <p class="modulCardECTS">
+                        <%= badge %> ECTS-Credits
+                    </p>
+                </div>
+                <% } %>
     </div>
 </div>
+
+<!-- Modal for Non-Elective -->
+<div class="modal fade" id="<%= modalId %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="border: 10px solid <%= color %>;">
+            <!-- Modal Content Here -->
+            <div class="modal-body">
+                <!-- Modal Body Here -->
+                <% if (description && description.trim() !=="" ) { %>
+                    <%= description %>
+                        <% } else { %>
+                            <h5>Keine Modulbeschreibung vorhanden.</h5>
+                            <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Elective -->
+<% if (is_elective) { %>
+    <div class="modal fade" id="<%= modalId2 %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border: 10px solid <%= color %>;">
+                <!-- Modal Content Here -->
+                <div class="modal-body">
+                    <p>/<span class="tab"></span>Verfügbare Module:</p>
+                    <ul>
+                        <% wahlmodule.forEach(modul=> { %>
+                            <li>
+                                <a id="wahlpflichtmodulLink" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                    data-bs-target="#<%= modul.shortname.replace(/\./g, '-') %>">
+                                    <%= modul.name %>
+                                </a>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+        <!-- Nested Modals for Each Elective Module -->
+        <% if (is_elective) { %>
+            <% wahlmodule.forEach(modul=> { %>
+                <div class="modal fade" id="<%= modul.shortname.replace(/\./g, '-') %>" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content" style="border: 10px solid <%= color %>;">
+                            <!-- Modal Content for Each Elective Module -->
+                            <div class="modal-body">
+                                <h3 class="modal-title col-auto">
+                                    <%= modul.name %>
+                                </h3>
+                                <p>/<span class="tab"></span>ECTS-Credits: <%= modul.badge %>
+                                </p>
+                                <p>/<span class="tab"></span>
+                                    <%= modul.shortname %>
+                                </p>
+                                <p>/<span class="tab"></span><a href="<%= modul.url %>" method="get"
+                                        target="_blank">Details zu diesem Modul</a></p>
+                                <% if (modul.description && modul.description.trim() !=="" ) { %>
+                                    <%= modul.description %>
+                                        <% } else { %>
+                                            <h5>Keine Modulbeschreibung vorhanden.</h5>
+                                            <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } %>
+
+                        <style>
+                            #Modulname {
+                                font-weight: bold;
+                                font-size: 10px;
+                                color: #000000;
+                                hyphens: auto;
+                                /* Silbentrennung für Modulnamen aktiviert --> in index.html "lang" von "en" auf "de" gesetzt */
+                                line-height: 1.1;
+                                padding: 0px !important;
+                            }
+
+                            #ModulCardBody {
+                                padding: 8px;
+                                /* Innenabstand für die Module */
+                                text-align: left;
+                                display: flex;
+                                flex-direction: column;
+                                border: 0px;
+                            }
+
+                            #ModulCard {
+                                margin-top: 5px;
+                                background: var(--moduleBG);
+                            }
+
+                            .modulCardECTS {
+                                font-size: 13px;
+                                padding: 0px !important;
+                            }
+
+                            #wahlpflichtmodulLink {
+                                font-size: medium;
+                                color: #000000;
+                            }
+
+                            #exampleModalLongTitle {
+                                padding-left: 0px;
+                            }
+
+                            /* ----- Modal ----- */
+
+                            .modal-body {
+                                height: 60vh;
+                                overflow-y: auto;
+                            }
+
+                            /* ----- Media Queries ----- */
+
+                            @media (min-width: 0px) {
+                                #ModulCard {
+                                    height: 80px;
+                                }
+
+                                #Modulname {
+                                    font-size: 14px;
+                                }
+
+                                .modulCardECTS {
+                                    font-size: 13px;
+                                }
+                            }
+
+                            @media (min-width: 768px) {
+                                #ModulCard {
+                                    height: 80px;
+                                }
+
+                                #Modulname {
+                                    font-size: 14px;
+                                }
+
+                                .modulCardECTS {
+                                    font-size: 13px;
+                                }
+                            }
+
+                            @media (min-width: 992px) {
+                                #ModulCard {
+                                    height: 80px;
+                                }
+
+                                #Modulname {
+                                    font-size: 15px;
+                                }
+
+                                .modulCardECTS {
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .tab {
+                                display: inline-block;
+                                margin-left: 40px;
+                            }
+
+                            .title {
+                                padding-bottom: 15px;
+                            }
+                        </style>

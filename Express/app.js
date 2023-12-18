@@ -5,7 +5,6 @@
  * @requires express-fileupload
  * @requires xlsx
  * @requires fs
- * @requires svelte-view-engine
  */
 // Imports
 const express = require("express");
@@ -14,14 +13,10 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const xlsx = require("xlsx");
 const fs = require("fs");
-const svelteViewEngine = require("svelte-view-engine");
 
 //const {add} = require("nodemon/lib/rules");
 
 const TEMP_DIR = "public/tmp/";
-
-let dir = "./pages";
-let type = "html";
 
 // Provides static resources for the frontend & file upload
 app.use(
@@ -32,23 +27,7 @@ app.use(
   })
 );
 
-app.engine(
-  type,
-  svelteViewEngine({
-    template: "./template.html", // see Root template below
-    dir,
-    type,
-    init: true,
-    watch: true,
-    liveReload: true,
-    svelte: {
-      // rollup-plugin-svelte config
-    },
-  })
-);
-
-app.set("view engine", type);
-app.set("views", dir);
+app.set("view engine", "ejs");
 
 app.post("/upload", async function (req, res) {
   if (!req.files || Object.keys(req.files).length === 0) {
@@ -92,7 +71,7 @@ app.post("/upload", async function (req, res) {
       semesterMap.set(module.Semester, semester);
     });
 
-    const all = Array.from(semesterMap.keys())
+    let all = Array.from(semesterMap.keys())
       .sort((a, b) => {
         // Split semester strings and parse them as integers for comparison
         const semesterA = parseInt(a.split(".")[0], 10);
@@ -110,11 +89,45 @@ app.post("/upload", async function (req, res) {
         ),
       }));
 
+    // Define the calculateTotalCredits function
+    function calculateTotalCredits(semester) {
+      let totalCredits = 0;
+      semester.semesterModules.forEach((group) => {
+        group.modules.forEach((module) => {
+          totalCredits += parseInt(module.credits, 10);
+        });
+      });
+      return totalCredits;
+    }
+
+    // Inside your /upload route handler, before rendering the App template:
+    all = all.map((semester) => {
+      return {
+        ...semester,
+        totalCredits: calculateTotalCredits(semester), // Add totalCredits to each semester object
+      };
+    });
+
+    let uniqueGroups = {};
+
+    all.forEach((semester) => {
+      semester.semesterModules.forEach((module) => {
+        const group = module.group;
+        const color = module.color;
+
+        if (!uniqueGroups[group]) {
+          uniqueGroups[group] = { group, color };
+        }
+      });
+    });
+
+    let groupsArray = Object.values(uniqueGroups);
+
     const returnFile = TEMP_DIR + Date.now() + "_" + "Modultafel.html";
 
     res.render(
-      "App.html",
-      { all: all, information: information },
+      "App",
+      { all: all, information: information, groupsArray: groupsArray },
       (err, html) => {
         if (err) {
           console.error("Render error:", err);
