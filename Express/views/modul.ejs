@@ -1,6 +1,6 @@
 <script>
-  <% let modalId = `modal-${name.replace(/[*&\s.]+/g, "-")}`; %>
-  <% let modalId2 = `modal-${name.replace(/[*&\s.]+/g, "-")}-2`; %>
+  <% let modalId = `modal-${name.replace(/[*&\s.+,]+/g, "-")}`; %>
+  <% let modalId2 = `modal-${name.replace(/[*&\s.+,]+/g, "-")}-2`; %>
 </script>
 
 <div class="card flex-fill" id="ModulCard" style="--moduleBG: <%= color %>;">
