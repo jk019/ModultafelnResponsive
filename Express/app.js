@@ -82,7 +82,6 @@ app.post("/upload", async function (req, res) {
     modules.forEach((module) => {
       const setting = settingsMap.get(module.Modulgruppe);
       Object.assign(module, {
-        FarbeModulkaestchen: setting.FarbeModulkaestchen,
         Hintergrundfarbe: setting.Hintergrundfarbe,
         Schriftfarbe: setting.Schriftfarbe,
         is_elective: !!module.Wahlpflichtmodul,
@@ -94,7 +93,14 @@ app.post("/upload", async function (req, res) {
     });
 
     const all = Array.from(semesterMap.keys())
-      .sort()
+      .sort((a, b) => {
+        // Split semester strings and parse them as integers for comparison
+        const semesterA = parseInt(a.split(".")[0], 10);
+        const semesterB = parseInt(b.split(".")[0], 10);
+
+        // Sort in descending order
+        return semesterB - semesterA;
+      })
       .map((semesterNumber) => ({
         number: semesterNumber.split(".")[0],
         semesterModules: transformModulesForSemester(
@@ -150,6 +156,7 @@ function transformModulesForSemester(
       groupModulesMap.set(groupName, {
         group: groupName,
         color: setting.Hintergrundfarbe,
+        font: setting.Schriftfarbe,
         modules: [],
       });
     }
